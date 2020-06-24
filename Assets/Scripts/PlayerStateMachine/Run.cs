@@ -27,7 +27,5 @@ public class Run : StateMachineBehaviour
         base.OnStateExit(animator, stateInfo, layerIndex);
 
         Debug.Log(owner.name + " exiting running mode");
-    }
-
-    
+    }    
 }

@@ -29,8 +29,9 @@ public class Player : MonoBehaviour
 
         if (Input.GetAxis("Horizontal") != 0)
         {
-            _state.SetTrigger("Run"); // name of a Trigger parameter in PlayerStateController
-        }
+            _state.SetBool("Running", true); // name of a Trigger parameter in PlayerStateController
+        } 
+        else _state.SetBool("Running", false);
 
         if (Input.GetButtonDown("Jump"))
         {
