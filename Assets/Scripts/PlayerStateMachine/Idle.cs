@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoNothing : StateMachineBehaviour
+public class Idle : StateMachineBehaviour
 {
     GameObject owner;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         owner = animator.gameObject;
-        Debug.Log(owner.name + " is idling");
+        // Debug.Log(owner.name + " is idling");
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

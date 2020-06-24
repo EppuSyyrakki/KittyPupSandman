@@ -5,13 +5,14 @@ using UnityEngine;
 public class Run : StateMachineBehaviour
 {
     GameObject owner;
-    [SerializeField] float _runningSpeed;
+    
+    float _runningSpeed = 5;
     
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         owner = animator.gameObject;
-
-        Debug.Log(owner.name + " entered running mode");
+        
+        // Debug.Log(owner.name + " entered running mode");
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -26,6 +27,6 @@ public class Run : StateMachineBehaviour
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
 
-        Debug.Log(owner.name + " exiting running mode");
+        // Debug.Log(owner.name + " exiting running mode");
     }    
 }
