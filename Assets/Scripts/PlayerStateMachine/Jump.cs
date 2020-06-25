@@ -5,14 +5,13 @@ using UnityEngine;
 public class Jump : StateMachineBehaviour
 {
     GameObject owner;
-    float _jumpingForceY = 3;
-    float _jumpingForceX = 2;
+    [SerializeField] [Range(1, 8)] float _jumpingForceY = 3;
+    [SerializeField] [Range(1, 8)] float _jumpingForceX = 2;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         owner = animator.gameObject;
         animator.SetBool("Grounded", false);
-
         owner = animator.gameObject;
         Rigidbody2D rb = owner.GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(animator.GetFloat("Horizontal") * _jumpingForceX, _jumpingForceY));

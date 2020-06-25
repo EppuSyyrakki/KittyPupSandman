@@ -18,4 +18,10 @@ public class Idle : StateMachineBehaviour
         
         // do regular updates
     }
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        base.OnStateExit(animator, stateInfo, layerIndex);
+
+        // Debug.Log(owner.name + " exiting idling mode");
+    }
 }

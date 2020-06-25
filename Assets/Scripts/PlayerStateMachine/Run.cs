@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Run : StateMachineBehaviour
 {
-    GameObject owner;
-    
-    float _runningSpeed = 5;
+    GameObject owner;    
+    [SerializeField][Range(1,8)] float _runningSpeed = 5;
     
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
