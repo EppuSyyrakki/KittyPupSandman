@@ -60,3 +60,6 @@ TagManager:
   - name: Obstacle cover
     uniqueID: 1896993269
     locked: 0
+  - name: Front
+    uniqueID: 2195325771
+    locked: 0
