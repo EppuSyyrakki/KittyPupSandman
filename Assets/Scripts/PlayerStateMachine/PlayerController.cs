@@ -8,6 +8,13 @@ public class PlayerController : CharacterController
     public Sprite runSprite;
     public Sprite jumpSprite;
 
+    [HideInInspector] public SpriteRenderer spriteRenderer;   // temporary tool before we get animations
+
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     // Update is called once per frame
     void Update()
     {

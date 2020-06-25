@@ -941,6 +941,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFSM
       objectReference: {fileID: 0}
+    - target: {fileID: 2171675683960303723, guid: cabec17b151749c4ca7998b3ab450b12,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 99b38c579c1e87348b2f43b329d4371a,
+        type: 3}
+    - target: {fileID: 2171675683960303723, guid: cabec17b151749c4ca7998b3ab450b12,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.4221344
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171675683960303723, guid: cabec17b151749c4ca7998b3ab450b12,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.4257812
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171675683960303723, guid: cabec17b151749c4ca7998b3ab450b12,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2171675683960303726, guid: cabec17b151749c4ca7998b3ab450b12,
         type: 3}
       propertyPath: m_LocalPosition.x

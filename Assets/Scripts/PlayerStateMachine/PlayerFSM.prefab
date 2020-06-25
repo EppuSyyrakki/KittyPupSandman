@@ -135,9 +135,10 @@ MonoBehaviour:
   _runSpeed: 2
   _jumpPowerX: 0
   _jumpPowerY: 0
-  idleSprite: {fileID: 0}
-  runSprite: {fileID: 0}
-  jumpSprite: {fileID: 0}
+  idleSprite: {fileID: 21300000, guid: 99b38c579c1e87348b2f43b329d4371a, type: 3}
+  runSprite: {fileID: 21300000, guid: a10fcd9c632b09e46b9974f32f7ce9e6, type: 3}
+  jumpSprite: {fileID: 21300000, guid: 220df751c9c284b49ab73c8b6061d072, type: 3}
+  spriteRenderer: {fileID: 0}
 --- !u!95 &2171675683960303720
 Animator:
   serializedVersion: 3
@@ -196,12 +197,12 @@ SpriteRenderer:
   m_SortingLayerID: 340492397
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b35a11143e1dc14dbb1113d71e7a0fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99b38c579c1e87348b2f43b329d4371a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 2.56}
+  m_Size: {x: 2.4221344, y: 3.4257812}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -241,16 +242,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01981914, y: -0.1325379}
+  m_Offset: {x: -0.040782124, y: -0.17967224}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 2.56}
-    newSize: {x: 1.28, y: 2.56}
+    oldSize: {x: 2.4221344, y: 3.4257812}
+    newSize: {x: 2.4221344, y: 3.4257812}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7250705, y: 2.2949243}
+  m_Size: {x: 1.2637489, y: 2.389193}
   m_EdgeRadius: 0
