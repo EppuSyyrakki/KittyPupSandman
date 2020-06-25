@@ -11,6 +11,19 @@ public class UIMaster : MonoBehaviour
         
     }
 
+    public void OnGUI()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ChangeScene(2);
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        { 
+            ChangeScene(0);
+        }
+    }
+
     public void ChangeScene(int sceneID)
     {
         // this method takes index values from build settings
