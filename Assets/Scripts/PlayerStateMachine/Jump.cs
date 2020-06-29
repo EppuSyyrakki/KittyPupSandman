@@ -35,8 +35,9 @@ public class Jump : StateMachineBehaviour
         if (rb.velocity.x > 0 && pc.spriteRenderer.flipX)       // if moving right, don't flip X
             pc.spriteRenderer.flipX = false;
 
-        // Debug.Log(owner.name + " is in the air");
+        Debug.Log(owner.name + " is in the air " + owner.transform.position);
     }
+
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
