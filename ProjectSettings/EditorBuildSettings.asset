@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sandbox.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TerhiTest.unity
-    guid: 47cb4f542f81ac647bc6b08b56de00ae
+    guid: 77950af7a3034fa48855facd326adeda
   m_configObjects: {}
