@@ -27,22 +27,21 @@ public class Jump : StateMachineBehaviour
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(animator, stateInfo, layerIndex);
+
+        float rotation = Input.GetAxis("Horizontal"); 
         Debug.Log(rb.velocity.x);
 
-        if (rb.velocity.x < 0 && !pc.spriteRenderer.flipX)      // if moving left, flip sprite X
+        if ((rb.velocity.x < 0 || rotation < 0) && !pc.spriteRenderer.flipX )      // if moving left, flip sprite X
             pc.spriteRenderer.flipX = true;
 
-        if (rb.velocity.x > 0 && pc.spriteRenderer.flipX)       // if moving right, don't flip X
+        if ((rb.velocity.x > 0 || rotation > 0) && pc.spriteRenderer.flipX)       // if moving right, don't flip X
             pc.spriteRenderer.flipX = false;
-
-        Debug.Log(owner.name + " is in the air " + owner.transform.position);
+        
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
         animator.ResetTrigger("Jump");
-        
-        // Debug.Log(owner.name + " has stopped jumping");
     }
 }
