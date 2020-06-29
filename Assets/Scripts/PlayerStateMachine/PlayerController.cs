@@ -23,6 +23,7 @@ public class PlayerController : CharacterController
 
     private void HandleInput()
     {
+        // the _state object is from CharacterController superclass
         _state.SetFloat("Horizontal", Input.GetAxis("Horizontal")); // send Axis to PlayerStateController parameter
 
         if (Input.GetAxis("Horizontal") != 0)
