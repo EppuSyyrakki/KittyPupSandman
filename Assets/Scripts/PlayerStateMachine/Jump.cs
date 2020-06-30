@@ -36,7 +36,6 @@ public class Jump : StateMachineBehaviour
 
         if ((rb.velocity.x > 0 || rotation > 0) && pc.spriteRenderer.flipX)       // if moving right, don't flip X
             pc.spriteRenderer.flipX = false;
-        
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
