@@ -22,6 +22,11 @@ public class UIMaster : MonoBehaviour
         { 
             ChangeScene(0);
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            QuitGame();
+        }
     }
 
     public void ChangeScene(int sceneID)
