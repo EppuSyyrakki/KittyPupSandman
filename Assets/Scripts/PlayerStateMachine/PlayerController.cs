@@ -13,6 +13,8 @@ public class PlayerController : CharacterController
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        transform.position = SaveGame.Instance.GetPosFromMemory();
     }
 
     // Update is called once per frame
@@ -34,6 +36,11 @@ public class PlayerController : CharacterController
         if (Input.GetButtonDown("Jump"))
         {
             _state.SetTrigger("Jump");
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SaveGame.Instance.SetPosVec(this.gameObject.transform.position);
         }
     }
 }

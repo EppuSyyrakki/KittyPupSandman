@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class UIMaster : MonoBehaviour
 {
+    public static UIMaster Instance { get; private set; }
+    public void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            UnityEngine.Debug.LogWarning("Warning: multiple " + this + " in scene!");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +24,18 @@ public class UIMaster : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            ChangeScene(2);
+            ChangeScene(3);
         }
+
+        if (Input.GetKeyDown(KeyCode.N))
+            StartNewGame();
+
+        if (Input.GetKeyDown(KeyCode.C))
+            ChangeScene(2);
 
         if (Input.GetKeyDown(KeyCode.M))
         { 
-            ChangeScene(0);
+            ChangeScene(1);
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -33,6 +48,12 @@ public class UIMaster : MonoBehaviour
     {
         // this method takes index values from build settings
         SceneManager.LoadScene(sceneBuildIndex: sceneID);
+    }
+
+    public void StartNewGame()
+    {
+        SaveGame.Instance.SetPosVec(new Vector2(0, 0));     // clear player pos from the memory
+        ChangeScene(2);
     }
 
     public void QuitGame()
