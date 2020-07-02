@@ -6,6 +6,8 @@ public class EnemyController : CharacterController
 {
     public Sprite patrolSprite;
     public Sprite alertSprite;
+    public Transform[] waypoints;
+    public float speed = 10f;
 
     [HideInInspector] public SpriteRenderer spriteRenderer;   // temporary tool before we get animations
 

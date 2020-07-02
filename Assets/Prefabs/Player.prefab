@@ -129,9 +129,10 @@ GameObject:
   - component: {fileID: 2171675683960303723}
   - component: {fileID: 2171675683960303722}
   - component: {fileID: 2171675683960303701}
+  - component: {fileID: 12122548}
   m_Layer: 0
-  m_Name: PlayerFSM
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,9 +166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _state: {fileID: 2171675683960303720}
-  _runSpeed: 2
-  _jumpPowerX: 0
-  _jumpPowerY: 0
   idleSprite: {fileID: 21300000, guid: 99b38c579c1e87348b2f43b329d4371a, type: 3}
   runSprite: {fileID: 21300000, guid: a10fcd9c632b09e46b9974f32f7ce9e6, type: 3}
   jumpSprite: {fileID: 21300000, guid: 220df751c9c284b49ab73c8b6061d072, type: 3}
@@ -288,6 +286,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2637489, y: 2.389193}
   m_EdgeRadius: 0
+--- !u!68 &12122548
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171675683960303700}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.65847075, y: -1.3930836}
+  - {x: 0.5637302, y: -1.3942373}
 --- !u!1 &4059542440880209360
 GameObject:
   m_ObjectHideFlags: 0

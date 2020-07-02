@@ -8,6 +8,10 @@ public class PlayerController : CharacterController
     public Sprite runSprite;
     public Sprite jumpSprite;
 
+    public float maxSpeed;
+    public float acceleration;
+    public float jumpForce;
+
     [HideInInspector] public SpriteRenderer spriteRenderer;   // temporary tool before we get animations
 
     void Start()

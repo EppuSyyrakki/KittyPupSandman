@@ -7,20 +7,18 @@ public class Jump : StateMachineBehaviour
     GameObject owner;
     Rigidbody2D rb;
     PlayerController pc;
-    [SerializeField] [Range(1, 8)] float _jumpingForceY = 3;
-    [SerializeField] [Range(0.01f, 0.1f)] float _jumpingForceX = 0.01f;
+    float jumpForce;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("Grounded", false);
-        owner = animator.gameObject;
-        
+        owner = animator.gameObject;       
         pc = owner.GetComponent<PlayerController>();
-        pc.spriteRenderer.sprite = pc.jumpSprite;   // temporary tool before animations are added
-
+        jumpForce = pc.jumpForce;
         rb = owner.GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(animator.GetFloat("Horizontal") * _jumpingForceX, _jumpingForceY));
+        rb.AddForce(new Vector2(0, jumpForce));
 
+        pc.spriteRenderer.sprite = pc.jumpSprite;   // temporary tool before animations are added
         //Debug.Log(owner.name + " entered jumping mode, force: " + (_jumpingForceX));
     }
 
@@ -29,10 +27,7 @@ public class Jump : StateMachineBehaviour
         base.OnStateUpdate(animator, stateInfo, layerIndex);
         float rotate = Input.GetAxis("Horizontal");
 
-        //Debug.Log(rb.velocity.x);
-
-        Flip(rotate);
-        
+        Flip(rotate);       
     }
 
     private void Flip(float rotate)

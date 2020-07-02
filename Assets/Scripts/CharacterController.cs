@@ -6,13 +6,9 @@ public abstract class CharacterController : MonoBehaviour
 {
     [Header("Character State Controller:")] public Animator _state; // State machine instance
 
-    [Range(2, 9)] public float _runSpeed = 2;
-    [Range(0.01f, 0.1f)] public float _jumpPowerX = 0.01f; // Horizontal jump power needs to be really small
-    [Range(1, 3)] public float _jumpPowerY = 1;
-
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground") 
         {
             _state.SetBool("Grounded", true);
         }

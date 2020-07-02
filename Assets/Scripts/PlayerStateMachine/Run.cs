@@ -8,8 +8,8 @@ public class Run : StateMachineBehaviour
     Rigidbody2D rb;
     PlayerController pc;
     float lastXPosition;
-    [SerializeField][Range(1,8)] float _runningSpeed = 5;
-
+    float acceleration;
+    float maxSpeed;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -17,7 +17,6 @@ public class Run : StateMachineBehaviour
         lastXPosition = owner.transform.position.x;
         pc = owner.GetComponent<PlayerController>();
         pc.spriteRenderer.sprite = pc.runSprite;   // temporary tool before animations are added
-
         rb = owner.GetComponent<Rigidbody2D>();
 
         // Debug.Log(owner.name + " entered running mode");
@@ -26,6 +25,7 @@ public class Run : StateMachineBehaviour
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(animator, stateInfo, layerIndex);
+        float horizontal = animator.GetFloat("Horizontal");
 
         if (lastXPosition > owner.transform.position.x && !pc.spriteRenderer.flipX)      // if moving left, flip sprite X
             pc.spriteRenderer.flipX = true;
@@ -34,7 +34,13 @@ public class Run : StateMachineBehaviour
             pc.spriteRenderer.flipX = false;
 
         // Possibly move the object via animation instead of this
-        rb.AddForce(new Vector2(animator.GetFloat("Horizontal") * Time.deltaTime * _runningSpeed, 0));       
+        rb.AddRelativeForce(Vector2.right * horizontal * acceleration * Time.deltaTime);
+        
+        if (Mathf.Abs(rb.velocity.x) > maxSpeed)
+        {
+            rb.velocity = new Vector2(maxSpeed * horizontal, rb.velocity.y);
+        }
+        // lastXPosition = owner.transform.position.x;
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
