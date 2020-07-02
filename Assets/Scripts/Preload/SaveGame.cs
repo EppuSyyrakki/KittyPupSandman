@@ -64,14 +64,14 @@ public class SaveGame : MonoBehaviour
 
         vec = playerPos;
         
-       //print("saving: " + playerPos + " in scene: " + sceneIndex);
+       print("saving: " + playerPos + " in scene: " + sceneIndex);
     }
 
     private void SetSceneIndex()
     {
         int tmp = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
 
-        if (tmp >= sceneIndex) // check that the active scene is a game scene (not menu nor preload)
+        if (tmp >= 2) // check that the active scene is a game scene (not menu nor preload)
             sceneIndex = tmp;
 
         //print("active scene in save game: " + sceneIndex);
