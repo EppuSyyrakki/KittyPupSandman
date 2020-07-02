@@ -28,27 +28,24 @@ public class Run : StateMachineBehaviour
     {
         base.OnStateUpdate(animator, stateInfo, layerIndex);
         float horizontal = animator.GetFloat("Horizontal");
-                
-        // Possibly move the object via animation instead of this
-        rb.AddRelativeForce(Vector2.right * horizontal * acceleration * Time.deltaTime);
-        
+        MoveRigidbody(horizontal);
+        InputBasedFlip(horizontal);
+    }
+
+    private void MoveRigidbody(float horizontal)
+    {
+        rb.AddRelativeForce(new Vector2(horizontal * acceleration * Time.deltaTime, 0));
+
         if (Mathf.Abs(rb.velocity.x) > maxSpeed)
         {
             rb.velocity = new Vector2(maxSpeed * horizontal, rb.velocity.y);
         }
-
-        //PositionBasedFlip();
-
-        InputBasedFlip();
-
-        // Possibly move the object via animation instead of this
-        rb.AddForce(new Vector2(animator.GetFloat("Horizontal") * Time.deltaTime * _runningSpeed, 0));
     }
 
-    private void InputBasedFlip()
+    private void InputBasedFlip(float horizontal)
     {
-        if (Input.GetAxis("Horizontal") > 0) pc.spriteRenderer.flipX = false;
-        if (Input.GetAxis("Horizontal") < 0) pc.spriteRenderer.flipX = true;
+        if (horizontal > 0) pc.spriteRenderer.flipX = false;
+        if (horizontal < 0) pc.spriteRenderer.flipX = true;
     }
 
     private void PositionBasedFlip()

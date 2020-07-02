@@ -8,6 +8,8 @@ public class Jump : StateMachineBehaviour
     Rigidbody2D rb;
     PlayerController pc;
     float jumpForce;
+    float maxSpeed;
+    float airborneSpeed;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -15,6 +17,9 @@ public class Jump : StateMachineBehaviour
         owner = animator.gameObject;       
         pc = owner.GetComponent<PlayerController>();
         jumpForce = pc.jumpForce;
+        maxSpeed = pc.maxSpeed;
+        airborneSpeed = pc.airborneSpeed;
+        
         rb = owner.GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(0, jumpForce));
 
@@ -25,17 +30,27 @@ public class Jump : StateMachineBehaviour
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(animator, stateInfo, layerIndex);
-        float rotate = Input.GetAxis("Horizontal");
-
-        Flip(rotate);       
+        float horizontal = Input.GetAxis("Horizontal");
+        MoveRigidbody(horizontal);
+        Flip(horizontal);
     }
 
-    private void Flip(float rotate)
+    private void MoveRigidbody(float horizontal)
     {
-        if (rotate < 0)
+        rb.AddRelativeForce(new Vector2(horizontal * airborneSpeed * Time.deltaTime, 0));
+
+        if (Mathf.Abs(rb.velocity.x) > maxSpeed)
+        {
+            rb.velocity = new Vector2(maxSpeed * horizontal, rb.velocity.y);
+        }
+    }
+
+    private void Flip(float horizontal)
+    {
+        if (horizontal < 0)
             FlipLeft();
 
-        if (rotate > 0)
+        if (horizontal > 0)
             FlipRight();
     }
 

@@ -11,6 +11,7 @@ public class PlayerController : CharacterController
     public float maxSpeed;
     public float acceleration;
     public float jumpForce;
+    public float airborneSpeed;
 
     [HideInInspector] public SpriteRenderer spriteRenderer;   // temporary tool before we get animations
 
