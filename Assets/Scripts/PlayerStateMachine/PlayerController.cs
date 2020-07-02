@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class PlayerController : CharacterController
 {
-    public Sprite idleSprite;
-    public Sprite runSprite;
-    public Sprite jumpSprite;
-
     public float maxSpeed;
     public float acceleration;
     public float jumpForce;
     public float airborneSpeed;
 
-    [HideInInspector] public SpriteRenderer spriteRenderer;   // temporary tool before we get animations
-
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
         transform.position = SaveGame.Instance.GetPosFromMemory();
     }
 

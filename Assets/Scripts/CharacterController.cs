@@ -6,11 +6,8 @@ public abstract class CharacterController : MonoBehaviour
 {
     [Header("Character State Controller:")] public Animator _state; // State machine instance
 
-    void OnTriggerStay2D(Collider2D other)
+    public void SetGrounded()
     {
-        if (other.gameObject.tag == "Ground") 
-        {
-            _state.SetBool("Grounded", true);
-        }
+        _state.SetBool("Grounded", true);
     }
 }
