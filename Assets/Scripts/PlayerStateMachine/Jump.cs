@@ -31,7 +31,7 @@ public class Jump : StateMachineBehaviour
         base.OnStateUpdate(animator, stateInfo, layerIndex);
         float horizontal = Input.GetAxis("Horizontal");
         MoveRigidbody(horizontal);
-        Flip(horizontal);
+        InputBasedFlip(horizontal);
     }
 
     private void MoveRigidbody(float horizontal)
@@ -44,25 +44,16 @@ public class Jump : StateMachineBehaviour
         }
     }
 
-    private void Flip(float horizontal)
+    private void InputBasedFlip(float horizontal)
     {
-        if (horizontal < 0)
-            FlipLeft();
-
         if (horizontal > 0)
-            FlipRight();
-    }
-
-    private void FlipRight()
-    {
-        // if (pc.spriteRenderer.flipX)        
-        //    pc.spriteRenderer.flipX = false;
-    }
-
-    private void FlipLeft()
-    {
-        // if (!pc.spriteRenderer.flipX)
-        //    pc.spriteRenderer.flipX = true;
+        {
+            owner.transform.localScale = new Vector3(1, 1, 1);
+        }
+        if (horizontal < 0)
+        {
+            owner.transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

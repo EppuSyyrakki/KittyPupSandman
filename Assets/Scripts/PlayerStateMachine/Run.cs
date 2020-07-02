@@ -43,17 +43,14 @@ public class Run : StateMachineBehaviour
 
     private void InputBasedFlip(float horizontal)
     {
-        // if (horizontal > 0) pc.spriteRenderer.flipX = false;
-        // if (horizontal < 0) pc.spriteRenderer.flipX = true;
-    }
-
-    private void PositionBasedFlip()
-    {
-        // if (lastXPosition > owner.transform.position.x && !pc.spriteRenderer.flipX)      // if moving left, flip sprite X
-        //    pc.spriteRenderer.flipX = true;
-
-        // if (lastXPosition < owner.transform.position.x && pc.spriteRenderer.flipX)       // if moving right, don't flip X
-        //    pc.spriteRenderer.flipX = false;           
+        if (horizontal > 0)
+        {           
+            owner.transform.localScale = new Vector3(1, 1, 1);
+        }
+        if (horizontal < 0)
+        {
+            owner.transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
