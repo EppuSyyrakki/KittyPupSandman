@@ -1429,6 +1429,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 602454249}
+    - target: {fileID: 1674354240631374313, guid: 6e9d1960bc42477499113310b3f1aa26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674354240631374313, guid: 6e9d1960bc42477499113310b3f1aa26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e9d1960bc42477499113310b3f1aa26, type: 3}
 --- !u!1 &1584831642
@@ -1792,7 +1802,7 @@ PrefabInstance:
     - target: {fileID: 1120411826663734438, guid: 9d249b6023329c4449f2e94b43b901ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1120411826663734438, guid: 9d249b6023329c4449f2e94b43b901ef,
         type: 3}

@@ -57,6 +57,9 @@ TagManager:
   - name: Player
     uniqueID: 340492397
     locked: 0
+  - name: Enemy
+    uniqueID: 1532050717
+    locked: 0
   - name: Obstacle cover
     uniqueID: 1896993269
     locked: 0

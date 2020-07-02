@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class CharacterController : MonoBehaviour
 {
-    [Header("Player State Controller:")] public Animator _state; // State machine instance
+    [Header("Character State Controller:")] public Animator _state; // State machine instance
 
     [Range(2, 9)] public float _runSpeed = 2;
     [Range(2, 5)] public float _jumpPowerX = 2;
