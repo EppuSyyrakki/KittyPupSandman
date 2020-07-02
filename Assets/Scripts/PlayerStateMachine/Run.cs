@@ -18,6 +18,8 @@ public class Run : StateMachineBehaviour
         pc = owner.GetComponent<PlayerController>();
         pc.spriteRenderer.sprite = pc.runSprite;   // temporary tool before animations are added
         rb = owner.GetComponent<Rigidbody2D>();
+        acceleration = pc.acceleration;
+        maxSpeed = pc.maxSpeed;
 
         // Debug.Log(owner.name + " entered running mode");
     }
@@ -26,13 +28,7 @@ public class Run : StateMachineBehaviour
     {
         base.OnStateUpdate(animator, stateInfo, layerIndex);
         float horizontal = animator.GetFloat("Horizontal");
-
-        if (lastXPosition > owner.transform.position.x && !pc.spriteRenderer.flipX)      // if moving left, flip sprite X
-            pc.spriteRenderer.flipX = true;
-
-        if (lastXPosition < owner.transform.position.x && pc.spriteRenderer.flipX)       // if moving right, don't flip X
-            pc.spriteRenderer.flipX = false;
-
+                
         // Possibly move the object via animation instead of this
         rb.AddRelativeForce(Vector2.right * horizontal * acceleration * Time.deltaTime);
         
@@ -40,7 +36,28 @@ public class Run : StateMachineBehaviour
         {
             rb.velocity = new Vector2(maxSpeed * horizontal, rb.velocity.y);
         }
-        // lastXPosition = owner.transform.position.x;
+
+        //PositionBasedFlip();
+
+        InputBasedFlip();
+
+        // Possibly move the object via animation instead of this
+        rb.AddForce(new Vector2(animator.GetFloat("Horizontal") * Time.deltaTime * _runningSpeed, 0));
+    }
+
+    private void InputBasedFlip()
+    {
+        if (Input.GetAxis("Horizontal") > 0) pc.spriteRenderer.flipX = false;
+        if (Input.GetAxis("Horizontal") < 0) pc.spriteRenderer.flipX = true;
+    }
+
+    private void PositionBasedFlip()
+    {
+        if (lastXPosition > owner.transform.position.x && !pc.spriteRenderer.flipX)      // if moving left, flip sprite X
+            pc.spriteRenderer.flipX = true;
+
+        if (lastXPosition < owner.transform.position.x && pc.spriteRenderer.flipX)       // if moving right, don't flip X
+            pc.spriteRenderer.flipX = false;           
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
