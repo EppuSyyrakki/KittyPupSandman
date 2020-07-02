@@ -23,7 +23,6 @@ public class Jump : StateMachineBehaviour
         rb = owner.GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(0, jumpForce));
 
-        pc.spriteRenderer.sprite = pc.jumpSprite;   // temporary tool before animations are added
         //Debug.Log(owner.name + " entered jumping mode, force: " + (_jumpingForceX));
     }
 
@@ -56,14 +55,14 @@ public class Jump : StateMachineBehaviour
 
     private void FlipRight()
     {
-        if (pc.spriteRenderer.flipX)        
-            pc.spriteRenderer.flipX = false;
+        // if (pc.spriteRenderer.flipX)        
+        //    pc.spriteRenderer.flipX = false;
     }
 
     private void FlipLeft()
     {
-        if (!pc.spriteRenderer.flipX)
-            pc.spriteRenderer.flipX = true;
+        // if (!pc.spriteRenderer.flipX)
+        //    pc.spriteRenderer.flipX = true;
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

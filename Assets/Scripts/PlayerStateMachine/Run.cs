@@ -16,7 +16,6 @@ public class Run : StateMachineBehaviour
         owner = animator.gameObject;
         lastXPosition = owner.transform.position.x;
         pc = owner.GetComponent<PlayerController>();
-        pc.spriteRenderer.sprite = pc.runSprite;   // temporary tool before animations are added
         rb = owner.GetComponent<Rigidbody2D>();
         acceleration = pc.acceleration;
         maxSpeed = pc.maxSpeed;
@@ -44,17 +43,17 @@ public class Run : StateMachineBehaviour
 
     private void InputBasedFlip(float horizontal)
     {
-        if (horizontal > 0) pc.spriteRenderer.flipX = false;
-        if (horizontal < 0) pc.spriteRenderer.flipX = true;
+        // if (horizontal > 0) pc.spriteRenderer.flipX = false;
+        // if (horizontal < 0) pc.spriteRenderer.flipX = true;
     }
 
     private void PositionBasedFlip()
     {
-        if (lastXPosition > owner.transform.position.x && !pc.spriteRenderer.flipX)      // if moving left, flip sprite X
-            pc.spriteRenderer.flipX = true;
+        // if (lastXPosition > owner.transform.position.x && !pc.spriteRenderer.flipX)      // if moving left, flip sprite X
+        //    pc.spriteRenderer.flipX = true;
 
-        if (lastXPosition < owner.transform.position.x && pc.spriteRenderer.flipX)       // if moving right, don't flip X
-            pc.spriteRenderer.flipX = false;           
+        // if (lastXPosition < owner.transform.position.x && pc.spriteRenderer.flipX)       // if moving right, don't flip X
+        //    pc.spriteRenderer.flipX = false;           
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

@@ -10,9 +10,7 @@ public class Idle : StateMachineBehaviour
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         owner = animator.gameObject;
-
         pc = owner.GetComponent<PlayerController>();   
-        pc.spriteRenderer.sprite = pc.idleSprite;   // temporary tool before animations are added
 
         // Debug.Log(owner.name + " is idling");
     }
