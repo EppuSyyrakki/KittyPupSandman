@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/_preload.unity
+    guid: ebddcc65684ca7f4ab99772ef5d69544
+  - enabled: 1
     path: Assets/Scenes/MainMenuScene.unity
     guid: 730dd2043deb83e42a0869629e900e3c
   - enabled: 1
@@ -14,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TerhiTest.unity
     guid: 77950af7a3034fa48855facd326adeda
+  - enabled: 0
+    path: Assets/Scenes/Sandman Animation.unity
+    guid: 04f58f4095aaec74fb2f04a6c8c6b8ab
   m_configObjects: {}

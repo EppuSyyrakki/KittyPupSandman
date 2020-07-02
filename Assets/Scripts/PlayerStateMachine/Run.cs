@@ -34,7 +34,7 @@ public class Run : StateMachineBehaviour
             pc.spriteRenderer.flipX = false;
 
         // Possibly move the object via animation instead of this
-        owner.transform.Translate(new Vector2(animator.GetFloat("Horizontal") * Time.deltaTime * _runningSpeed, 0));       
+        rb.AddForce(new Vector2(animator.GetFloat("Horizontal") * Time.deltaTime * _runningSpeed, 0));       
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
