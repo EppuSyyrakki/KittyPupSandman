@@ -26,15 +26,29 @@ public class Run : StateMachineBehaviour
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(animator, stateInfo, layerIndex);
+        //Debug.Log("last x pos / player pos: " + lastXPosition + " / " + owner.transform.position.x);
 
+        //PositionBasedFlip();
+
+        InputBasedFlip();
+
+        // Possibly move the object via animation instead of this
+        rb.AddForce(new Vector2(animator.GetFloat("Horizontal") * Time.deltaTime * _runningSpeed, 0));
+    }
+
+    private void InputBasedFlip()
+    {
+        if (Input.GetAxis("Horizontal") > 0) pc.spriteRenderer.flipX = false;
+        if (Input.GetAxis("Horizontal") < 0) pc.spriteRenderer.flipX = true;
+    }
+
+    private void PositionBasedFlip()
+    {
         if (lastXPosition > owner.transform.position.x && !pc.spriteRenderer.flipX)      // if moving left, flip sprite X
             pc.spriteRenderer.flipX = true;
 
         if (lastXPosition < owner.transform.position.x && pc.spriteRenderer.flipX)       // if moving right, don't flip X
             pc.spriteRenderer.flipX = false;
-
-        // Possibly move the object via animation instead of this
-        rb.AddForce(new Vector2(animator.GetFloat("Horizontal") * Time.deltaTime * _runningSpeed, 0));       
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

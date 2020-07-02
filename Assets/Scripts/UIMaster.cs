@@ -56,6 +56,14 @@ public class UIMaster : MonoBehaviour
         ChangeScene(2);
     }
 
+    public void ContinueGame()
+    {
+        int i = SaveGame.Instance.GetSceneIndex();
+        // Debug.LogWarning("scene index in UI: " + i);
+
+        ChangeScene(i);
+    }
+
     public void QuitGame()
     {
         /*

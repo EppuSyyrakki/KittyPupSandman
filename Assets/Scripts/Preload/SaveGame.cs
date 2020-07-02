@@ -39,12 +39,12 @@ public class SaveGame : MonoBehaviour
 
             float.TryParse(arr[0], out vec.x);
             float.TryParse(arr[1], out vec.y);
-            int.TryParse(arr[3], out sceneIndex);
+            int.TryParse(arr[2], out sceneIndex);
             //move our character to the position we got from our file
 
             print("begin at pos:" + vec);
             print("and at scene: " + sceneIndex);
-            UIMaster.Instance.ChangeScene(sceneIndex);
+            //UIMaster.Instance.ChangeScene(sceneIndex);
         }
 
     }
@@ -64,12 +64,22 @@ public class SaveGame : MonoBehaviour
 
         vec = playerPos;
         
-       print("saving: " + playerPos + " in scene: " + sceneIndex);
+       //print("saving: " + playerPos + " in scene: " + sceneIndex);
     }
 
     private void SetSceneIndex()
     {
-        sceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        int tmp = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+
+        if (tmp >= sceneIndex) // check that the active scene is a game scene (not menu nor preload)
+            sceneIndex = tmp;
+
+        //print("active scene in save game: " + sceneIndex);
+    }
+
+    public int GetSceneIndex()
+    {
+        return sceneIndex;
     }
 
     public Vector2 GetPosFromMemory()
