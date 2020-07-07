@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerGrounded : MonoBehaviour
 {
-    public PlayerController pc;
+    public PlayerInputController pc;
     // Start is called before the first frame update
 
     void OnTriggerStay2D(Collider2D other)

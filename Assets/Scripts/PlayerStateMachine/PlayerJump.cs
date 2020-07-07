@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class PlayerJump : PlayerBehaviour
 {
-    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public override void OnStateEnter(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.OnStateEnter(animator, stateInfo, layerIndex);
-        animator.SetBool("Grounded", false);               
-        _rb.AddForce(new Vector2(0, jumpForce));
+        base.OnStateEnter(state, stateInfo, layerIndex);
+        state.SetBool("Grounded", false);
+        _graphic.SetBool("Jumping", true);                       
+        _rigidBody.AddForce(new Vector2(0, _player.jumpForce));
     }
 
-    public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public override void OnStateUpdate(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.OnStateUpdate(animator, stateInfo, layerIndex);
-        MoveRigidbody(animator.GetFloat("Horizontal"), airborneSpeed);
-        InputBasedFlip(animator.GetFloat("Horizontal"));       
+        base.OnStateUpdate(state, stateInfo, layerIndex);
+        MoveRigidbody(state.GetFloat("Horizontal"), _player.airborneSpeed);
+        InputBasedFlip(state.GetFloat("Horizontal"));       
     }
 
-    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public override void OnStateExit(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.OnStateExit(animator, stateInfo, layerIndex);
-        animator.ResetTrigger("Jump");
+        base.OnStateExit(state, stateInfo, layerIndex);
+        _graphic.SetBool("Jumping", false);
     }
 }
