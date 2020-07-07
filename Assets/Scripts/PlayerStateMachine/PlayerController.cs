@@ -9,6 +9,7 @@ public class PlayerController : CharacterController
     public float jumpForce;
     public float airborneSpeed;
 
+
     void Start()
     {
         transform.position = SaveGame.Instance.GetPosFromMemory();
@@ -38,6 +39,7 @@ public class PlayerController : CharacterController
         if (Input.GetKeyDown(KeyCode.P))
         {
             SaveGame.Instance.SetPosVec(this.gameObject.transform.position);
+            
         }
     }
 }
