@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : CharacterController
+public class PlayerController : MonoBehaviour
 {
+    [Header("Character State Controller:")] public Animator _state; // State machine instance
+
     public float maxSpeed;
-    public float acceleration;
+    public float groundSpeed;
     public float jumpForce;
     public float airborneSpeed;
 
@@ -22,8 +24,7 @@ public class PlayerController : CharacterController
 
     private void HandleInput()
     {
-        // the _state object is from CharacterController superclass
-        _state.SetFloat("Horizontal", Input.GetAxis("Horizontal")); // send Axis to PlayerStateController parameter
+        _state.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
 
         if (Input.GetAxis("Horizontal") != 0)
         {
@@ -39,5 +40,10 @@ public class PlayerController : CharacterController
         {
             SaveGame.Instance.SetPosVec(this.gameObject.transform.position);
         }
+    }
+
+    public void SetGrounded()   // script PlayerGrounded.cs in the player's legs uses this
+    {
+        _state.SetBool("Grounded", true);
     }
 }
