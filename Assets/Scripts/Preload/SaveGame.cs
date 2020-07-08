@@ -9,10 +9,33 @@ public class SaveGame : MonoBehaviour
 {
     Vector2 vec;
     String txt;
-    public int sceneIndex;
+    public static int sceneIndex;
     public String[] arr;
 
     public static SaveGame Instance { get; private set; }
+
+    private void OnEnable()
+    {
+        EventManager.onSaveGameEvent += Save;
+        EventManager.onSaveSceneEvent += SaveScene;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.onSaveGameEvent -= Save;
+        EventManager.onSaveSceneEvent -= SaveScene;
+    }
+
+    private void Save()
+    {
+        SetPosVec(Savepoint.currentlyActivated);
+    }
+
+    private void SaveScene()
+    {
+        sceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        //UnityEngine.Debug.Log("Saving scene: " + sceneIndex);
+    }
 
     public void Awake()
     {
@@ -22,9 +45,14 @@ public class SaveGame : MonoBehaviour
             UnityEngine.Debug.LogWarning("Warning: multiple " + this + " in scene!");
     }
 
+
     void Start()
     {
+        InitFromMemory();
+    }
 
+    private void InitFromMemory()
+    {
         if (File.Exists("C:/sandmanSaves/" + transform.name + ".txt"))
         {
             txt = File.ReadAllText("C:/sandmanSaves/" + transform.name + ".txt");
@@ -39,39 +67,24 @@ public class SaveGame : MonoBehaviour
             float.TryParse(arr[0], out vec.x);
             float.TryParse(arr[1], out vec.y);
             int.TryParse(arr[2], out sceneIndex);
-            //move our character to the position we got from our file
 
             print("begin at pos:" + vec + " in scene " + sceneIndex);
         }
-
     }
-
-    void Update()
-    {
-        if (Savepoint._isActive) SetPosVec(Savepoint.currentlyActivated);
-    }
-
 
     public void SetPosVec(Vector2 playerPos)
     {
-        SetSceneIndex();
         txt = playerPos.x + "!" + playerPos.y;
         txt = txt + "!" + sceneIndex;
 
-        if (!Directory.Exists("C:/sandmanSaves")) { Directory.CreateDirectory("C:/sandmanSaves"); }
+        if (!Directory.Exists("C:/sandmanSaves")) 
+        { 
+            Directory.CreateDirectory("C:/sandmanSaves"); 
+        }
+
         File.WriteAllText("C:/sandmanSaves/" + transform.name + ".txt", txt);
 
         vec = playerPos;
-        
-       //print("saving: " + playerPos + " in scene: " + sceneIndex);
-    }
-
-    private void SetSceneIndex()
-    {
-        int tmp = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
-
-        if (tmp >= 2) // check that the active scene is a game scene (not menu nor preload)
-            sceneIndex = tmp;
     }
 
     public int GetSceneIndex()
