@@ -16,7 +16,8 @@ public class PlayerJump : PlayerBehaviour
     {
         base.OnStateUpdate(state, stateInfo, layerIndex);
         MoveRigidbody(state.GetFloat("Horizontal"), _player.airborneSpeed);
-        InputBasedFlip(state.GetFloat("Horizontal"));       
+        InputBasedFlip(state.GetFloat("Horizontal"));
+        Debug.Log(_entryPoint);
     }
 
     public override void OnStateExit(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
