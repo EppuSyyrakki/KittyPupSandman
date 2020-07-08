@@ -25,16 +25,17 @@ public class PlayerInputController : MonoBehaviour
     }
 
     private void HandleInput()
-    {
-        // set the state machine Horizontal parameter every frame so it doesn't need to know about input.
-        state.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
-
+    {       
         if (Input.GetAxis("Horizontal") != 0)
         {
-            state.SetTrigger("Run"); // name of a Trigger parameter in PlayerStateController
+            // set the state machine Horizontal parameter every frame it's touched so it doesn't need to know about input.
+            state.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+
+            if (state.GetBool("Grounded")) 
+                state.SetTrigger("Run");
         } 
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && state.GetBool("Grounded"))
         {
             state.SetTrigger("Jump");
         }
