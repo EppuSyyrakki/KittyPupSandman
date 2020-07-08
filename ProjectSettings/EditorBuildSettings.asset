@@ -14,9 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sandbox.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/TerhiTest.unity
-    guid: 77950af7a3034fa48855facd326adeda
+  - enabled: 1
+    path: Assets/Scenes/TerhiTest2.unity
+    guid: 4da01889de522fd4ebc43a179c824359
   - enabled: 0
     path: Assets/Scenes/Sandman Animation.unity
     guid: 04f58f4095aaec74fb2f04a6c8c6b8ab
