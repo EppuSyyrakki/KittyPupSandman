@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerRunOnGround : PlayerBehaviour
@@ -18,12 +19,16 @@ public class PlayerRunOnGround : PlayerBehaviour
         HandleGraphics(horizontal);
         MoveRigidbody(horizontal, _player.groundSpeed);
         InputBasedFlip(horizontal);
+        
+        if (!state.GetBool("Grounded"))
+            state.SetTrigger("Falling");
     }
 
     public override void OnStateExit(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(state, stateInfo, layerIndex);
     }
+
     private void HandleGraphics(float horizontal)
     {
         float velocity = Mathf.Abs(_rigidBody.velocity.x);
