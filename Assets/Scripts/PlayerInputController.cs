@@ -6,7 +6,7 @@ public class PlayerInputController : MonoBehaviour
 {
     // this is the machine that controls Player object states that handle physics and animation by sending messages
     // to the Animator component in gameObject's child (Matti). called "state" in the behaviour script methods.
-    [Header("Character State Controller:")] public Animator state;
+    [HideInInspector] public Animator state;
         
     public float maxSpeed;
     public float groundSpeed;
@@ -17,6 +17,7 @@ public class PlayerInputController : MonoBehaviour
 
     void Start()
     {
+        state = GetComponent<Animator>();
         transform.position = SaveGame.Instance.GetPosFromMemory();
     }
 
