@@ -205,6 +205,65 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &3855229616913408490
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7735847362632445067}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.14638263, y: 0.6704887}
+      - {x: 0.16058992, y: -0.4285496}
+      - {x: 0.87200236, y: -0.29345268}
+      - {x: 0.8720907, y: 0.23762566}
+--- !u!60 &9196469074801071504
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8822966130059002291}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.6100611, y: 0.4508083}
+      - {x: 0.05116661, y: 0.24845251}
+      - {x: 0.066620596, y: -0.36651424}
+      - {x: 0.62482965, y: -0.41257602}
+      - {x: 0.9199679, y: -0.03922579}
 --- !u!1 &8837791233572522494
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +277,7 @@ GameObject:
   - component: {fileID: 3646863239973547530}
   - component: {fileID: 7979563254768250079}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player Temp
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -636,6 +695,18 @@ GameObject:
 --- !u!4 &1189239785721120406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8910411190475602733, guid: d8370d5d8c0245a43a3eec2f4bc45c27,
+    type: 3}
+  m_PrefabInstance: {fileID: 1501628815051457093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7735847362632445067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9191173127403171534, guid: d8370d5d8c0245a43a3eec2f4bc45c27,
+    type: 3}
+  m_PrefabInstance: {fileID: 1501628815051457093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8822966130059002291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7973521441722876918, guid: d8370d5d8c0245a43a3eec2f4bc45c27,
     type: 3}
   m_PrefabInstance: {fileID: 1501628815051457093}
   m_PrefabAsset: {fileID: 0}
