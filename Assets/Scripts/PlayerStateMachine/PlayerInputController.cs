@@ -14,6 +14,7 @@ public class PlayerInputController : MonoBehaviour
     public float airborneSpeed;
     public float runToWalkThreshold;
 
+
     void Start()
     {
         transform.position = SaveGame.Instance.GetPosFromMemory();
@@ -43,6 +44,7 @@ public class PlayerInputController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             SaveGame.Instance.SetPosVec(this.gameObject.transform.position);
+            
         }
     }
 
