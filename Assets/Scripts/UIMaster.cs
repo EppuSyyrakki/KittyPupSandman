@@ -23,25 +23,23 @@ public class UIMaster : MonoBehaviour
     public void OnGUI()
     {
         if (Input.GetKeyDown(KeyCode.T))
-        {
-            ChangeScene(3);
-        }
+            ChangeScene(4);
 
         if (Input.GetKeyDown(KeyCode.N))
             StartNewGame();
 
         if (Input.GetKeyDown(KeyCode.C))
-            ChangeScene(2);
+            ContinueGame();
 
         if (Input.GetKeyDown(KeyCode.M))
-        { 
-            ChangeScene(1);
-        }
+            ChangeScene(1);        
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
+        if (Input.GetKeyDown(KeyCode.Q))        
             QuitGame();
-        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+            EnterOptionsMenu();
+        
     }
 
     public void ChangeScene(int sceneID)
@@ -53,7 +51,7 @@ public class UIMaster : MonoBehaviour
     public void StartNewGame()
     {
         SaveGame.Instance.SetPosVec(new Vector2(0, 0));     // clear player pos from the memory
-        ChangeScene(2);
+        ChangeScene(3);
     }
 
     public void ContinueGame()
@@ -61,12 +59,20 @@ public class UIMaster : MonoBehaviour
         int i = SaveGame.Instance.GetSceneIndex();
         // Debug.LogWarning("scene index in UI: " + i);
 
+        if (i == 0)
+            StartNewGame();       
+
         ChangeScene(i);
     }
 
     public void EnterMainMenu()
     {
         ChangeScene(1);
+    }
+
+    public void EnterOptionsMenu()
+    {
+        ChangeScene(2);
     }
 
     public void QuitGame()
