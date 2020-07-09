@@ -64,6 +64,11 @@ public class UIMaster : MonoBehaviour
         ChangeScene(i);
     }
 
+    public void EnterMainMenu()
+    {
+        ChangeScene(1);
+    }
+
     public void QuitGame()
     {
         /*
