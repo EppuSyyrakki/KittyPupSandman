@@ -27,12 +27,12 @@ public class PlayerInputController : MonoBehaviour
     }
 
     private void HandleInput()
-    {       
-        if (Input.GetAxis("Horizontal") != 0)
-        {
-            // set the state machine Horizontal parameter every frame it's touched so it doesn't need to know about input.
-            state.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+    {
+        // set the state machine Horizontal parameter every frame it's touched so it doesn't need to know about input.
+        state.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
 
+        if (Input.GetAxis("Horizontal") != 0)
+        {           
             if (state.GetBool("Grounded")) 
                 state.SetTrigger("Run");
         } 
@@ -42,6 +42,11 @@ public class PlayerInputController : MonoBehaviour
             state.SetTrigger("Jump");
         }
 
+        if (Input.GetButtonDown("Light") && state.GetBool("Grounded"))
+        {
+            // state.SetTrigger("Fire"); no such trigger yet
+        }
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             SaveGame.Instance.SetPosVec(this.gameObject.transform.position);
@@ -49,7 +54,7 @@ public class PlayerInputController : MonoBehaviour
         }
     }
 
-    public void SetGrounded()   // script PlayerGrounded.cs in the player's legs uses this if trigger is on ground.
+    public void SetGrounded()   // script PlayerGrounded.cs in the player's legs uses this on collisions with Ground
     {
         state.SetBool("Grounded", true);
     }

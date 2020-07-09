@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerRunOnGround : PlayerBehaviour
@@ -15,22 +14,22 @@ public class PlayerRunOnGround : PlayerBehaviour
     public override void OnStateUpdate(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(state, stateInfo, layerIndex);
-        float horizontal = state.GetFloat("Horizontal");
-        HandleGraphics(horizontal);
-        MoveRigidbody(horizontal, _player.groundSpeed);
-        InputBasedFlip(horizontal);
-        
-        if (!state.GetBool("Grounded"))
-            state.SetTrigger("Falling");
+        MoveRigidbody(state.GetFloat("Horizontal"), _player.groundSpeed);
+        HandleGraphics(state.GetFloat("Horizontal"));
+
+        if (_owner.transform.position.y + 0.5f < _entryPoint.y) state.SetTrigger("Fall");           
     }
 
     public override void OnStateExit(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(state, stateInfo, layerIndex);
+        _graphic.SetBool("Walking", false);
+        _graphic.SetBool("Running", false);
     }
 
     private void HandleGraphics(float horizontal)
     {
+        InputBasedFlip(horizontal);
         float velocity = Mathf.Abs(_rigidBody.velocity.x);
 
         if (horizontal == 0)

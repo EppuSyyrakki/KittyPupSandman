@@ -19,5 +19,6 @@ public class PlayerIdle : PlayerBehaviour
     public override void OnStateExit(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(state, stateInfo, layerIndex);
+        state.ResetTrigger("Run");
     }
 }
