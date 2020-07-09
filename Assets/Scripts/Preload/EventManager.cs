@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    public delegate void OnSaveGameDelegate();
-    public static event OnSaveGameDelegate onSaveGameEvent;
+    public delegate void OnSaveGame();
+    public static event OnSaveGame onSaveGameEvent;
 
-    public delegate void OnSaveSceneDelegate();
-    public static event OnSaveSceneDelegate onSaveSceneEvent;
+    public delegate void OnUpdateScene();
+    public static event OnUpdateScene onUpdateSceneEvent;
+
+    public delegate void OnNewSaveFile();
+    public static event OnNewSaveFile onNewSaveFileEvent;
+
+    public delegate void OnReadFile();
+    public static event OnReadFile onReadFileEvent;
 
     public static void RaiseOnSaveGame()
     {
@@ -17,9 +23,21 @@ public class EventManager : MonoBehaviour
             onSaveGameEvent();
     }
 
-    public static void RaiseOnSaveScene()
+    public static void RaiseOnUpdateScene()
     {
-        if (onSaveSceneEvent != null)
-            onSaveSceneEvent();
+        if (onUpdateSceneEvent != null)
+            onUpdateSceneEvent();
+    }
+
+    public static void RaiseOnNewSaveFile() 
+    {
+        if (onNewSaveFileEvent != null)
+            onNewSaveFileEvent();
+    }
+
+    public static void RaiseOnReadFile()
+    {
+        if (onReadFileEvent != null)
+            onReadFileEvent();
     }
 }
