@@ -8,7 +8,7 @@ public class PlayerJump : PlayerBehaviour
     {
         base.OnStateEnter(state, stateInfo, layerIndex);
         state.SetBool("Grounded", false);
-        _graphic.SetBool("Jumping", true);                       
+        _graphic.SetBool("Jumping", true);                                     
         _rigidBody.AddForce(new Vector2(0, _player.jumpForce));
     }
 
@@ -17,7 +17,6 @@ public class PlayerJump : PlayerBehaviour
         base.OnStateUpdate(state, stateInfo, layerIndex);
         MoveRigidbody(state.GetFloat("Horizontal"), _player.airborneSpeed);
         InputBasedFlip(state.GetFloat("Horizontal"));
-        Debug.Log(_entryPoint);
     }
 
     public override void OnStateExit(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
