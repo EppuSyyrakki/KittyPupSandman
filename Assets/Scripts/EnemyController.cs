@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public Sprite patrolSprite;
-    public Sprite alertSprite;
     public Transform[] waypoints;
     public float speed = 10f;
-
-    [HideInInspector] public SpriteRenderer spriteRenderer;   // temporary tool before we get animations
+    [HideInInspector] public Animator state;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        state = GetComponent<Animator>();
     }
 
     // Update is called once per frame
