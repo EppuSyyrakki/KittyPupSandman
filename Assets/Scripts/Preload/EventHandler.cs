@@ -19,7 +19,7 @@ public class EventHandler : MonoBehaviour
             timer = 0;
         }
 
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex >= 2 && Savepoint._isActive)
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex >= 3 && Savepoint._isActive)
         {
             //Debug.Log("EventHandler invoked by save scene action");
             EventManager.RaiseOnUpdateScene();
@@ -39,7 +39,6 @@ public class EventHandler : MonoBehaviour
 
         if (!Savepoint._isActive && timer > 1.5f)
         {
-            Debug.Log("EventHandler invoked by close message action");
             EventManager.RaiseOnCloseMessage();
             timer = 0;
         }
