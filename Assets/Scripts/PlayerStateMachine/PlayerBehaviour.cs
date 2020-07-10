@@ -7,7 +7,6 @@ public class PlayerBehaviour : StateMachineBehaviour
     [HideInInspector] public GameObject _owner;
     [HideInInspector] public Rigidbody2D _rigidBody;
     [HideInInspector] public PlayerInputController _player;
-    [HideInInspector] public Animator _graphic;
     [HideInInspector] public Vector2 _entryPoint;
 
     public override void OnStateEnter(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
@@ -16,13 +15,17 @@ public class PlayerBehaviour : StateMachineBehaviour
         _owner = state.gameObject;
         _rigidBody = _owner.GetComponent<Rigidbody2D>();
         _player = _owner.GetComponent<PlayerInputController>();
-        _graphic = _owner.transform.GetChild(0).GetComponent<Animator>();
         _entryPoint = new Vector2(_owner.transform.position.x, _owner.transform.position.y);
     }
 
     public override void OnStateUpdate(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(state, stateInfo, layerIndex);
+    }
+
+    public override void OnStateExit(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        base.OnStateExit(state, stateInfo, layerIndex);
     }
 
     public void InputBasedFlip(float horizontal)

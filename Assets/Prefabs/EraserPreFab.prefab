@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2078137773924732165}
   - component: {fileID: 3430323555602986062}
   - component: {fileID: 4654271001816913187}
+  - component: {fileID: 1468107914841063444}
   m_Layer: 0
   m_Name: EraserPreFab
   m_TagString: Ground
@@ -109,6 +110,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8002338, y: 1.3667984}
   m_EdgeRadius: 0
+--- !u!114 &1468107914841063444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5791574394259567407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000534dde1041772ca06d804b141d3d515bf5d11171
+  m_ShapePath:
+  - {x: -0.31209946, y: -0.9510753, z: 0}
+  - {x: 1.6063595, y: -0.96626186, z: 0}
+  - {x: 1.5922947, y: -0.33136308, z: 0}
+  - {x: 0.34471512, y: 0.95922947, z: 0}
+  - {x: -1.559679, y: 0.97553754, z: 0}
+  - {x: -1.5737438, y: 0.31393313, z: 0}
+  m_ShapePathHash: -1510831059
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 160470
 --- !u!1 &8032408467095928276
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +206,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1896993269
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8a2f79489c040524abf6a10f5e1db281, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
