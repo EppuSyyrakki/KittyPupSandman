@@ -9,14 +9,23 @@ public class PlayerInputController : MonoBehaviour
     [HideInInspector] public Animator state;
 
     public float maxSpeed;
-    public float groundSpeed;
-    public float jumpForce;
-    public float airborneSpeed;
+    public float fastSpeed;
+    public float slowSpeed;
+    public float jumpForce;    
+    public float floatingDrag;
+    public GroundedCheck groundedCheck;
+    public GameObject umbrella;
+    public Transform umbrellaPosition;
+    public GameObject lamp;
+    public Transform lampPosition;
+
+    public bool LightDeployed { get; set; }
 
     void Start()
     {
         state = GetComponent<Animator>();
         transform.position = SaveGame.Instance.GetPosFromMemory();
+        LightDeployed = false;
     }
 
     void Update()
@@ -29,6 +38,7 @@ public class PlayerInputController : MonoBehaviour
         // set the state machine input parameters every frame so it doesn't have to know about input
         SetStateFloats();
         SetStateBools();
+        SetStateGrounded();
 
         if (Input.GetKeyDown(KeyCode.P))
             SaveGame.Instance.SetPosVec(this.gameObject.transform.position);
@@ -48,7 +58,7 @@ public class PlayerInputController : MonoBehaviour
 
         if (Input.GetButtonDown("Float")) 
             state.SetBool("InputFloat", true);       
-        if (Input.GetButtonUp("Up"))
+        if (Input.GetButtonUp("Float"))
             state.SetBool("InputFloat", false);
 
         if (Input.GetButtonDown("Light"))
@@ -57,8 +67,11 @@ public class PlayerInputController : MonoBehaviour
             state.SetBool("InputLight", false);
     }
 
-    public void SetGrounded()   // script PlayerGrounded.cs in the player's legs uses this on collisions with Ground
+    public void SetStateGrounded()
     {
-        state.SetBool("Grounded", true);
+        if (groundedCheck.isGrounded)
+            state.SetBool("Grounded", true);
+        else
+            state.SetBool("Grounded", false);
     }
 }

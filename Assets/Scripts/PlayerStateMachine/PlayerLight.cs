@@ -2,20 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerJump : PlayerBehaviour
+public class PlayerLight : PlayerBehaviour
 {
+    private GameObject lampClone;
+
     public override void OnStateEnter(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(state, stateInfo, layerIndex);
-        state.SetBool("Grounded", false);                                   
-        rigidBody.AddForce(new Vector2(0, player.jumpForce));
     }
 
     public override void OnStateUpdate(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(state, stateInfo, layerIndex);
-        MoveRigidbody(state.GetFloat("InputX"), player.slowSpeed);
-        InputBasedFlip(state.GetFloat("InputX"));
+
+        if (state.GetBool("InputLight") && !player.LightDeployed)
+        {
+            lampClone = Instantiate(player.lamp,
+                player.lampPosition.position,
+                owner.transform.rotation,
+                owner.transform);
+            player.LightDeployed = true;
+        }
+
+        if (!state.GetBool("InputLight") && player.LightDeployed)
+        {
+            Destroy(lampClone);
+            player.LightDeployed = false;
+        }
     }
 
     public override void OnStateExit(Animator state, AnimatorStateInfo stateInfo, int layerIndex)

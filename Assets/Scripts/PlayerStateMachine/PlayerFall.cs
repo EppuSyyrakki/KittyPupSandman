@@ -13,7 +13,7 @@ public class PlayerFall : PlayerBehaviour
     public override void OnStateUpdate(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(state, stateInfo, layerIndex);
-        MoveRigidbody(state.GetFloat("InputX"), _player.airborneSpeed);
+        MoveRigidbody(state.GetFloat("InputX"), player.slowSpeed);
         InputBasedFlip(state.GetFloat("InputX"));
     }
 

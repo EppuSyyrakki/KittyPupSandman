@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class PlayerBehaviour : StateMachineBehaviour
 {
-    [HideInInspector] public GameObject _owner;
-    [HideInInspector] public Rigidbody2D _rigidBody;
-    [HideInInspector] public PlayerInputController _player;
-    [HideInInspector] public Vector2 _entryPoint;
+    [HideInInspector] public GameObject owner;
+    [HideInInspector] public Rigidbody2D rigidBody;
+    [HideInInspector] public PlayerInputController player;
+
 
     public override void OnStateEnter(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(state, stateInfo, layerIndex);
-        _owner = state.gameObject;
-        _rigidBody = _owner.GetComponent<Rigidbody2D>();
-        _player = _owner.GetComponent<PlayerInputController>();
-        _entryPoint = new Vector2(_owner.transform.position.x, _owner.transform.position.y);
+        owner = state.gameObject;
+        rigidBody = owner.GetComponent<Rigidbody2D>();
+        player = owner.GetComponent<PlayerInputController>();       
     }
 
     public override void OnStateUpdate(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(state, stateInfo, layerIndex);
+        Debug.Log(player.LightDeployed);
     }
 
     public override void OnStateExit(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
@@ -32,21 +32,21 @@ public class PlayerBehaviour : StateMachineBehaviour
     {
         if (horizontal > 0)
         {
-            _owner.transform.localScale = new Vector3(1, 1, 1);
+            owner.transform.localScale = new Vector3(1, 1, 1);
         }
         if (horizontal < 0)
         {
-            _owner.transform.localScale = new Vector3(-1, 1, 1);
+            owner.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
     public void MoveRigidbody(float horizontal, float speed)
     {
-        _rigidBody.AddRelativeForce(new Vector2(horizontal * speed * Time.deltaTime, 0));
+        rigidBody.AddRelativeForce(new Vector2(horizontal * speed * Time.deltaTime, 0));
 
-        if (Mathf.Abs(_rigidBody.velocity.x) > _player.maxSpeed)
+        if (Mathf.Abs(rigidBody.velocity.x) > player.maxSpeed)
         {
-            _rigidBody.velocity = new Vector2(_player.maxSpeed * horizontal, _rigidBody.velocity.y);
+            rigidBody.velocity = new Vector2(player.maxSpeed * horizontal, rigidBody.velocity.y);
         }
     }
 }

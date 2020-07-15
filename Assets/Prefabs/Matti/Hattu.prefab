@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1276622353958306755}
-  - component: {fileID: 2252691464012462428}
-  - component: {fileID: 3848819834852829392}
+  - component: {fileID: 292174583327900265}
+  - component: {fileID: 1095714922853307729}
+  - component: {fileID: 5698845012145310797}
   m_Layer: 0
   m_Name: Hattu
   m_TagString: Untagged
@@ -30,15 +31,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7866540227826883012}
-  - {fileID: 3113840307498516838}
-  - {fileID: 636101263430899843}
-  - {fileID: 8478664187050421537}
-  - {fileID: 2391576990587224779}
-  - {fileID: 8295886850739237946}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &2252691464012462428
+--- !u!50 &292174583327900265
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -50,16 +46,35 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.3
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
---- !u!233 &3848819834852829392
+  m_CollisionDetection: 0
+  m_Constraints: 3
+--- !u!232 &1095714922853307729
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276622353958306765}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 6380189013830315041}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 1.8683066
+  m_MaxDistanceOnly: 1
+--- !u!233 &5698845012145310797
 HingeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,17 +87,17 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 2205818324494816052}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.09457824, y: 0.10255563}
+  m_ConnectedAnchor: {x: 0.09458162, y: 0.10255529}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 1
+  m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 83
-    m_UpperAngle: 199.6
+    m_LowerAngle: 0
+    m_UpperAngle: 359
 --- !u!1 &1345728735263871914
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +110,7 @@ GameObject:
   - component: {fileID: 7296816799187825206}
   - component: {fileID: 6459883724235470775}
   - component: {fileID: 3084391288676067214}
-  - component: {fileID: 6132748167956296600}
+  - component: {fileID: 1617241518998081443}
   m_Layer: 0
   m_Name: Pipo5
   m_TagString: Untagged
@@ -110,12 +125,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345728735263871914}
-  m_LocalRotation: {x: -0, y: -0, z: -0.18520495, w: 0.9827}
-  m_LocalPosition: {x: -0.98, y: -1.274, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.070282295, w: 0.9975271}
+  m_LocalPosition: {x: -0.043925814, y: -0.35994387, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1276622353958306755}
-  m_RootOrder: 4
+  m_Children:
+  - {fileID: 8295886850739237946}
+  m_Father: {fileID: 8478664187050421537}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -21.346}
 --- !u!212 &7296816799187825206
 SpriteRenderer:
@@ -180,15 +196,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.3
+  m_Mass: 0.0001
+  m_LinearDrag: 100
+  m_AngularDrag: 1000000
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 3
 --- !u!114 &3084391288676067214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,8 +230,8 @@ MonoBehaviour:
   - {x: -0.04699979, y: 0.2092013, z: 0}
   m_ShapePathHash: 469585226
   m_Mesh: {fileID: 0}
-  m_InstanceId: 211962
---- !u!233 &6132748167956296600
+  m_InstanceId: -213178
+--- !u!233 &1617241518998081443
 HingeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,9 +244,9 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 6380189013830315041}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.18999994, y: 0.22399998}
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0.05, y: 0.25}
+  m_ConnectedAnchor: {x: 0.3275758, y: 0.43864903}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -250,7 +266,6 @@ GameObject:
   - component: {fileID: 8295886850739237946}
   - component: {fileID: 8147214972866925238}
   - component: {fileID: 6380189013830315041}
-  - component: {fileID: 423456445383342655}
   - component: {fileID: 5780257551064538356}
   m_Layer: 0
   m_Name: Tupsu
@@ -266,12 +281,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2728890189258349039}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.17, y: -1.498, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.18520498, w: 0.98269993}
+  m_LocalPosition: {x: -0.09542919, y: -0.2777935, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1276622353958306755}
-  m_RootOrder: 5
+  m_Father: {fileID: 2391576990587224779}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8147214972866925238
 SpriteRenderer:
@@ -336,55 +351,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.004
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.3
+  m_Mass: 0.001
+  m_LinearDrag: 100
+  m_AngularDrag: 1000000
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
---- !u!60 &423456445383342655
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2728890189258349039}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: c33eb2b7f19f55a4fa371d32e61fa308, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.31640625, y: 0.31640625}
-    newSize: {x: 0.31640625, y: 0.31640625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.15820312, y: 0.064453125}
-      - {x: 0.087890625, y: 0.15039062}
-      - {x: 0.060546875, y: 0.15820312}
-      - {x: -0.052734375, y: 0.15820312}
-      - {x: -0.099609375, y: 0.13476562}
-      - {x: -0.14257812, y: 0.087890625}
-      - {x: -0.15820312, y: 0.048828125}
-      - {x: -0.15820312, y: -0.029296875}
-      - {x: -0.15429688, y: -0.060546875}
-      - {x: -0.13476562, y: -0.099609375}
-      - {x: -0.068359375, y: -0.15820312}
-      - {x: 0.044921875, y: -0.15820312}
-      - {x: 0.115234375, y: -0.123046875}
-      - {x: 0.13867188, y: -0.091796875}
-      - {x: 0.15820312, y: -0.044921875}
+  m_Constraints: 3
 --- !u!114 &5780257551064538356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +388,7 @@ MonoBehaviour:
   - {x: -0.16252327, y: -0.030994058, z: 0}
   m_ShapePathHash: -424010721
   m_Mesh: {fileID: 0}
-  m_InstanceId: 211984
+  m_InstanceId: -213182
 --- !u!1 &3395734508705439372
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +401,7 @@ GameObject:
   - component: {fileID: 4062867802548995331}
   - component: {fileID: 2912550302354195739}
   - component: {fileID: 4852947968243262883}
-  - component: {fileID: 7033546182788793143}
+  - component: {fileID: 2963222454539325811}
   m_Layer: 0
   m_Name: Pipo3
   m_TagString: Untagged
@@ -441,12 +416,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3395734508705439372}
-  m_LocalRotation: {x: -0, y: -0, z: -0.15550476, w: 0.9878351}
-  m_LocalPosition: {x: -0.508, y: -0.672, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.15550478, w: 0.98783517}
+  m_LocalPosition: {x: -0.22000003, y: -0.32299998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1276622353958306755}
-  m_RootOrder: 2
+  m_Children:
+  - {fileID: 8478664187050421537}
+  m_Father: {fileID: 3113840307498516838}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -17.892}
 --- !u!212 &4062867802548995331
 SpriteRenderer:
@@ -511,15 +487,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.3
+  m_Mass: 0.0001
+  m_LinearDrag: 100
+  m_AngularDrag: 1000000
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 3
 --- !u!114 &4852947968243262883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,8 +525,8 @@ MonoBehaviour:
   - {x: -0.22155483, y: -0.09520821, z: 0}
   m_ShapePathHash: 1457618298
   m_Mesh: {fileID: 0}
-  m_InstanceId: 211980
---- !u!233 &7033546182788793143
+  m_InstanceId: -213186
+--- !u!233 &2963222454539325811
 HingeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -563,9 +539,9 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 2248517076406117819}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.07167634, y: 0.39624673}
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0.02, y: 0.13}
+  m_ConnectedAnchor: {x: 0.06532984, y: 0.52762634}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -585,9 +561,8 @@ GameObject:
   - component: {fileID: 8478664187050421537}
   - component: {fileID: 7641745334742880925}
   - component: {fileID: 2248517076406117819}
-  - component: {fileID: 3876521300128474206}
   - component: {fileID: 746467442591342949}
-  - component: {fileID: 4649785399137327211}
+  - component: {fileID: 6909044703147381895}
   m_Layer: 0
   m_Name: Pipo4
   m_TagString: Untagged
@@ -602,12 +577,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3851760104958258059}
-  m_LocalRotation: {x: -0, y: -0, z: -0.2538134, w: 0.9672532}
-  m_LocalPosition: {x: -0.765, y: -0.982, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.100313276, w: 0.9949559}
+  m_LocalPosition: {x: -0.1493304, y: -0.37396446, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1276622353958306755}
-  m_RootOrder: 3
+  m_Children:
+  - {fileID: 2391576990587224779}
+  m_Father: {fileID: 636101263430899843}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -29.407001}
 --- !u!212 &7641745334742880925
 SpriteRenderer:
@@ -672,58 +648,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.3
+  m_Mass: 0.0001
+  m_LinearDrag: 100
+  m_AngularDrag: 1000000
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
---- !u!60 &3876521300128474206
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3851760104958258059}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: c33eb2b7f19f55a4fa371d32e61fa308, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.328125, y: 0.515625}
-    newSize: {x: 0.328125, y: 0.515625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.1640625, y: 0.1875}
-      - {x: 0.15625, y: 0.203125}
-      - {x: 0.1328125, y: 0.23828125}
-      - {x: 0.1015625, y: 0.2578125}
-      - {x: -0.046875, y: 0.2578125}
-      - {x: -0.1171875, y: 0.2265625}
-      - {x: -0.140625, y: 0.203125}
-      - {x: -0.1640625, y: 0.12109375}
-      - {x: -0.1640625, y: -0.05859375}
-      - {x: -0.15625, y: -0.09765625}
-      - {x: -0.1328125, y: -0.1796875}
-      - {x: -0.08984375, y: -0.23828125}
-      - {x: -0.06640625, y: -0.25390625}
-      - {x: -0.0234375, y: -0.2578125}
-      - {x: 0.05859375, y: -0.2578125}
-      - {x: 0.08203125, y: -0.234375}
-      - {x: 0.1015625, y: -0.16796875}
-      - {x: 0.1640625, y: 0.09765625}
+  m_Constraints: 3
 --- !u!114 &746467442591342949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,8 +686,8 @@ MonoBehaviour:
   - {x: -0.10872882, y: 0.22356923, z: 0}
   m_ShapePathHash: -294483780
   m_Mesh: {fileID: 0}
-  m_InstanceId: 211936
---- !u!233 &4649785399137327211
+  m_InstanceId: -213190
+--- !u!233 &6909044703147381895
 HingeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -767,9 +700,9 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 6459883724235470775}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.093962125, y: 0.35022873}
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0.06, y: 0.18}
+  m_ConnectedAnchor: {x: 0.178603, y: 0.5200352}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -789,9 +722,8 @@ GameObject:
   - component: {fileID: 3113840307498516838}
   - component: {fileID: 5149964053185862649}
   - component: {fileID: 2451628848629733236}
-  - component: {fileID: 8208191042787198484}
   - component: {fileID: 6699339549123655729}
-  - component: {fileID: 1344127476162298301}
+  - component: {fileID: 8856502427982621436}
   m_Layer: 0
   m_Name: Pipo2
   m_TagString: Untagged
@@ -807,11 +739,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7274595749113079174}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.301, y: -0.388, z: 0}
+  m_LocalPosition: {x: -0.19342175, y: -0.24644437, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1276622353958306755}
-  m_RootOrder: 1
+  m_Children:
+  - {fileID: 636101263430899843}
+  m_Father: {fileID: 7866540227826883012}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5149964053185862649
 SpriteRenderer:
@@ -876,61 +809,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.3
+  m_Mass: 0.0001
+  m_LinearDrag: 100
+  m_AngularDrag: 1000000
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
---- !u!60 &8208191042787198484
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7274595749113079174}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: c33eb2b7f19f55a4fa371d32e61fa308, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.55078125, y: 0.5859375}
-    newSize: {x: 0.55078125, y: 0.5859375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.27539062, y: 0.08203125}
-      - {x: 0.26757812, y: 0.1171875}
-      - {x: 0.19335938, y: 0.2265625}
-      - {x: 0.099609375, y: 0.28125}
-      - {x: 0.060546875, y: 0.29296875}
-      - {x: -0.083984375, y: 0.29296875}
-      - {x: -0.115234375, y: 0.27734375}
-      - {x: -0.15429688, y: 0.24609375}
-      - {x: -0.19335938, y: 0.171875}
-      - {x: -0.25585938, y: 0.01953125}
-      - {x: -0.27539062, y: -0.05078125}
-      - {x: -0.27539062, y: -0.1484375}
-      - {x: -0.26757812, y: -0.1640625}
-      - {x: -0.25195312, y: -0.19140625}
-      - {x: -0.19335938, y: -0.25}
-      - {x: -0.13867188, y: -0.28125}
-      - {x: -0.091796875, y: -0.29296875}
-      - {x: 0.033203125, y: -0.29296875}
-      - {x: 0.041015625, y: -0.2890625}
-      - {x: 0.14648438, y: -0.19140625}
-      - {x: 0.27539062, y: -0.0859375}
+  m_Constraints: 3
 --- !u!114 &6699339549123655729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,8 +847,8 @@ MonoBehaviour:
   - {x: -0.20975906, y: 0.09607422, z: 0}
   m_ShapePathHash: 1790133687
   m_Mesh: {fileID: 0}
-  m_InstanceId: 211992
---- !u!233 &1344127476162298301
+  m_InstanceId: -213194
+--- !u!233 &8856502427982621436
 HingeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -974,17 +861,17 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 2912550302354195739}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.109736554, y: 0.33386058}
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0.02, y: 0.07}
+  m_ConnectedAnchor: {x: 0.11012005, y: 0.37496614}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 6.7
-    m_UpperAngle: 90
+    m_LowerAngle: 0
+    m_UpperAngle: 359
 --- !u!1 &8524390800984037819
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,7 +884,7 @@ GameObject:
   - component: {fileID: 102489079685743569}
   - component: {fileID: 2205818324494816052}
   - component: {fileID: 1671515316461124333}
-  - component: {fileID: 4239795045537683680}
+  - component: {fileID: 3902774015355911984}
   m_Layer: 0
   m_Name: Pipo1
   m_TagString: Untagged
@@ -1013,9 +900,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8524390800984037819}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09457824, y: -0.10255563, z: 0}
+  m_LocalPosition: {x: -0.086, y: -0.068, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3113840307498516838}
   m_Father: {fileID: 1276622353958306755}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1081,15 +969,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.3
+  m_Mass: 0.0001
+  m_LinearDrag: 100
+  m_AngularDrag: 1000000
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 3
 --- !u!114 &1671515316461124333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1120,8 +1008,8 @@ MonoBehaviour:
   - {x: -0.10970779, y: -0.29820132, z: 0}
   m_ShapePathHash: -1535477899
   m_Mesh: {fileID: 0}
-  m_InstanceId: 211946
---- !u!233 &4239795045537683680
+  m_InstanceId: -213198
+--- !u!233 &3902774015355911984
 HingeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1134,14 +1022,14 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 2451628848629733236}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.20642176, y: 0.28544438}
+  m_ConnectedAnchor: {x: 0.19342807, y: 0.24644426}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 1
+  m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 79.1
-    m_UpperAngle: 186.7
+    m_LowerAngle: 0
+    m_UpperAngle: 359
