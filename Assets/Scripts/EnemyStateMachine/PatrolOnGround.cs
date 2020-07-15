@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PatrolOnGround : StateMachineBehaviour
 {
-    GameObject owner;
+    GameObject _owner;
+    Rigidbody2D _rb;
     private Transform[] waypoints;
     private int waypointIndex;
     private EnemyController controller;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        owner = animator.gameObject;
-        controller = owner.GetComponent<EnemyController>();
+        _owner = animator.gameObject;
+        _rb = _owner.GetComponent<Rigidbody2D>();
+        controller = _owner.GetComponent<EnemyController>();
         waypoints = controller.waypoints;
         waypointIndex = 0;
     }
@@ -20,10 +22,14 @@ public class PatrolOnGround : StateMachineBehaviour
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         float step = controller.speed * Time.deltaTime;
-        owner.transform.position = Vector2.MoveTowards(owner.transform.position, waypoints[waypointIndex].position, step);
 
-        if (owner.transform.position.x == waypoints[waypointIndex].position.x)
-            NextWayPoint();            
+        if (waypointIndex % 2 == 0)
+            step *= 1.75f;
+
+        _owner.transform.position = Vector2.MoveTowards(_owner.transform.position, waypoints[waypointIndex].position, step);
+
+        if (RoughlySame(_owner.transform.position.x, waypoints[waypointIndex].position.x))
+            NextWayPoint();
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -39,4 +45,8 @@ public class PatrolOnGround : StateMachineBehaviour
             waypointIndex = 0;
     }
 
+    bool RoughlySame(float a, float b)
+    {
+        return Mathf.Abs(a - b) < 0.01f;
+    }
 }

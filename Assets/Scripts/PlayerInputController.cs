@@ -7,18 +7,25 @@ public class PlayerInputController : MonoBehaviour
     // this is the machine that controls Player object states that handle physics and animation by sending messages
     // to the Animator component in gameObject's child (Matti). called "state" in the behaviour script methods.
     [HideInInspector] public Animator state;
-        
-    public float maxSpeed;
-    public float groundSpeed;
-    public float jumpForce;
-    public float airborneSpeed;
-    public float runToWalkThreshold;
 
+    public float maxSpeed;
+    public float fastSpeed;
+    public float slowSpeed;
+    public float jumpForce;    
+    public float floatingDrag;
+    public GroundedCheck groundedCheck;
+    public GameObject umbrella;
+    public Transform umbrellaPosition;
+    public GameObject lamp;
+    public Transform lampPosition;
+
+    public bool LightDeployed { get; set; }
 
     void Start()
     {
         state = GetComponent<Animator>();
         transform.position = SaveGame.Instance.GetPosFromMemory();
+        LightDeployed = false;
     }
 
     void Update()
@@ -28,34 +35,43 @@ public class PlayerInputController : MonoBehaviour
 
     private void HandleInput()
     {
-        // set the state machine Horizontal parameter every frame it's touched so it doesn't need to know about input.
-        state.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
-
-        if (Input.GetAxis("Horizontal") != 0)
-        {           
-            if (state.GetBool("Grounded")) 
-                state.SetTrigger("Run");
-        } 
-
-        if (Input.GetButtonDown("Jump") && state.GetBool("Grounded"))
-        {
-            state.SetTrigger("Jump");
-        }
-
-        if (Input.GetButtonDown("Light") && state.GetBool("Grounded"))
-        {
-            // state.SetTrigger("Fire"); no such trigger yet
-        }
+        // set the state machine input parameters every frame so it doesn't have to know about input
+        SetStateFloats();
+        SetStateBools();
+        SetStateGrounded();
 
         if (Input.GetKeyDown(KeyCode.P))
-        {
             SaveGame.Instance.SetPosVec(this.gameObject.transform.position);
-            
-        }
+    }
+    private void SetStateFloats()
+    {
+        state.SetFloat("InputX", Input.GetAxis("Horizontal"));
+        state.SetFloat("InputXAbs", Mathf.Abs(Input.GetAxis("Horizontal")));
     }
 
-    public void SetGrounded()   // script PlayerGrounded.cs in the player's legs uses this on collisions with Ground
+    private void SetStateBools()
     {
-        state.SetBool("Grounded", true);
+        if (Input.GetButtonDown("Jump"))
+            state.SetBool("InputJump", true);
+        if (Input.GetButtonUp("Jump"))
+            state.SetBool("InputJump", false);
+
+        if (Input.GetButtonDown("Float")) 
+            state.SetBool("InputFloat", true);       
+        if (Input.GetButtonUp("Float"))
+            state.SetBool("InputFloat", false);
+
+        if (Input.GetButtonDown("Light"))
+            state.SetBool("InputLight", true);
+        if (Input.GetButtonUp("Light"))
+            state.SetBool("InputLight", false);
+    }
+
+    public void SetStateGrounded()
+    {
+        if (groundedCheck.isGrounded)
+            state.SetBool("Grounded", true);
+        else
+            state.SetBool("Grounded", false);
     }
 }
