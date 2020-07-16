@@ -52,7 +52,7 @@ public class SaveGame : MonoBehaviour
 
     private void CreateNewSaveFile()
     {
-        Directory.CreateDirectory("C:/sandmanSaves");
+        Directory.CreateDirectory("C:/sandmanSaves/");
     }
 
     private void ReadFile()
