@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class EnemyEscape : EnemyBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    public override void OnStateEnter(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        base.OnStateEnter(state, stateInfo, layerIndex);
+        controller.StartCoroutine("FadeOut");
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnStateUpdate(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        base.OnStateUpdate(state, stateInfo, layerIndex);
+    }
+
+    public override void OnStateExit(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        base.OnStateExit(state, stateInfo, layerIndex);
+        controller.escaping = false;
     }
 }
