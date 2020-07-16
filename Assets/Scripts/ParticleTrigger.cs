@@ -15,7 +15,8 @@ public class ParticleTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Invoke("TriggerParticles", _triggerDelay);
+        if (collision.gameObject.CompareTag("Player"))
+            Invoke("TriggerParticles", _triggerDelay);
     }
 
     private void TriggerParticles()
