@@ -11,6 +11,8 @@ public class PlayerInputController : MonoBehaviour
     public float maxSpeed;
     public float fastSpeed;
     public float slowSpeed;
+    public float lightDeployedSpeed;
+    [HideInInspector] public float currentSpeed;
     public float jumpForce;    
     public float floatingDrag;
     public GroundedCheck groundedCheck;

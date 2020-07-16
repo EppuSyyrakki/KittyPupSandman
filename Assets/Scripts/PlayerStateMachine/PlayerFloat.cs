@@ -11,10 +11,6 @@ public class PlayerFloat : PlayerBehaviour
     {
         base.OnStateEnter(state, stateInfo, layerIndex);
         _originalDrag = rigidBody.drag;
-        umbrellaClone = Instantiate(player.umbrella, 
-            player.umbrellaPosition.position, 
-            owner.transform.rotation, 
-            owner.transform);
     }
 
     public override void OnStateUpdate(Animator state, AnimatorStateInfo stateInfo, int layerIndex)

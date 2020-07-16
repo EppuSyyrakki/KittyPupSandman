@@ -23,16 +23,22 @@ public class PlayerLight : PlayerBehaviour
                 owner.transform);
             player.LightDeployed = true;
         }
-
         if (!state.GetBool("InputLight") && player.LightDeployed)
-        {
-            Destroy(lampClone);
-            player.LightDeployed = false;
-        }
+            DestroyLamps();
     }
 
     public override void OnStateExit(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(state, stateInfo, layerIndex);
+        DestroyLamps();
+    }
+
+    private void DestroyLamps()
+    {
+        GameObject[] lampClones = GameObject.FindGameObjectsWithTag("Lamp");
+
+        foreach (GameObject lampClone in lampClones) Destroy(lampClone);
+
+        player.LightDeployed = false;
     }
 }

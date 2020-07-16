@@ -8,7 +8,6 @@ public class PlayerBehaviour : StateMachineBehaviour
     [HideInInspector] public Rigidbody2D rigidBody;
     [HideInInspector] public PlayerInputController player;
 
-
     public override void OnStateEnter(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(state, stateInfo, layerIndex);
@@ -20,7 +19,6 @@ public class PlayerBehaviour : StateMachineBehaviour
     public override void OnStateUpdate(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(state, stateInfo, layerIndex);
-        Debug.Log(player.LightDeployed);
     }
 
     public override void OnStateExit(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
