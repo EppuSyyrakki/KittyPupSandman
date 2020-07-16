@@ -9,7 +9,6 @@ public class LightWeapon : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Enemy Detected");
             EnemyController ec = collision.GetComponent<EnemyController>();
             Vector2 direction = (transform.position - collision.transform.position) * -Vector2.one;
             ec.escapeDirection = direction.normalized;

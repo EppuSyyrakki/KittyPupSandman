@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPatrol : EnemyBehaviour
 {
-    [HideInInspector] public Transform[] waypoints;
+    private Transform[] waypoints;
     private int waypointIndex;
 
     public override void OnStateEnter(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
@@ -43,6 +43,6 @@ public class EnemyPatrol : EnemyBehaviour
 
     bool RoughlySame(float a, float b)
     {
-        return Mathf.Abs(a - b) < 0.01f;
+        return Mathf.Abs(a - b) < 0.1f;
     }
 }
