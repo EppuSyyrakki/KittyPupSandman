@@ -8,13 +8,16 @@ public class GroundedCheck : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ground" && !isGrounded)
-            isGrounded = true;
+        if (!isGrounded)
+        {
+            if (collision.CompareTag("Ground")) // or "Enemy" if we want to have player walking on enemies.
+                isGrounded = true;
+        }      
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.CompareTag("Ground"))
             isGrounded = false;
     }
 }

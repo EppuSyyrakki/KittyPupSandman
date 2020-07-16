@@ -61,7 +61,7 @@ MonoBehaviour:
   - {x: 0.50948274, y: -0.19030197, z: 0}
   m_ShapePathHash: -856728447
   m_Mesh: {fileID: 0}
-  m_InstanceId: -4974
+  m_InstanceId: -64816
 --- !u!114 &1339281861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   - {x: 0.502733, y: 0.15857029, z: 0}
   m_ShapePathHash: 1687189415
   m_Mesh: {fileID: 0}
-  m_InstanceId: -4966
+  m_InstanceId: -64808
 --- !u!1 &1935918871654438096
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
   maxSpeed: 8
   fastSpeed: 16
   slowSpeed: 8
-  lightDeployedSpeed: 12
+  lightDeployedSpeed: 10
   currentSpeed: 0
   jumpForce: 5
   floatingDrag: 4
@@ -717,7 +717,7 @@ MonoBehaviour:
   - {x: 0.5059086, y: 0.16611795, z: 0}
   m_ShapePathHash: -1682303784
   m_Mesh: {fileID: 0}
-  m_InstanceId: -4968
+  m_InstanceId: -64810
 --- !u!1 &3676093658803603933
 GameObject:
   m_ObjectHideFlags: 0

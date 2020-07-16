@@ -1,18 +1,26 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LightWeapon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Enemy Detected");
+            EnemyController ec = collision.GetComponent<EnemyController>();
+            Vector2 direction = (transform.position - collision.transform.position) * -Vector2.one;
+            ec.escapeDirection = direction.normalized;
+            ec.escaping = true;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<EnemyController>().escaping = false;
+        }
     }
 }
