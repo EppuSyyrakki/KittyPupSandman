@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{5f0420d2-8dca-46a5-8dd8-234ff64ed155}">
+		<property name="assetPath">
+			<value>464690__branndybottle__grasswalking-step2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.3235374149659864</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{624330c8-510c-4a36-ad5f-a2d4dad2147e}</destination>
+		</relationship>
+	</object>
+</objects>

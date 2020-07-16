@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{e52d3368-512e-4296-9c43-79b1a9bc82e2}">
+		<property name="assetPath">
+			<value>Soundscape 3 - level 1.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>186.66666666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{624330c8-510c-4a36-ad5f-a2d4dad2147e}</destination>
+		</relationship>
+	</object>
+</objects>
