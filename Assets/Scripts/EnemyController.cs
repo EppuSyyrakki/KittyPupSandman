@@ -8,8 +8,9 @@ public class EnemyController : MonoBehaviour
     public float speed = 10f;
     public float fadeOutTime = 1.5f;
     [HideInInspector] public Animator state;
-    [HideInInspector] public Vector2 lastPosition;
+    [HideInInspector] public float lastPositionX;
     
+    private bool movingRight;   
     private SpriteRenderer[] sr;
     private bool dead = false;
 
@@ -26,12 +27,26 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        LocationBasedFlip();
         state.SetBool("Escaping", escaping);
 
         if (dead)
         {
             Destroy(gameObject);
         }
+
+        lastPositionX = transform.position.x;
+    }
+
+    private void LocationBasedFlip() 
+    {
+        if (lastPositionX < transform.position.x) movingRight = true;
+        else movingRight = false;
+
+        if (movingRight && transform.localScale.x != 1)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (!movingRight && transform.localScale.x != -1)
+            transform.localScale = new Vector3(-1, 1, 1);
     }
 
     IEnumerator FadeOut()
