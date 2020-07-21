@@ -20,6 +20,12 @@ public class EventManager : MonoBehaviour
     public delegate void OnCloseMessage();
     public static event OnCloseMessage onCloseMessageEvent;
 
+    public delegate void OnPauseGame();
+    public static event OnPauseGame onPauseEvent;
+
+    public delegate void OnResumeGame();
+    public static event OnResumeGame onResumeEvent;
+
     public static void RaiseOnSaveGame()
     {
         if (onSaveGameEvent != null)
@@ -48,5 +54,17 @@ public class EventManager : MonoBehaviour
     {
         if (onCloseMessageEvent != null)
             onCloseMessageEvent();
+    }
+
+    public static void RaiseOnPause()
+    {
+        if (onPauseEvent != null)
+            onPauseEvent();
+    }
+
+    public static void RaiseOnResume()
+    {
+        if (onResumeEvent != null)
+            onResumeEvent();
     }
 }

@@ -7,8 +7,8 @@ using TMPro;
 
 public class SaveGame : MonoBehaviour
 {
-    private Vector2 vec;
-    private String txt;
+    private Vector2 playerPosVec;
+    private String saveDataTxt;
     public static int sceneIndex;
     private String[] saveDataArr;
     public static bool _isInit { get; private set; }
@@ -59,19 +59,19 @@ public class SaveGame : MonoBehaviour
     {
         _isInit = false;
 
-        txt = File.ReadAllText("C:/sandmanSaves/" + transform.name + ".txt");
+        saveDataTxt = File.ReadAllText("C:/sandmanSaves/" + transform.name + ".txt");
 
         //split the string into an array of strings at the separator written in our file
 
-        saveDataArr = txt.Split("!"[0]);
+        saveDataArr = saveDataTxt.Split("!"[0]);
 
         // now change each of the strings back to numbers
 
-        float.TryParse(saveDataArr[0], out vec.x);
-        float.TryParse(saveDataArr[1], out vec.y);
+        float.TryParse(saveDataArr[0], out playerPosVec.x);
+        float.TryParse(saveDataArr[1], out playerPosVec.y);
         int.TryParse(saveDataArr[2], out sceneIndex);
 
-        print("begin at pos:" + vec + " in scene " + sceneIndex);
+        print("begin at pos:" + playerPosVec + " in scene " + sceneIndex);
     }
 
     public void Awake()
@@ -90,12 +90,12 @@ public class SaveGame : MonoBehaviour
 
     public void SetPosVec(Vector2 playerPos)
     {
-        txt = playerPos.x + "!" + playerPos.y;
-        txt = txt + "!" + sceneIndex;
+        saveDataTxt = playerPos.x + "!" + playerPos.y;
+        saveDataTxt = saveDataTxt + "!" + sceneIndex;
 
-        File.WriteAllText("C:/sandmanSaves/" + transform.name + ".txt", txt);
+        File.WriteAllText("C:/sandmanSaves/" + transform.name + ".txt", saveDataTxt);
 
-        vec = playerPos;
+        playerPosVec = playerPos;
     }
 
     public int GetSceneIndex()
@@ -105,6 +105,6 @@ public class SaveGame : MonoBehaviour
 
     public Vector2 GetPosFromMemory()
     {
-        return vec;
+        return playerPosVec;
     }
 }

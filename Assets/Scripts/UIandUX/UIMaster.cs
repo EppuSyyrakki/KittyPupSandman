@@ -5,19 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class UIMaster : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject[] menus = null;
+
+    [SerializeField]
+    private int startMenu = 0;
+
+    public static GameObject currentMenu;
+
     public static UIMaster Instance { get; private set; }
+
     public void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
             UnityEngine.Debug.LogWarning("Warning: multiple " + this + " in scene!");
+
+        currentMenu = menus[startMenu];
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     public void OnGUI()
@@ -35,11 +45,22 @@ public class UIMaster : MonoBehaviour
             ChangeScene(1);        
 
         if (Input.GetKeyDown(KeyCode.Q))        
-            QuitGame();
+            QuitGame();        
+    }
 
-        if (Input.GetKeyDown(KeyCode.O))
-            EnterOptionsMenu();
-        
+    public void ChangeMenu(int menuIndex)
+    {
+        for (int i = 0; i < menus.Length; i++)
+        {
+            if (i == menuIndex)
+            {
+                menus[i].SetActive(true);
+                currentMenu = menus[i];
+                Debug.Log("Menu changed to: " + currentMenu.tag);
+            }
+            else
+                menus[i].SetActive(false);
+        }
     }
 
     public void ChangeScene(int sceneID)
@@ -65,14 +86,19 @@ public class UIMaster : MonoBehaviour
         ChangeScene(i);
     }
 
-    public void EnterMainMenu()
+    public void EnterMainMenuScene()
     {
         ChangeScene(1);
     }
 
-    public void EnterOptionsMenu()
+    public string GetCurrentMenu()
     {
-        ChangeScene(2);
+        return currentMenu.tag;
+    }
+
+    public int GetCurrentScene()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
     }
 
     public void QuitGame()

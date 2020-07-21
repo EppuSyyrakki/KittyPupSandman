@@ -8,6 +8,11 @@ TagManager:
   - savepoint
   - Enemy
   - Lamp
+  - HudMenu
+  - PauseMenu
+  - OptionsMenu
+  - ControlsMenu
+  - MainMenu
   layers:
   - Default
   - TransparentFX
