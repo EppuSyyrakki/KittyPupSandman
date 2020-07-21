@@ -43,5 +43,22 @@ public class EventHandler : MonoBehaviour
             timer = 0;
         }
 
+        if (UIMaster.Instance.GetCurrentMenu() == "PauseMenu" ||
+            UIMaster.Instance.GetCurrentMenu() == "OptionsMenu" ||
+            UIMaster.Instance.GetCurrentMenu() == "ControlsMenu")
+        {
+            //Debug.Log("EventHandler invoked by pause action");
+            if (!Pause._isPaused)
+                EventManager.RaiseOnPause();
+        }
+
+        if (UIMaster.Instance.GetCurrentMenu() == "HudMenu" && UIMaster.Instance.GetCurrentScene() > 1)
+        {
+            //Debug.Log("EventHandler invoked by resume action");
+            if (Pause._isPaused)
+                EventManager.RaiseOnResume();
+        }
+
+
     }
 }

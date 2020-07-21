@@ -15,8 +15,6 @@ public class HUD : MonoBehaviour
     [SerializeField]
     private string message = "Game Saved!";
 
-    private float messageTimer = 0;
-
     private void OnEnable()
     {
         EventManager.onSaveGameEvent += popMessage;
