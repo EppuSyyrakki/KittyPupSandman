@@ -21,30 +21,33 @@ public class PlayerInputController : MonoBehaviour
     public GameObject lamp;
     public Transform lampPosition;
 
+    public bool MovementEnabled { get; set; }
+
     public bool LightDeployed { get; set; }
+
+    public bool LookingDown { get; set; }
 
     void Start()
     {
         state = GetComponent<Animator>();
         transform.position = SaveGame.Instance.GetPosFromMemory();
         LightDeployed = false;
+        MovementEnabled = true;
     }
 
     void Update()
     {
-        HandleInput();
-    }
-
-    private void HandleInput()
-    {
-        // set the state machine input parameters every frame so it doesn't have to know about input
-        SetStateFloats();
-        SetStateBools();
-        SetStateGrounded();
+        if (MovementEnabled)
+        {
+            SetStateFloats();
+            SetStateBools();
+            SetStateGrounded();
+        }       
 
         if (Input.GetKeyDown(KeyCode.P))
             SaveGame.Instance.SetPosVec(this.gameObject.transform.position);
     }
+
     private void SetStateFloats()
     {
         state.SetFloat("InputX", Input.GetAxis("Horizontal"));
@@ -58,10 +61,15 @@ public class PlayerInputController : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
             state.SetBool("InputJump", false);
 
-        if (Input.GetButtonDown("Float")) 
-            state.SetBool("InputFloat", true);       
-        if (Input.GetButtonUp("Float"))
+        if (Input.GetAxis("Vertical") > 0)
+            state.SetBool("InputFloat", true);
+        else if (Input.GetAxis("Vertical") <= 0)
             state.SetBool("InputFloat", false);
+
+        if (Input.GetAxis("Vertical") < 0)
+            LookingDown = true;
+        else if (Input.GetAxis("Vertical") >= 0)
+            LookingDown = false;
 
         if (Input.GetButtonDown("Light"))
             state.SetBool("InputLight", true);
