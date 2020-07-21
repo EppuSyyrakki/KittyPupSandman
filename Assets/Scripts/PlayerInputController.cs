@@ -21,8 +21,6 @@ public class PlayerInputController : MonoBehaviour
     public GameObject lamp;
     public Transform lampPosition;
 
-    public bool MovementEnabled { get; set; }
-
     public bool LightDeployed { get; set; }
 
     public bool LookingDown { get; set; }
@@ -32,17 +30,13 @@ public class PlayerInputController : MonoBehaviour
         state = GetComponent<Animator>();
         transform.position = SaveGame.Instance.GetPosFromMemory();
         LightDeployed = false;
-        MovementEnabled = true;
     }
 
     void Update()
     {
-        if (MovementEnabled)
-        {
-            SetStateFloats();
-            SetStateBools();
-            SetStateGrounded();
-        }       
+        SetStateFloats();
+        SetStateBools();
+        SetStateGrounded();    
 
         if (Input.GetKeyDown(KeyCode.P))
             SaveGame.Instance.SetPosVec(this.gameObject.transform.position);
