@@ -87,29 +87,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Layer 12
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 3729
-      y: 1475
-      width: 0
-      height: 0
-    spriteID: 1ab4d63522377d6449a71f5fc9ccd677
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 897, y: -393}
-  - name: lamp copy
+  - name: varjostin
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -120,7 +98,7 @@ ScriptedImporter:
       y: 1134
       width: 877
       height: 644
-    spriteID: a956ba8c04322f846972823cfa6829bb
+    spriteID: e8b1b65bb7996fd49af78015d9c0b35d
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -142,7 +120,7 @@ ScriptedImporter:
       y: 1880
       width: 1636
       height: 1868
-    spriteID: f94e3adcb55fb3748b8ded7ec7d12208
+    spriteID: 0a7935d6ee2e56546bb72f522f1c9025
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -153,51 +131,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 1880}
-  - name: Layer 13
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 3729
-      y: 1483
-      width: 0
-      height: 0
-    spriteID: bf30cbdda1477a94caa53a0b34ef5869
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 897, y: -385}
-  - name: Layer 11
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 3455
-      y: 4
-      width: 463
-      height: 796
-    spriteID: 0c64c35647983804c95a73859c9b6b95
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 3412, y: -303}
-  - name: Layer 5 copy 2
+  - name: jalka
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -208,7 +142,7 @@ ScriptedImporter:
       y: 4
       width: 603
       height: 1122
-    spriteID: 3ae83e12fdf93dd49b0903d6eb8d024a
+    spriteID: 0af04ac74f152c04ebafaba672b50753
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -219,7 +153,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 2844, y: -255}
-  - name: Layer 8
+  - name: kaula
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -230,7 +164,7 @@ ScriptedImporter:
       y: 1134
       width: 101
       height: 333
-    spriteID: 81eaa029f9352c742af4f9059b40ad63
+    spriteID: d06d3d4c3c746e541aa372435266c910
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -241,7 +175,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 3512, y: 146}
-  - name: Layer 3
+  - name: ground
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -252,7 +186,7 @@ ScriptedImporter:
       y: 3756
       width: 2832
       height: 378
-    spriteID: df77b0328ec46124da49cbe7692bfd53
+    spriteID: ee03be95ff1556241b7461b230634aa8
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -274,7 +208,7 @@ ScriptedImporter:
       y: 4
       width: 2832
       height: 1868
-    spriteID: e217d880455e4c74cb9d9e14f26f6c9b
+    spriteID: 20860b8f219805946aa787914343f984
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -311,67 +245,46 @@ ScriptedImporter:
     spriteID: 00000000000000000000000000000000
     layerID: 8
     mosaicPosition: {x: 0, y: 0}
-  - name: Layer 12
-    spriteName: Layer 12
+  - name: varjostin
+    spriteName: varjostin
     isGroup: 0
     parentIndex: 0
-    spriteID: 1ab4d63522377d6449a71f5fc9ccd677
-    layerID: 24
-    mosaicPosition: {x: 3729, y: 1475}
-  - name: lamp copy
-    spriteName: lamp copy
-    isGroup: 0
-    parentIndex: 0
-    spriteID: a956ba8c04322f846972823cfa6829bb
+    spriteID: e8b1b65bb7996fd49af78015d9c0b35d
     layerID: 11
     mosaicPosition: {x: 2844, y: 1134}
   - name: light
     spriteName: light
     isGroup: 0
     parentIndex: 0
-    spriteID: f94e3adcb55fb3748b8ded7ec7d12208
+    spriteID: 0a7935d6ee2e56546bb72f522f1c9025
     layerID: 20
     mosaicPosition: {x: 4, y: 1880}
-  - name: Layer 13
-    spriteName: Layer 13
+  - name: jalka
+    spriteName: jalka
     isGroup: 0
     parentIndex: 0
-    spriteID: bf30cbdda1477a94caa53a0b34ef5869
-    layerID: 25
-    mosaicPosition: {x: 3729, y: 1483}
-  - name: Layer 11
-    spriteName: Layer 11
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 0c64c35647983804c95a73859c9b6b95
+    spriteID: 0af04ac74f152c04ebafaba672b50753
     layerID: 23
-    mosaicPosition: {x: 3455, y: 4}
-  - name: Layer 5 copy 2
-    spriteName: Layer 5 copy 2
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 3ae83e12fdf93dd49b0903d6eb8d024a
-    layerID: 16
     mosaicPosition: {x: 2844, y: 4}
-  - name: Layer 8
-    spriteName: Layer 8
+  - name: kaula
+    spriteName: kaula
     isGroup: 0
     parentIndex: 0
-    spriteID: 81eaa029f9352c742af4f9059b40ad63
+    spriteID: d06d3d4c3c746e541aa372435266c910
     layerID: 17
     mosaicPosition: {x: 3729, y: 1134}
-  - name: Layer 3
-    spriteName: Layer 3
+  - name: ground
+    spriteName: ground
     isGroup: 0
     parentIndex: -1
-    spriteID: df77b0328ec46124da49cbe7692bfd53
+    spriteID: ee03be95ff1556241b7461b230634aa8
     layerID: 4
     mosaicPosition: {x: 4, y: 3756}
   - name: Layer 7
     spriteName: Layer 7
     isGroup: 0
     parentIndex: -1
-    spriteID: e217d880455e4c74cb9d9e14f26f6c9b
+    spriteID: 20860b8f219805946aa787914343f984
     layerID: 15
     mosaicPosition: {x: 4, y: 4}
   characterData:
