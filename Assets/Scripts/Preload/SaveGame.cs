@@ -41,7 +41,7 @@ public class SaveGame : MonoBehaviour
 
     private void Save()
     {
-        SetPosVec(Savepoint.currentlyActivated);
+        WriteFile(Savepoint.currentlyActivated);
     }
 
     private void UpdateScene()
@@ -79,7 +79,7 @@ public class SaveGame : MonoBehaviour
         if (Instance == null)
             Instance = this;
         else
-            UnityEngine.Debug.LogWarning("Warning: multiple " + this + " in scene!");
+            UnityEngine.Debug.LogWarning("Warning: multiple " + this + " in scene! (" + UIMaster.Instance.GetCurrentSceneId() + ")");
     }
 
 
@@ -88,7 +88,7 @@ public class SaveGame : MonoBehaviour
         _isInit = true;
     }
 
-    public void SetPosVec(Vector2 playerPos)
+    public void WriteFile(Vector2 playerPos)
     {
         saveDataTxt = playerPos.x + "!" + playerPos.y;
         saveDataTxt = saveDataTxt + "!" + sceneIndex;
@@ -96,6 +96,7 @@ public class SaveGame : MonoBehaviour
         File.WriteAllText("C:/sandmanSaves/" + transform.name + ".txt", saveDataTxt);
 
         playerPosVec = playerPos;
+        //UnityEngine.Debug.LogWarning("Writing file... scene index: " + sceneIndex);
     }
 
     public int GetSceneIndex()

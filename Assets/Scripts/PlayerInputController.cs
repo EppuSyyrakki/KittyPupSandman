@@ -39,7 +39,7 @@ public class PlayerInputController : MonoBehaviour
         SetStateGrounded();    
 
         if (Input.GetKeyDown(KeyCode.P))
-            SaveGame.Instance.SetPosVec(this.gameObject.transform.position);
+            SaveGame.Instance.WriteFile(this.gameObject.transform.position);
     }
 
     private void SetStateFloats()

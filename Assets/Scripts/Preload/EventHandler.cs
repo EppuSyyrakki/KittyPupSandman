@@ -19,15 +19,15 @@ public class EventHandler : MonoBehaviour
             timer = 0;
         }
 
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex >= 3 && Savepoint._isActive)
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex > UIMaster.Instance.GetMainMenuSceneId() && Savepoint._isActive)
         {
-            //Debug.Log("EventHandler invoked by save scene action");
+            //Debug.Log("EventHandler invoked by update scene action");
             EventManager.RaiseOnUpdateScene();
         }       
 
         if (!Directory.Exists("C:/sandmanSaves"))
         {
-            //Debug.Log("EventHandler invoked by create save file action");
+            // Debug.Log("EventHandler invoked by create save file action");
             EventManager.RaiseOnNewSaveFile();
         }
 
@@ -52,7 +52,7 @@ public class EventHandler : MonoBehaviour
                 EventManager.RaiseOnPause();
         }
 
-        if (UIMaster.Instance.GetCurrentMenu() == "HudMenu" && UIMaster.Instance.GetCurrentScene() > 1)
+        if (UIMaster.Instance.GetCurrentMenu() == "HudMenu" && UIMaster.Instance.GetCurrentSceneId() > UIMaster.Instance.GetMainMenuSceneId())
         {
             //Debug.Log("EventHandler invoked by resume action");
             if (Pause._isPaused)

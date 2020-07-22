@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMOD;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,10 @@ public class UIMaster : MonoBehaviour
 
     public static GameObject currentMenu;
 
+    private int _preloadSceneId = 0; 
+    private int _mainMenuSceneId = 1;
+    private int _firstLevelSceneId = 2;
+
     public static UIMaster Instance { get; private set; }
 
     public void Awake()
@@ -25,15 +30,8 @@ public class UIMaster : MonoBehaviour
         currentMenu = menus[startMenu];
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     public void OnGUI()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-            ChangeScene(4);
 
         if (Input.GetKeyDown(KeyCode.N))
             StartNewGame();
@@ -42,7 +40,7 @@ public class UIMaster : MonoBehaviour
             ContinueGame();
 
         if (Input.GetKeyDown(KeyCode.M))
-            ChangeScene(1);        
+            ChangeScene(_mainMenuSceneId);        
 
         if (Input.GetKeyDown(KeyCode.Q))        
             QuitGame();        
@@ -56,7 +54,7 @@ public class UIMaster : MonoBehaviour
             {
                 menus[i].SetActive(true);
                 currentMenu = menus[i];
-                Debug.Log("Menu changed to: " + currentMenu.tag);
+                //Debug.Log("Menu changed to: " + currentMenu.tag);
             }
             else
                 menus[i].SetActive(false);
@@ -65,30 +63,34 @@ public class UIMaster : MonoBehaviour
 
     public void ChangeScene(int sceneID)
     {
+
+       // Debug.LogWarning("Change scene, scene index given: " + sceneID);
         // this method takes index values from build settings
         SceneManager.LoadScene(sceneBuildIndex: sceneID);
     }
 
     public void StartNewGame()
     {
-        SaveGame.Instance.SetPosVec(new Vector2(0, 0));     // clear player pos from the memory
-        ChangeScene(3);
+        ChangeScene(_firstLevelSceneId);
+        SaveGame.Instance.WriteFile(new Vector2(0, 0));     // clear player pos from the memory
     }
 
     public void ContinueGame()
     {
         int i = SaveGame.Instance.GetSceneIndex();
-        // Debug.LogWarning("scene index in UI: " + i);
+        //Debug.LogWarning("Continue game, scene index in UI: " + i);
 
-        if (i == 0)
-            StartNewGame();       
-
-        ChangeScene(i);
+        if (i == _preloadSceneId)
+            StartNewGame(); 
+        else
+            ChangeScene(i);
     }
 
     public void EnterMainMenuScene()
     {
-        ChangeScene(1);
+        ChangeScene(_mainMenuSceneId);
+
+        //Debug.LogWarning("Main menu, scene index in UI: " + SceneManager.GetActiveScene().buildIndex);
     }
 
     public string GetCurrentMenu()
@@ -96,9 +98,19 @@ public class UIMaster : MonoBehaviour
         return currentMenu.tag;
     }
 
-    public int GetCurrentScene()
+    public int GetCurrentSceneId()
     {
         return SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public int GetMainMenuSceneId()
+    {
+        return _mainMenuSceneId;
+    }
+
+    public int GetFirstLevelSceneId()
+    {
+        return _firstLevelSceneId;
     }
 
     public void QuitGame()
