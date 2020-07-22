@@ -59,7 +59,17 @@
 			<destination>{ddeee7a3-2fbb-41c9-9a1f-6e82fcaeae3e}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{1ae8ec10-b951-40d0-99de-cc7232ceaa6d}" />
+	<object class="EventAutomatableProperties" id="{1ae8ec10-b951-40d0-99de-cc7232ceaa6d}">
+		<property name="maxVoices">
+			<value>3</value>
+		</property>
+		<property name="voiceStealing">
+			<value>3</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>30</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{b7e1852f-d574-4b6e-90a3-d2e14fe9a877}" />
 	<object class="GroupTrack" id="{91a5ebad-922e-4b27-8034-fc82f1e10091}">
 		<relationship name="modules">
@@ -75,6 +85,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{e4bbd20e-036e-4b38-8f1b-10a4b85dc514}">
+		<property name="volume">
+			<value>6</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{19048e15-8097-4e7a-8214-2871be22f824}</destination>
 		</relationship>
@@ -128,6 +141,7 @@
 	<object class="MixerBusEffectChain" id="{19048e15-8097-4e7a-8214-2871be22f824}">
 		<relationship name="effects">
 			<destination>{280cdb21-3e1b-4142-916f-cf41ecca3a75}</destination>
+			<destination>{7c970169-387e-43a4-9a5e-53ca83fe8c2f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{cbd7b908-9b1a-44d4-9655-1161f4b88a06}" />
@@ -137,7 +151,7 @@
 			<value>volume</value>
 		</property>
 		<property name="amount">
-			<value>6</value>
+			<value>10</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{0c98777c-7939-4f24-bc49-e09462292b19}">
@@ -170,5 +184,10 @@
 	</object>
 	<object class="MixerBusPanner" id="{ef2dc4f3-2b03-4c37-9d75-f0337a2a79e1}" />
 	<object class="MixerBusFader" id="{280cdb21-3e1b-4142-916f-cf41ecca3a75}" />
+	<object class="ObjectSpatialiserEffect" id="{7c970169-387e-43a4-9a5e-53ca83fe8c2f}">
+		<property name="minimumDistance">
+			<value>6</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{ee079eb6-e4f5-4b1f-bc68-afcdc75df006}" />
 </objects>

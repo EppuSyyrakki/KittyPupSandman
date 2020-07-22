@@ -18,6 +18,8 @@ public class EnemyController : MonoBehaviour
     [HideInInspector] public bool escaping;
     [HideInInspector] public Vector2 escapeDirection;
 
+    FMOD.Studio.EventInstance boo;
+
     void Start()
     {
         state = GetComponent<Animator>();
@@ -63,6 +65,7 @@ public class EnemyController : MonoBehaviour
             if (ft <= 0.1)
             {
                 dead = true;
+                StopEnemySound();
             }              
 
             if (!escaping)
@@ -83,5 +86,19 @@ public class EnemyController : MonoBehaviour
             c.a = 1f;
             r.color = c;
         }
+    }
+
+    public void PlayEnemySound(string path)
+    {
+        boo = FMODUnity.RuntimeManager.CreateInstance(path);
+        //Debug.Log("the enemy: " + name );
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(boo, transform, GetComponent<Rigidbody2D>());
+        boo.start();
+        boo.release();
+    }
+
+    public void StopEnemySound()
+    {
+        boo.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
