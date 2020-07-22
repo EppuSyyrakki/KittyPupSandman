@@ -1,0 +1,1363 @@
+fileFormatVersion: 2
+guid: e72084ba91e88c84ca2b0bee13d5fd24
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: ghost
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 543
+      height: 899
+    spriteID: fb0a9106d65f08e4492119e9709e5b81
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -619, y: -140}
+  - name: "k\xE4si1 kyyn\xE4r copy"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 555
+      y: 4
+      width: 305
+      height: 457
+    spriteID: e545514467c7a834380c3478efeb75c5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 343, y: -470}
+  - name: "k\xE4si1 olka copy"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 911
+      width: 391
+      height: 390
+    spriteID: a4437593fece07041b3a76d7cc30e838
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -420, y: 370}
+  - name: finger copy 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 679
+      y: 1226
+      width: 68
+      height: 142
+    spriteID: eef2a11cec62f654d98c0dcccc0fc213
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 589, y: 901}
+  - name: finger copy 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 868
+      y: 203
+      width: 138
+      height: 76
+    spriteID: a8afbd9a91838f648bbadebb1f7fb037
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 776, y: -240}
+  - name: finger copy 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 403
+      y: 911
+      width: 117
+      height: 113
+    spriteID: 977d1d08558f7f44cb3a4a376b98a0ab
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 356, y: 452}
+  - name: finger copy 2_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1750
+      y: 4
+      width: 140
+      height: 81
+    spriteID: 4ca013b154b68a542b555bc9ff149dd1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1619, y: -488}
+  - name: finger copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 403
+      y: 1570
+      width: 98
+      height: 126
+    spriteID: 951a562eea7ff394f90eec33173720b2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 177, y: 1286}
+  - name: finger copy_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 403
+      y: 1430
+      width: 95
+      height: 132
+    spriteID: 8bc888c4654f38340a09fba657033171
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 173, y: 1051}
+  - name: finger
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 679
+      y: 1526
+      width: 43
+      height: 151
+    spriteID: aba8dbe990100fa4d9ea46adccd94890
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 335, y: 1201}
+  - name: finger_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1014
+      y: 203
+      width: 140
+      height: 70
+    spriteID: 67262929d45819c439a1b5ef54446ac4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 773, y: -243}
+  - name: "k\xE4si1 kyyn\xE4r copy_1"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 555
+      y: 934
+      width: 116
+      height: 511
+    spriteID: da96c0688fbac714eb5972aa85ed5e2e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -785, y: 782}
+  - name: "k\xE4si1 olka copy_1"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1707
+      width: 501
+      height: 191
+    spriteID: ddaa6e326b56dd240838edf46821dfc1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -931, y: 1234}
+  - name: finger copy 3_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1377
+      y: 4
+      width: 87
+      height: 136
+    spriteID: 8897deab64942864583960f3e53b7581
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -100, y: -101}
+  - name: finger copy 4_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 213
+      y: 1906
+      width: 137
+      height: 87
+    spriteID: ad9d548cea8d6384f878bf27814d4510
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1157, y: 1752}
+  - name: finger copy 2_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1566
+      y: 4
+      width: 84
+      height: 137
+    spriteID: 948f3df7b39347e42806580056e5c132
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 89, y: -49}
+  - name: finger copy 2_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1162
+      y: 203
+      width: 148
+      height: 47
+    spriteID: 188c8cfd7c4853d40af267cf914dee21
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -203, y: 58}
+  - name: finger copy_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 679
+      y: 934
+      width: 82
+      height: 138
+    spriteID: eea0d3725e54bb64e9979b18eef12527
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -527, y: 882}
+  - name: finger copy_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1474
+      y: 203
+      width: 146
+      height: 45
+    spriteID: 5c3e6ee5c55c72944afa3b5985c4a2d0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 220, y: 57}
+  - name: finger_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 403
+      y: 1153
+      width: 113
+      height: 113
+    spriteID: 612d11b0d988b474cb1e67b80041d27a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -768, y: 1027}
+  - name: finger_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1750
+      y: 93
+      width: 138
+      height: 80
+    spriteID: b6e17750dbb9efb438a68d85f2b9764b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 497, y: -67}
+  - name: "k\xE4si1 kyyn\xE4r copy 2"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 555
+      y: 469
+      width: 305
+      height: 457
+    spriteID: 74cfb5e4e866bea4cbe9ceb647794aa6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -806, y: -75}
+  - name: "k\xE4si1 olka copy 2"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1309
+      width: 391
+      height: 390
+    spriteID: 3f2fe880022b68f4eb274e5e3f388d0c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1059, y: 698}
+  - name: finger copy 3_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 679
+      y: 1376
+      width: 68
+      height: 142
+    spriteID: 2e3e555b7f622ef4cb048a398b8205c8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1041, y: 981}
+  - name: finger copy 4_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 868
+      y: 287
+      width: 138
+      height: 76
+    spriteID: c36c361b32c87424d8281e7449b2dafb
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -780, y: -226}
+  - name: finger copy 2_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 403
+      y: 1032
+      width: 117
+      height: 113
+    spriteID: c6726912e75c2d1439ce1e70dd4b9b67
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1311, y: 503}
+  - name: finger copy 2_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1898
+      y: 4
+      width: 140
+      height: 81
+    spriteID: 9d5d256fdcf546b4f8ac380c61be9562
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 291, y: -558}
+  - name: finger copy_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 107
+      y: 1906
+      width: 98
+      height: 126
+    spriteID: 75f1877aee6b2df4a82baf01efd3330c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1447, y: 1552}
+  - name: finger copy_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1906
+      width: 95
+      height: 132
+    spriteID: 623649eeb3565b34397d65ff5ad4ee1e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1549, y: 1457}
+  - name: finger_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 679
+      y: 1685
+      width: 43
+      height: 151
+    spriteID: e724498326d503f438de1e9d253f17f4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -812, y: 1290}
+  - name: finger_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1014
+      y: 281
+      width: 140
+      height: 70
+    spriteID: 81ef0bec5c8ab0949a692ca98da3572c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -483, y: -235}
+  - name: "k\xE4si1 kyyn\xE4r copy 3"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 555
+      y: 1453
+      width: 116
+      height: 511
+    spriteID: baf4bf95458e99e4e91d070391a66a60
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 181, y: 1280}
+  - name: "k\xE4si1 olka copy 3"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 868
+      y: 4
+      width: 501
+      height: 191
+    spriteID: 1f4056d803b18ed4f8eead23c8df19df
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 474, y: -490}
+  - name: finger copy 3_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1472
+      y: 4
+      width: 86
+      height: 136
+    spriteID: 52f1daf36c0f80041a91845042b1e035
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1205, y: -122}
+  - name: finger copy 4_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 358
+      y: 1906
+      width: 137
+      height: 87
+    spriteID: daea3ba6b43f1314cbe0e1f290467860
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 35, y: 1731}
+  - name: finger copy 2_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1658
+      y: 4
+      width: 84
+      height: 137
+    spriteID: 5f588696598b9e443baff21f0e47de79
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1389, y: -70}
+  - name: finger copy 2_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1318
+      y: 203
+      width: 148
+      height: 47
+    spriteID: 9f014b130c0903e40a7f4e938b92a7e8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1001, y: 37}
+  - name: finger copy_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 679
+      y: 1080
+      width: 82
+      height: 138
+    spriteID: 90210e2b5d82f5e4c8d1c31616973817
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 137, y: 1007}
+  - name: finger copy_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1628
+      y: 203
+      width: 146
+      height: 45
+    spriteID: 22ebb271dd27175478428c3c419e48c8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1198, y: 36}
+  - name: finger_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 403
+      y: 1309
+      width: 113
+      height: 113
+    spriteID: 9ba19e6ab98e6e542b0ca2046160b7e9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -143, y: 1162}
+  - name: finger_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1896
+      y: 93
+      width: 138
+      height: 80
+    spriteID: 24d36eb8c20330641b8c09ef2c782792
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1457, y: -88}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 2048
+  importedTextureHeight: 2048
+  documentSize: {x: 1831, y: 1215}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 2048
+  textureActualHeight: 2048
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: ghost
+    spriteName: ghost
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fb0a9106d65f08e4492119e9709e5b81
+    layerID: 209
+    mosaicPosition: {x: 4, y: 4}
+  - name: "Yl\xE4K\xE4siL "
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 299
+    mosaicPosition: {x: 0, y: 0}
+  - name: "k\xE4si1 kyyn\xE4r copy"
+    spriteName: "k\xE4si1 kyyn\xE4r copy"
+    isGroup: 0
+    parentIndex: 1
+    spriteID: e545514467c7a834380c3478efeb75c5
+    layerID: 298
+    mosaicPosition: {x: 555, y: 4}
+  - name: "k\xE4si1 olka copy"
+    spriteName: "k\xE4si1 olka copy"
+    isGroup: 0
+    parentIndex: 1
+    spriteID: a4437593fece07041b3a76d7cc30e838
+    layerID: 297
+    mosaicPosition: {x: 4, y: 911}
+  - name: Group 1
+    spriteName: 
+    isGroup: 1
+    parentIndex: 1
+    spriteID: 00000000000000000000000000000000
+    layerID: 296
+    mosaicPosition: {x: 0, y: 0}
+  - name: finger copy 3
+    spriteName: finger copy 3
+    isGroup: 0
+    parentIndex: 4
+    spriteID: eef2a11cec62f654d98c0dcccc0fc213
+    layerID: 295
+    mosaicPosition: {x: 679, y: 1226}
+  - name: finger copy 4
+    spriteName: finger copy 4
+    isGroup: 0
+    parentIndex: 4
+    spriteID: a8afbd9a91838f648bbadebb1f7fb037
+    layerID: 294
+    mosaicPosition: {x: 868, y: 203}
+  - name: finger copy 2
+    spriteName: finger copy 2
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 977d1d08558f7f44cb3a4a376b98a0ab
+    layerID: 293
+    mosaicPosition: {x: 403, y: 911}
+  - name: finger copy 2
+    spriteName: finger copy 2_1
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 4ca013b154b68a542b555bc9ff149dd1
+    layerID: 292
+    mosaicPosition: {x: 1750, y: 4}
+  - name: finger copy
+    spriteName: finger copy
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 951a562eea7ff394f90eec33173720b2
+    layerID: 291
+    mosaicPosition: {x: 403, y: 1570}
+  - name: finger copy
+    spriteName: finger copy_1
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 8bc888c4654f38340a09fba657033171
+    layerID: 290
+    mosaicPosition: {x: 403, y: 1430}
+  - name: finger
+    spriteName: finger
+    isGroup: 0
+    parentIndex: 4
+    spriteID: aba8dbe990100fa4d9ea46adccd94890
+    layerID: 289
+    mosaicPosition: {x: 679, y: 1526}
+  - name: finger
+    spriteName: finger_1
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 67262929d45819c439a1b5ef54446ac4
+    layerID: 288
+    mosaicPosition: {x: 1014, y: 203}
+  - name: "Yl\xE4K\xE4siR "
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 285
+    mosaicPosition: {x: 0, y: 0}
+  - name: "k\xE4si1 kyyn\xE4r copy 2"
+    spriteName: "k\xE4si1 kyyn\xE4r copy 2"
+    isGroup: 0
+    parentIndex: 13
+    spriteID: 74cfb5e4e866bea4cbe9ceb647794aa6
+    layerID: 338
+    mosaicPosition: {x: 555, y: 469}
+  - name: "k\xE4si1 olka copy 2"
+    spriteName: "k\xE4si1 olka copy 2"
+    isGroup: 0
+    parentIndex: 13
+    spriteID: 3f2fe880022b68f4eb274e5e3f388d0c
+    layerID: 337
+    mosaicPosition: {x: 4, y: 1309}
+  - name: Group 1 copy 2
+    spriteName: 
+    isGroup: 1
+    parentIndex: 13
+    spriteID: 00000000000000000000000000000000
+    layerID: 336
+    mosaicPosition: {x: 0, y: 0}
+  - name: finger copy 3
+    spriteName: finger copy 3_2
+    isGroup: 0
+    parentIndex: 16
+    spriteID: 2e3e555b7f622ef4cb048a398b8205c8
+    layerID: 335
+    mosaicPosition: {x: 679, y: 1376}
+  - name: finger copy 4
+    spriteName: finger copy 4_2
+    isGroup: 0
+    parentIndex: 16
+    spriteID: c36c361b32c87424d8281e7449b2dafb
+    layerID: 334
+    mosaicPosition: {x: 868, y: 287}
+  - name: finger copy 2
+    spriteName: finger copy 2_4
+    isGroup: 0
+    parentIndex: 16
+    spriteID: c6726912e75c2d1439ce1e70dd4b9b67
+    layerID: 333
+    mosaicPosition: {x: 403, y: 1032}
+  - name: finger copy 2
+    spriteName: finger copy 2_5
+    isGroup: 0
+    parentIndex: 16
+    spriteID: 9d5d256fdcf546b4f8ac380c61be9562
+    layerID: 332
+    mosaicPosition: {x: 1898, y: 4}
+  - name: finger copy
+    spriteName: finger copy_4
+    isGroup: 0
+    parentIndex: 16
+    spriteID: 75f1877aee6b2df4a82baf01efd3330c
+    layerID: 331
+    mosaicPosition: {x: 107, y: 1906}
+  - name: finger copy
+    spriteName: finger copy_5
+    isGroup: 0
+    parentIndex: 16
+    spriteID: 623649eeb3565b34397d65ff5ad4ee1e
+    layerID: 330
+    mosaicPosition: {x: 4, y: 1906}
+  - name: finger
+    spriteName: finger_4
+    isGroup: 0
+    parentIndex: 16
+    spriteID: e724498326d503f438de1e9d253f17f4
+    layerID: 329
+    mosaicPosition: {x: 679, y: 1685}
+  - name: finger
+    spriteName: finger_5
+    isGroup: 0
+    parentIndex: 16
+    spriteID: 81ef0bec5c8ab0949a692ca98da3572c
+    layerID: 328
+    mosaicPosition: {x: 1014, y: 281}
+  - name: "AlaK\xE4siR"
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 218
+    mosaicPosition: {x: 0, y: 0}
+  - name: "k\xE4si1 kyyn\xE4r copy"
+    spriteName: "k\xE4si1 kyyn\xE4r copy_1"
+    isGroup: 0
+    parentIndex: 25
+    spriteID: da96c0688fbac714eb5972aa85ed5e2e
+    layerID: 204
+    mosaicPosition: {x: 555, y: 934}
+  - name: "k\xE4si1 olka copy"
+    spriteName: "k\xE4si1 olka copy_1"
+    isGroup: 0
+    parentIndex: 25
+    spriteID: ddaa6e326b56dd240838edf46821dfc1
+    layerID: 203
+    mosaicPosition: {x: 4, y: 1707}
+  - name: Group 1
+    spriteName: 
+    isGroup: 1
+    parentIndex: 25
+    spriteID: 00000000000000000000000000000000
+    layerID: 260
+    mosaicPosition: {x: 0, y: 0}
+  - name: finger copy 3
+    spriteName: finger copy 3_1
+    isGroup: 0
+    parentIndex: 28
+    spriteID: 8897deab64942864583960f3e53b7581
+    layerID: 259
+    mosaicPosition: {x: 1377, y: 4}
+  - name: finger copy 4
+    spriteName: finger copy 4_1
+    isGroup: 0
+    parentIndex: 28
+    spriteID: ad9d548cea8d6384f878bf27814d4510
+    layerID: 258
+    mosaicPosition: {x: 213, y: 1906}
+  - name: finger copy 2
+    spriteName: finger copy 2_2
+    isGroup: 0
+    parentIndex: 28
+    spriteID: 948f3df7b39347e42806580056e5c132
+    layerID: 229
+    mosaicPosition: {x: 1566, y: 4}
+  - name: finger copy 2
+    spriteName: finger copy 2_3
+    isGroup: 0
+    parentIndex: 28
+    spriteID: 188c8cfd7c4853d40af267cf914dee21
+    layerID: 228
+    mosaicPosition: {x: 1162, y: 203}
+  - name: finger copy
+    spriteName: finger copy_2
+    isGroup: 0
+    parentIndex: 28
+    spriteID: eea0d3725e54bb64e9979b18eef12527
+    layerID: 227
+    mosaicPosition: {x: 679, y: 934}
+  - name: finger copy
+    spriteName: finger copy_3
+    isGroup: 0
+    parentIndex: 28
+    spriteID: 5c3e6ee5c55c72944afa3b5985c4a2d0
+    layerID: 226
+    mosaicPosition: {x: 1474, y: 203}
+  - name: finger
+    spriteName: finger_2
+    isGroup: 0
+    parentIndex: 28
+    spriteID: 612d11b0d988b474cb1e67b80041d27a
+    layerID: 217
+    mosaicPosition: {x: 403, y: 1153}
+  - name: finger
+    spriteName: finger_3
+    isGroup: 0
+    parentIndex: 28
+    spriteID: b6e17750dbb9efb438a68d85f2b9764b
+    layerID: 214
+    mosaicPosition: {x: 1750, y: 93}
+  - name: "AlaK\xE4siL"
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 257
+    mosaicPosition: {x: 0, y: 0}
+  - name: "k\xE4si1 kyyn\xE4r copy 3"
+    spriteName: "k\xE4si1 kyyn\xE4r copy 3"
+    isGroup: 0
+    parentIndex: 37
+    spriteID: baf4bf95458e99e4e91d070391a66a60
+    layerID: 372
+    mosaicPosition: {x: 555, y: 1453}
+  - name: "k\xE4si1 olka copy 3"
+    spriteName: "k\xE4si1 olka copy 3"
+    isGroup: 0
+    parentIndex: 37
+    spriteID: 1f4056d803b18ed4f8eead23c8df19df
+    layerID: 371
+    mosaicPosition: {x: 868, y: 4}
+  - name: Group 1 copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 37
+    spriteID: 00000000000000000000000000000000
+    layerID: 370
+    mosaicPosition: {x: 0, y: 0}
+  - name: finger copy 3
+    spriteName: finger copy 3_3
+    isGroup: 0
+    parentIndex: 40
+    spriteID: 52f1daf36c0f80041a91845042b1e035
+    layerID: 369
+    mosaicPosition: {x: 1472, y: 4}
+  - name: finger copy 4
+    spriteName: finger copy 4_3
+    isGroup: 0
+    parentIndex: 40
+    spriteID: daea3ba6b43f1314cbe0e1f290467860
+    layerID: 368
+    mosaicPosition: {x: 358, y: 1906}
+  - name: finger copy 2
+    spriteName: finger copy 2_6
+    isGroup: 0
+    parentIndex: 40
+    spriteID: 5f588696598b9e443baff21f0e47de79
+    layerID: 367
+    mosaicPosition: {x: 1658, y: 4}
+  - name: finger copy 2
+    spriteName: finger copy 2_7
+    isGroup: 0
+    parentIndex: 40
+    spriteID: 9f014b130c0903e40a7f4e938b92a7e8
+    layerID: 366
+    mosaicPosition: {x: 1318, y: 203}
+  - name: finger copy
+    spriteName: finger copy_6
+    isGroup: 0
+    parentIndex: 40
+    spriteID: 90210e2b5d82f5e4c8d1c31616973817
+    layerID: 365
+    mosaicPosition: {x: 679, y: 1080}
+  - name: finger copy
+    spriteName: finger copy_7
+    isGroup: 0
+    parentIndex: 40
+    spriteID: 22ebb271dd27175478428c3c419e48c8
+    layerID: 364
+    mosaicPosition: {x: 1628, y: 203}
+  - name: finger
+    spriteName: finger_6
+    isGroup: 0
+    parentIndex: 40
+    spriteID: 9ba19e6ab98e6e542b0ca2046160b7e9
+    layerID: 363
+    mosaicPosition: {x: 403, y: 1309}
+  - name: finger
+    spriteName: finger_7
+    isGroup: 0
+    parentIndex: 40
+    spriteID: 24d36eb8c20330641b8c09ef2c782792
+    layerID: 362
+    mosaicPosition: {x: 1896, y: 93}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: shadow_maere Texture
+  prefabAssetName: shadow_maere Prefab
+  spriteLibAssetName: shadow_maere Sprite Lib
+  secondarySpriteTextures: []
