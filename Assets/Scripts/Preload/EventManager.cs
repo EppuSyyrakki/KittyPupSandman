@@ -89,21 +89,16 @@ public class EventManager : MonoBehaviour
 
     public static void RaiseOnGroundEnemyAttack()
     {
-        Debug.Log("Enemy attaaaacks!");
+        //Debug.Log("Enemy attaaaacks!");
         if (onGroundEnemyAttackEvent != null)
             onGroundEnemyAttackEvent();
     }
 
     public static void RaiseOnAirEnemyAttack()
     {
-        Debug.Log("Air enemy attaaaaacks!");
+        //Debug.Log("Air enemy attaaaaacks!");
         if (onAirEnemyAttackEvent != null)
             onAirEnemyAttackEvent();
     }
 
-    internal static void RaiseOnPlayMusic()
-    {
-        if (onPlayMusicEvent != null)
-            onPlayMusicEvent();
-    }
 }

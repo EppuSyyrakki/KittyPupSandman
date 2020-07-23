@@ -74,9 +74,5 @@ public class EventHandler : MonoBehaviour
             EventManager.RaiseOnAirEnemyAttack();
         }
 
-        if (!Pause._isPaused)
-        {
-            EventManager.RaiseOnPlayMusic();
-        }
     }
 }

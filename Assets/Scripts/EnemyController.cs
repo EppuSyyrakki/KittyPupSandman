@@ -93,20 +93,21 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (name == "Shadow_ground Variant" && collision.collider.tag == "Player")
+        if (name.Contains("Shadow_ground Variant") && collision.collider.tag == "Player")
             _isAttackSoundGround = true;
 
-        if (name == "Shadow_fly Variant" && collision.collider.tag == "Player")
+        else if (name.Contains("Shadow_fly Variant") && collision.collider.tag == "Player")
             _isAttackSoundAir = true;
+
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (name == "Shadow_ground Variant" && collision.collider.tag == "Player")
+        if (name.Contains("Shadow_ground Variant") && collision.collider.tag == "Player")
             _isAttackSoundGround = false;
 
-        if (name == "Shadow_fly Variant" && collision.collider.tag == "Player")
+        else if (name.Contains("Shadow_fly Variant") && collision.collider.tag == "Player")
             _isAttackSoundAir = false;
-
     }
 }

@@ -8,19 +8,9 @@ public class MusicBox : MonoBehaviour
 
     private static FMOD.Studio.EventInstance backgroundMusic;
 
-    private void OnEnable()
-    {
-        EventManager.onPlayMusicEvent += PlayMusic;
-    }
-
-    private void OnDisable()
-    {
-        EventManager.onPlayMusicEvent -= PlayMusic;
-    }
 
     private void OnDestroy()
     {
-        EventManager.onPlayMusicEvent -= PlayMusic;
         backgroundMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
@@ -33,13 +23,5 @@ public class MusicBox : MonoBehaviour
         backgroundMusic.release();
 
     }
-
-    private void PlayMusic()
-    {
-        Debug.Log("Play music please");
-        //backgroundMusic.start();
-    }
-
     
-
 }

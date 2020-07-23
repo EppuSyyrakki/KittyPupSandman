@@ -2937,12 +2937,12 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: PlayFootstepsPlayer
-    data: event:/matti/footsteps/SingleStep1
+    data: event:/matti/footsteps/SingleStep2
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.68333334
+  - time: 0.55
     functionName: PlayFootstepsPlayer
     data: event:/matti/footsteps/SingleStep2
     objectReferenceParameter: {fileID: 0}
