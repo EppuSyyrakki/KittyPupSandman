@@ -61,7 +61,7 @@ public class PlayerInputController : MonoBehaviour
             LookingDown = true;
         }
         else if (Input.GetAxis("Vertical") <= 0)
-            state.SetBool("InputFloat", false);
+            state.SetBool("InputFloat", false);          
 
         if (Input.GetAxis("Vertical") < 0)
             LookingDown = true;
