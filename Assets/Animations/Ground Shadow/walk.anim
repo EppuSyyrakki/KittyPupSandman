@@ -3806,7 +3806,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.05
-    functionName: PlayEnemySound
+    functionName: PlayMoveEnemy
     data: event:/monster/ballMonsterRandom3D
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -3820,8 +3820,8 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.55
-    functionName: PlayEnemySound
-    data: event:/monster/ballMonsterAggressiveRandom3D
+    functionName: PlayMoveEnemy
+    data: event:/monster/ballMonsterRandom3D
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -3834,8 +3834,8 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 1.05
-    functionName: PlayEnemySound
-    data: event:/monster/ballMonsterRandom3D
+    functionName: PlayMoveEnemy
+    data: event:/monster/ballMonsterAggressiveRandom3D
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -3848,7 +3848,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 1.55
-    functionName: PlayEnemySound
+    functionName: PlayMoveEnemy
     data: event:/monster/ballMonsterAggressiveRandom3D
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

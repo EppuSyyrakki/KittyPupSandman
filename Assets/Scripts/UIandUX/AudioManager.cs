@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     FMOD.Studio.EventInstance testSoundEvent;
+    FMOD.Studio.PLAYBACK_STATE playbackState;
 
     FMOD.Studio.Bus Music;
     FMOD.Studio.Bus SFX;
@@ -20,8 +21,7 @@ public class AudioManager : MonoBehaviour
         SFX = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
         Master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
 
-        testSoundEvent = FMODUnity.RuntimeManager.CreateInstance("event:/music/Soundscape1_level1");
-
+        testSoundEvent = FMODUnity.RuntimeManager.CreateInstance("event:/monster/ballMonsterAggressiveRandom3D");
     }
 
     // Update is called once per frame
@@ -35,12 +35,20 @@ public class AudioManager : MonoBehaviour
     public void MasterVolumeLevel(float newMasterVol)
     {
         _masterVol = newMasterVol;
+        TestSound();
+    }
 
-        FMOD.Studio.PLAYBACK_STATE playbackState;
-
+    private void TestSound()
+    {
         testSoundEvent.getPlaybackState(out playbackState);
+
         if (playbackState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        {
             testSoundEvent.start();
+            testSoundEvent.release();
+        }
+        else
+            Debug.Log("it's playing already");
     }
 
     public void MusicVolumeLevel(float newMusicVol)

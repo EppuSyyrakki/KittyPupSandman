@@ -3413,16 +3413,16 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0
-    functionName: PlayFootstepsRun
+  - time: 0.016666668
+    functionName: PlayFootstepsPlayer
     data: event:/matti/footsteps/SingleStep1
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.5833333
-    functionName: PlayFootstepsRun
-    data: event:/matti/footsteps/SingleStep1
+  - time: 0.68333334
+    functionName: PlayFootstepsPlayer
+    data: event:/matti/footsteps/SingleStep2
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
