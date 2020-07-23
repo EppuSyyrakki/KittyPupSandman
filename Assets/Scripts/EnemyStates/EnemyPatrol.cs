@@ -19,9 +19,11 @@ public class EnemyPatrol : EnemyBehaviour
         base.OnStateUpdate(state, stateInfo, layerIndex);
         float step = controller.speed * Time.deltaTime;
 
-        if (waypointIndex % 2 == 0)
-            step *= 1.75f;
-
+        if (controller.variableSpeed)
+        {
+            if (waypointIndex % 2 == 0)
+                step *= 1.75f;
+        }     
         owner.transform.position = Vector2.MoveTowards(owner.transform.position, waypoints[waypointIndex].position, step);
 
         if (RoughlySame(owner.transform.position.x, waypoints[waypointIndex].position.x))

@@ -61,7 +61,7 @@ MonoBehaviour:
   - {x: 0.50948274, y: -0.19030197, z: 0}
   m_ShapePathHash: -856728447
   m_Mesh: {fileID: 0}
-  m_InstanceId: 52010
+  m_InstanceId: 358698
 --- !u!114 &1339281861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   - {x: 0.502733, y: 0.15857029, z: 0}
   m_ShapePathHash: 1687189415
   m_Mesh: {fileID: 0}
-  m_InstanceId: 51954
+  m_InstanceId: 358632
 --- !u!1 &1935918871654438096
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,7 +716,7 @@ MonoBehaviour:
   - {x: 0.5059086, y: 0.16611795, z: 0}
   m_ShapePathHash: -1682303784
   m_Mesh: {fileID: 0}
-  m_InstanceId: 51964
+  m_InstanceId: 358642
 --- !u!1 &3676093658803603933
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,7 +894,7 @@ GameObject:
   - component: {fileID: 3945336933981308168}
   - component: {fileID: 1126162191116867221}
   m_Layer: 0
-  m_Name: Hat
+  m_Name: Hat OLD
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

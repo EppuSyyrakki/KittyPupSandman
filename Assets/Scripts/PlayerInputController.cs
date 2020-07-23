@@ -52,14 +52,11 @@ public class PlayerInputController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
             state.SetBool("InputJump", true);
-        if (Input.GetButtonUp("Jump"))
+        else if (Input.GetButtonUp("Jump"))
             state.SetBool("InputJump", false);
 
         if (Input.GetAxis("Vertical") > 0)
-        {
             state.SetBool("InputFloat", true);
-            LookingDown = true;
-        }
         else if (Input.GetAxis("Vertical") <= 0)
             state.SetBool("InputFloat", false);          
 

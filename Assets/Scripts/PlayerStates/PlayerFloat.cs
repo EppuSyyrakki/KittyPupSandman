@@ -15,6 +15,7 @@ public class PlayerFloat : PlayerBehaviour
             player.umbrellaPosition.position,
             owner.transform.rotation,
             owner.transform);
+        player.LookingDown = true;
     }
 
     public override void OnStateUpdate(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
@@ -30,5 +31,6 @@ public class PlayerFloat : PlayerBehaviour
         base.OnStateExit(state, stateInfo, layerIndex);
         rigidBody.drag = _originalDrag;
         Destroy(umbrellaClone);
+        player.LookingDown = false;
     }
 }

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85012097757809468}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.22, y: 0, z: 0}
+  m_LocalPosition: {x: -0.22, y: -0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4891087531147615404}
@@ -56,8 +56,8 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 0.258
   m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 132
-  m_PointLightOuterAngle: 159
+  m_PointLightInnerAngle: 125
+  m_PointLightOuterAngle: 180
   m_PointLightInnerRadius: 5
   m_PointLightOuterRadius: 15
   m_PointLightDistance: 3
@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 4891087531147615404}
   - component: {fileID: 4211319801542173836}
   - component: {fileID: 4448275937952322006}
+  - component: {fileID: 449448608117956062}
   m_Layer: 0
   m_Name: lamp
   m_TagString: Ground
@@ -181,3 +182,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.834852, y: 0.77286243}
   m_EdgeRadius: 0
+--- !u!114 &449448608117956062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126795734050987664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 0000000045b71d8b3b450ff4534dde1041772ca06d804b141d3d515bf5d111714b03da82
+  m_ShapePath:
+  - {x: -3.6762447, y: 1.0970368, z: 0}
+  - {x: 3.1533961, y: 1.0822543, z: 0}
+  - {x: 3.1593814, y: 1.8414046, z: 0}
+  - {x: -3.7191153, y: 1.8449649, z: 0}
+  m_ShapePathHash: 173460061
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 52844

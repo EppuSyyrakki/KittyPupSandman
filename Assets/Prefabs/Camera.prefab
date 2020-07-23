@@ -133,7 +133,7 @@ MonoBehaviour:
   verticalOffset: 3
   horizontalOffset: 4
   depthOffset: -11
-  followSpeed: 4
+  followSpeed: 8
 --- !u!114 &6566983910669237784
 MonoBehaviour:
   m_ObjectHideFlags: 0

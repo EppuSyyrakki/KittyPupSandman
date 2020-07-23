@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     public Transform[] waypoints;
     public float speed = 10f;
+    public bool variableSpeed;
     public float fadeOutTime = 1.5f;
     [HideInInspector] public Animator state;
     [HideInInspector] public float lastPositionX;
