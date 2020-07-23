@@ -13,6 +13,8 @@ TagManager:
   - OptionsMenu
   - ControlsMenu
   - MainMenu
+  - Enemy:fly
+  - Enemy:ground
   layers:
   - Default
   - TransparentFX

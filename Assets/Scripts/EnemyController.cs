@@ -15,16 +15,19 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer[] sr;
     private bool dead = false;
 
+    public static bool _isKillSound { get; set; }
+    public static bool _isAttackSoundGround { get; private set; }
+    public static bool _isAttackSoundAir { get; private set; }
+
     // These are set in LightWeapon.cs if this is hit by the Light trigger
     [HideInInspector] public bool escaping;
     [HideInInspector] public Vector2 escapeDirection;
-
-    FMOD.Studio.EventInstance boo;
 
     void Start()
     {
         state = GetComponent<Animator>();
         sr = GetComponentsInChildren<SpriteRenderer>();
+        _isKillSound = false;
     }
 
     // Update is called once per frame
@@ -36,6 +39,7 @@ public class EnemyController : MonoBehaviour
         if (dead)
         {
             Destroy(gameObject);
+            _isKillSound = true;
         }
 
         lastPositionX = transform.position.x;
@@ -66,7 +70,6 @@ public class EnemyController : MonoBehaviour
             if (ft <= 0.1)
             {
                 dead = true;
-                StopEnemySound();
             }              
 
             if (!escaping)
@@ -89,17 +92,23 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void PlayEnemySound(string path)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        boo = FMODUnity.RuntimeManager.CreateInstance(path);
-        //Debug.Log("the enemy: " + name );
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(boo, transform, GetComponent<Rigidbody2D>());
-        boo.start();
-        boo.release();
+        if (name.Contains("Shadow_ground Variant") && collision.collider.tag == "Player")
+            _isAttackSoundGround = true;
+
+        else if (name.Contains("Shadow_fly Variant") && collision.collider.tag == "Player")
+            _isAttackSoundAir = true;
+
+
     }
 
-    public void StopEnemySound()
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        boo.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        if (name.Contains("Shadow_ground Variant") && collision.collider.tag == "Player")
+            _isAttackSoundGround = false;
+
+        else if (name.Contains("Shadow_fly Variant") && collision.collider.tag == "Player")
+            _isAttackSoundAir = false;
     }
 }

@@ -59,6 +59,20 @@ public class EventHandler : MonoBehaviour
                 EventManager.RaiseOnResume();
         }
 
+        if (EnemyController._isKillSound)
+        {
+            EventManager.RaiseOnEnemyDeath();
+        }
+
+        if (EnemyController._isAttackSoundGround)
+        {
+            EventManager.RaiseOnGroundEnemyAttack();
+        }
+
+        if (EnemyController._isAttackSoundAir)
+        {
+            EventManager.RaiseOnAirEnemyAttack();
+        }
 
     }
 }

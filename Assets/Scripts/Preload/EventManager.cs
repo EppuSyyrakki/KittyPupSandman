@@ -26,6 +26,18 @@ public class EventManager : MonoBehaviour
     public delegate void OnResumeGame();
     public static event OnResumeGame onResumeEvent;
 
+    public delegate void OnDeadEnemy();
+    public static event OnDeadEnemy onKillEnemySoundEvent;
+
+    public delegate void OnAttackingGroundEnemy();
+    public static event OnAttackingGroundEnemy onGroundEnemyAttackEvent;
+
+    public delegate void OnAttackingAirEnemy();
+    public static event OnAttackingAirEnemy onAirEnemyAttackEvent;
+
+    public delegate void OnPlayMusic();
+    public static event OnPlayMusic onPlayMusicEvent;
+
     public static void RaiseOnSaveGame()
     {
         if (onSaveGameEvent != null)
@@ -67,4 +79,26 @@ public class EventManager : MonoBehaviour
         if (onResumeEvent != null)
             onResumeEvent();
     }
+
+    public static void RaiseOnEnemyDeath()
+    {
+        //Debug.Log("Enemy dies");
+        if (onKillEnemySoundEvent != null)
+            onKillEnemySoundEvent();
+    }
+
+    public static void RaiseOnGroundEnemyAttack()
+    {
+        //Debug.Log("Enemy attaaaacks!");
+        if (onGroundEnemyAttackEvent != null)
+            onGroundEnemyAttackEvent();
+    }
+
+    public static void RaiseOnAirEnemyAttack()
+    {
+        //Debug.Log("Air enemy attaaaaacks!");
+        if (onAirEnemyAttackEvent != null)
+            onAirEnemyAttackEvent();
+    }
+
 }

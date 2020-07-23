@@ -80,18 +80,4 @@ public class PlayerInputController : MonoBehaviour
             state.SetBool("Grounded", false);
     }
 
-    public void PlayFootstepsRun(string path)
-    {
-        FMOD.Studio.EventInstance Footsteps = FMODUnity.RuntimeManager.CreateInstance(path);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(Footsteps, transform, GetComponent<Rigidbody2D>());
-        Footsteps.start();
-        Footsteps.release();
-    }
-
-    public void PlayJump(string path)
-    {
-        FMOD.Studio.EventInstance Jump = FMODUnity.RuntimeManager.CreateInstance(path);
-        Jump.start();
-        Jump.release();
-    }
 }
