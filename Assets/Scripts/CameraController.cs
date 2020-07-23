@@ -8,55 +8,57 @@ public class CameraController : MonoBehaviour
     public float verticalOffset;
     public float horizontalOffset;
     public float depthOffset;
-    public float followSpeed;
+    public float cameraSpeed;
 
     private Vector3 target;
+    private float lerpT = 1;
     private PlayerInputController pc;
-    private Vector3 velocity = Vector3.zero;
-    private Rigidbody2D mattiRB;
 
     // Start is called before the first frame update
     void Start()
     {
         pc = matti.GetComponent<PlayerInputController>();
-        mattiRB = matti.GetComponent<Rigidbody2D>();
-        GetXPosition();
-        GetYPosition();
+        GetVerticalPosition();
+        GetHorizontalPosition();
         transform.position = target;
-        followSpeed /= 100f;
     }
 
     // Update is called once per frame
     void Update()
     {
         target = new Vector3(matti.transform.position.x, matti.transform.position.y, depthOffset);       
-        GetXPosition();
-        GetYPosition();
-        velocity = mattiRB.velocity;
-        transform.position = Vector3.SmoothDamp(transform.position, target, ref velocity, followSpeed);
+        GetVerticalPosition();
+        GetHorizontalPosition();
+        LerpToPosition();
+        lerpT += Time.deltaTime;
     }
 
-    private void GetXPosition()
+    private void GetVerticalPosition()
     {
         if (matti.transform.localScale.x > 0)   // TODO smooth out camera movement on direction change
         {
-            target.x += horizontalOffset;
+            target.x += verticalOffset;
         }
         else
         {
-            target.x -= horizontalOffset;
+            target.x -= verticalOffset;
         }
     }
 
-    private void GetYPosition()
+    private void GetHorizontalPosition()
     {
         if (pc.LookingDown) // TODO smooth out camera movement on pressing down
         {
-            target.y -= verticalOffset - 0.7f;
+            target.y -= horizontalOffset;
         }
         else
         {
-            target.y += verticalOffset;
+            target.y += horizontalOffset;
         }
+    }
+
+    private void LerpToPosition()
+    {
+        transform.position = Vector3.Lerp(transform.position, target, Time.time / lerpT);
     }
 }
