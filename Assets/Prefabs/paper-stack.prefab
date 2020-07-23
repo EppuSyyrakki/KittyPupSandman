@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5089395506391842245}
   - component: {fileID: 5374557385866471704}
-  - component: {fileID: 8481680753684729144}
   - component: {fileID: 8390000170243528704}
+  - component: {fileID: 7571031914448749527}
   m_Layer: 0
   m_Name: paper-stack
   m_TagString: Ground
@@ -83,32 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8481680753684729144
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162012632368930625}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.04408121, y: -0.7268269}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.8125, y: 3.90625}
-    newSize: {x: 7.8125, y: 3.90625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.739283, y: 0.690784}
-  m_EdgeRadius: 0
 --- !u!114 &8390000170243528704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,4 +110,41 @@ MonoBehaviour:
   - {x: -1.901053, y: -0.5931568, z: 0}
   m_ShapePathHash: -612684058
   m_Mesh: {fileID: 0}
-  m_InstanceId: -602072
+  m_InstanceId: 46460
+--- !u!60 &7571031914448749527
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162012632368930625}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.8125, y: 3.90625}
+    newSize: {x: 7.8125, y: 3.90625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.9296875, y: -0.8359375}
+      - {x: 1.9208331, y: -0.62369823}
+      - {x: 0.30052015, y: -0.19635436}
+      - {x: -1.9790676, y: -0.18187529}
+      - {x: -1.9721937, y: -0.6609428}
+      - {x: -1.90625, y: -0.6796875}
+      - {x: -1.7265625, y: -0.71875}
+      - {x: -0.8203125, y: -0.953125}
+      - {x: -0.5234375, y: -1.03125}
+      - {x: -0.34375, y: -1.078125}
+      - {x: 1.9453125, y: -1.0625}
+      - {x: 1.9375, y: -1.0390625}

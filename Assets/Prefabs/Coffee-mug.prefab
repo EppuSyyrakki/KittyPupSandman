@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3902919766439178962}
   - component: {fileID: 757918113428676515}
-  - component: {fileID: 6248368167180431896}
   - component: {fileID: -2403292637206335032}
+  - component: {fileID: 626826701702524712}
   m_Layer: 0
   m_Name: Coffee-mug
   m_TagString: Ground
@@ -83,32 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6248368167180431896
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290361898013619620}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: a49224c0294de5b4ebddcd4af9f355cf, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.47527242, y: -0.043206215}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.8125, y: 3.90625}
-    newSize: {x: 7.8125, y: 3.90625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.2325873, y: 2.4372234}
-  m_EdgeRadius: 0
 --- !u!114 &-2403292637206335032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,4 +119,81 @@ MonoBehaviour:
   - {x: -2.060196, y: 1.1414983, z: 0}
   m_ShapePathHash: 48809920
   m_Mesh: {fileID: 0}
-  m_InstanceId: 159918
+  m_InstanceId: 47730
+--- !u!60 &626826701702524712
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290361898013619620}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.8125, y: 3.90625}
+    newSize: {x: 7.8125, y: 3.90625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.9765625, y: -1.1953125}
+      - {x: 1.1328125, y: -1.15625}
+      - {x: 1.1953125, y: -1.109375}
+      - {x: 1.203125, y: -1}
+      - {x: 1.4765625, y: -0.9921875}
+      - {x: 1.65625, y: -0.9453125}
+      - {x: 1.78125, y: -0.90625}
+      - {x: 1.9765625, y: -0.7890625}
+      - {x: 2.0390625, y: -0.7421875}
+      - {x: 2.171875, y: -0.6015625}
+      - {x: 2.21875, y: -0.546875}
+      - {x: 2.3203125, y: -0.3671875}
+      - {x: 2.34375, y: -0.2890625}
+      - {x: 2.3359375, y: 0.15625}
+      - {x: 2.2734375, y: 0.3046875}
+      - {x: 2.21875, y: 0.390625}
+      - {x: 1.8203125, y: 0.7109375}
+      - {x: 1.6875, y: 0.765625}
+      - {x: 1.546875, y: 0.8046875}
+      - {x: 1.453125, y: 0.8203125}
+      - {x: 1.359375, y: 0.828125}
+      - {x: 1.1953125, y: 0.828125}
+      - {x: 1.1953125, y: 1.078125}
+      - {x: 1.1640625, y: 1.1171875}
+      - {x: 1.0703125, y: 1.1640625}
+      - {x: 0.859375, y: 1.2109375}
+      - {x: 0.5625, y: 1.2421875}
+      - {x: 0.2734375, y: 1.265625}
+      - {x: -0.0625, y: 1.28125}
+      - {x: -0.8203125, y: 1.28125}
+      - {x: -1.0078125, y: 1.2734375}
+      - {x: -1.15625, y: 1.265625}
+      - {x: -1.3671875, y: 1.25}
+      - {x: -1.5859375, y: 1.2265625}
+      - {x: -1.796875, y: 1.1953125}
+      - {x: -1.953125, y: 1.15625}
+      - {x: -2.046875, y: 1.1171875}
+      - {x: -2.078125, y: 1.078125}
+      - {x: -2.078125, y: -1.09375}
+      - {x: -2.046875, y: -1.1328125}
+      - {x: -1.8984375, y: -1.1953125}
+      - {x: -1.6328125, y: -1.234375}
+      - {x: -1.3515625, y: -1.265625}
+      - {x: -1.1328125, y: -1.28125}
+      - {x: -0.765625, y: -1.296875}
+      - {x: -0.1171875, y: -1.296875}
+      - {x: 0.0859375, y: -1.2890625}
+      - {x: 0.46875, y: -1.265625}
+      - {x: 0.8046875, y: -1.2265625}
+    - - {x: 1.5546875, y: -0.6328125}
+      - {x: 1.4214455, y: -0.7514845}
+      - {x: 1.203125, y: -0.6953125}
