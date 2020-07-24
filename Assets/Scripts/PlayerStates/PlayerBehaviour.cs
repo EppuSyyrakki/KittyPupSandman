@@ -7,13 +7,15 @@ public class PlayerBehaviour : StateMachineBehaviour
     [HideInInspector] public GameObject owner;
     [HideInInspector] public Rigidbody2D rigidBody;
     [HideInInspector] public PlayerInputController player;
+    private float _realMaxSpeed;
 
     public override void OnStateEnter(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(state, stateInfo, layerIndex);
         owner = state.gameObject;
         rigidBody = owner.GetComponent<Rigidbody2D>();
-        player = owner.GetComponent<PlayerInputController>();       
+        player = owner.GetComponent<PlayerInputController>();
+        _realMaxSpeed = player._maxSpeed / 3;
     }
 
     public override void OnStateUpdate(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
@@ -42,9 +44,9 @@ public class PlayerBehaviour : StateMachineBehaviour
     {
         rigidBody.AddRelativeForce(new Vector2(horizontal * speed * Time.deltaTime, 0));
 
-        if (Mathf.Abs(rigidBody.velocity.x) > player.maxSpeed)
+        if (Mathf.Abs(rigidBody.velocity.x) > _realMaxSpeed)
         {
-            rigidBody.velocity = new Vector2(player.maxSpeed * horizontal, rigidBody.velocity.y);
+            rigidBody.velocity = new Vector2(_realMaxSpeed * horizontal, rigidBody.velocity.y);
         }
     }
 }

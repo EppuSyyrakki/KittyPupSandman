@@ -58,38 +58,45 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator FadeOut()
     {
-        for (float ft = 1f; ft >= 0; ft -= 0.1f)
+        for (float alpha = 1f; alpha >= 0; alpha -= 0.05f)
         {
             foreach (SpriteRenderer r in sr)
             {
                 Color c = r.color;
-                c.a = ft;
+                c.a = alpha;
                 r.color = c;
             }
             
-            if (ft <= 0.1)
+            if (alpha <= 0.1)
             {
                 dead = true;
             }              
 
             if (!escaping)
             {
-                CancelFade();
+                CancelFade(alpha);
                 break;
             } 
             else
-                yield return new WaitForSeconds(fadeOutTime / 10);
+                yield return new WaitForSeconds(fadeOutTime * 0.05f);
         }
     }
 
-    public void CancelFade()
+    private void CancelFade(float alpha) => StartCoroutine("FadeIn", alpha);
+
+    IEnumerator FadeIn(float alphaStart)
     {
-        foreach (SpriteRenderer r in sr)
+        for (float alpha = alphaStart; alpha <= 1; alpha += 0.05f)
         {
-            Color c = r.color;
-            c.a = 1f;
-            r.color = c;
+            foreach (SpriteRenderer r in sr)
+            {
+                Color c = r.color;
+                c.a = alpha;
+                r.color = c;
+            }
+            yield return new WaitForSeconds(fadeOutTime * 0.05f);
         }
+            
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -99,8 +106,6 @@ public class EnemyController : MonoBehaviour
 
         else if (name.Contains("Shadow_fly Variant") && collision.collider.tag == "Player")
             _isAttackSoundAir = true;
-
-
     }
 
     private void OnCollisionExit2D(Collision2D collision)

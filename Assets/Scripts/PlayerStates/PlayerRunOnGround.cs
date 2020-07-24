@@ -14,9 +14,9 @@ public class PlayerRunOnGround : PlayerBehaviour
         base.OnStateUpdate(state, stateInfo, layerIndex);
         
         if (player.LightDeployed) 
-            player.currentSpeed = player.lightDeployedSpeed;
+            player.currentSpeed = player._speedWithLamp;
         else 
-            player.currentSpeed = player.fastSpeed;
+            player.currentSpeed = player._fastSpeed;
         
         MoveRigidbody(state.GetFloat("InputX"), player.currentSpeed);
         InputBasedFlip(state.GetFloat("InputX"));
