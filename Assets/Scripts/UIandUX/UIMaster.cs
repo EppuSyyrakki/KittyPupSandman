@@ -50,11 +50,6 @@ public class UIMaster : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
             QuitGame();
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            
-        }
     }
 
     public void ChangeMenu(int menuIndex)
