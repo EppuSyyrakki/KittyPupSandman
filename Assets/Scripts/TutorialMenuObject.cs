@@ -10,32 +10,14 @@ public class TutorialMenuObject : MonoBehaviour
 
     public bool _isAlive;
 
-    private void OnEnable()
-    {
-        EventManager.onDestroyTutoObjectEvent += KillObject;
-    }
-
-
-    private void OnDisable()
-    {
-        EventManager.onDestroyTutoObjectEvent -= KillObject;
-    }
-
-    private void OnDestroy()
-    {
-        EventManager.onDestroyTutoObjectEvent -= KillObject;
-    }
-
     void Start()
     {
         _isAlive = true;
         edgeCollider = GetComponent<EdgeCollider2D>();
-        print(name + " is at index: " + menuIndex);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(name + " collided with " + collision.tag);
 
         if (collision.CompareTag("Player"))
         {
@@ -58,10 +40,5 @@ public class TutorialMenuObject : MonoBehaviour
         _isAlive = false;
     }
 
-    private void KillObject()
-    {
-        print(name + " died");
-        //GameObject.Destroy(this);
-    }
 
 }
