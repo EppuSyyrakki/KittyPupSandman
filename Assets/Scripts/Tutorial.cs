@@ -4,40 +4,59 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
-    public Canvas canvas;
-    public int menuIndex;
+    [SerializeField]
+    private TutorialMenuObject[] tutoMenus;
     public GameObject black;
-    private EdgeCollider2D edgeCollider;
-    private UIMaster uiMaster;
 
-    void Start()
+    private int currentIndex = 0;
+    private TutorialMenuObject currentObj;
+   
+
+    private void Update()
     {
-        uiMaster = canvas.GetComponent<UIMaster>();
-        edgeCollider = GetComponent<EdgeCollider2D>();        
+        ActivateCurrentObject();
+        SetCurrentIndex();
+        RunEndGame();
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void RunEndGame()
     {
-        if (collision.CompareTag("Player"))
+        if (currentObj.name == "End" && !currentObj._isAlive)
+            EndTutorial();
+    }
+
+    private void SetCurrentIndex()
+    {
+        if (!currentObj._isAlive)
         {
-            Time.timeScale = 0f;    // purukumiratkaisu - TODO event
-            uiMaster.ChangeMenu(menuIndex);
-        }       
+            currentIndex++;
+            print("next up index: " + currentIndex);
+        }
     }
 
-    public void Resume()
+    private void ActivateCurrentObject()
     {
-        uiMaster.ChangeMenu(0); // back to normal hud
-        Destroy(edgeCollider);  // trigger this only once
-        Time.timeScale = 1f;    // purukumi - TODO event
+        for (int i = 0; i < tutoMenus.Length; i++)
+        {
+            if (i == currentIndex)
+            {
+                tutoMenus[i].gameObject.SetActive(true);
+                currentObj = tutoMenus[i];
+            }
+            else
+            {
+                tutoMenus[i].gameObject.SetActive(false);
+            }
+        }
     }
 
     public void EndTutorial()
     {
-        Resume();
         black.SetActive(true);
         StartCoroutine("FadeToBlack");
         Invoke("LoadNextLevel", 1.2f);
+        print(name + " ends tutorial");
     }
 
     IEnumerator FadeToBlack()
@@ -49,11 +68,12 @@ public class Tutorial : MonoBehaviour
             c.a = i;
             img.color = c;
             yield return new WaitForSeconds(0.05f);
-        }      
+        }
     }
 
     private void LoadNextLevel()
     {
-        uiMaster.ChangeScene(uiMaster.GetCurrentSceneId() + 1);
+        UIMaster.Instance.ChangeScene(UIMaster.Instance.GetCurrentSceneId() + 1);
+        print("scene change");
     }
 }

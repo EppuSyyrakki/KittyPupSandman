@@ -7,6 +7,18 @@ public class Pause : MonoBehaviour
 {
     public static bool _isPaused { get; private set; }
 
+    public static Pause Instance { get; private set; }
+
+    public void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            UnityEngine.Debug.LogWarning("Warning: multiple " + this + " in scene!");
+
+        _isPaused = false;
+    }
+
     private void OnEnable()
     {
         EventManager.onPauseEvent += PauseGame;
@@ -25,12 +37,7 @@ public class Pause : MonoBehaviour
         EventManager.onResumeEvent -= ResumeGame;
     }
 
-    void Awake()
-    {
-        _isPaused = false;
-    }
-
-    private void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0f;
 
@@ -38,7 +45,7 @@ public class Pause : MonoBehaviour
             _isPaused = true;
     }
 
-    private void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1f;
 

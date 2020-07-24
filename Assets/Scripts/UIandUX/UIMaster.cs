@@ -1,4 +1,5 @@
 ﻿using FMOD;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class UIMaster : MonoBehaviour
     private int _mainMenuSceneId = 1;
     private int _firstLevelSceneId = 2;
 
+    public bool _isPausedInTuto;
+
     public static UIMaster Instance { get; private set; }
 
     public void Awake()
@@ -27,12 +30,15 @@ public class UIMaster : MonoBehaviour
         else
             UnityEngine.Debug.LogWarning("Warning: multiple " + this + " in scene!");
 
+    }
+    private void Start()
+    {
         currentMenu = menus[startMenu];
+
     }
 
     public void OnGUI()
     {
-
         if (Input.GetKeyDown(KeyCode.N))
             StartNewGame();
 
@@ -40,10 +46,15 @@ public class UIMaster : MonoBehaviour
             ContinueGame();
 
         if (Input.GetKeyDown(KeyCode.M))
-            ChangeScene(_mainMenuSceneId);        
+            ChangeScene(_mainMenuSceneId);
 
-        if (Input.GetKeyDown(KeyCode.Q))        
-            QuitGame();        
+        if (Input.GetKeyDown(KeyCode.Q))
+            QuitGame();
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            
+        }
     }
 
     public void ChangeMenu(int menuIndex)
@@ -64,7 +75,6 @@ public class UIMaster : MonoBehaviour
     public void ChangeScene(int sceneID)
     {
 
-       // Debug.LogWarning("Change scene, scene index given: " + sceneID);
         // this method takes index values from build settings
         SceneManager.LoadScene(sceneBuildIndex: sceneID);
     }
