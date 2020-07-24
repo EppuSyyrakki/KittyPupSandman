@@ -32,7 +32,7 @@ public class CameraController : MonoBehaviour
         target = new Vector3(matti.transform.position.x, matti.transform.position.y, zOffset);
         GetXPosition();
         GetYPosition();
-        // velocity = mattiRB.velocity;
+        velocity = mattiRB.velocity;
         transform.position = Vector3.SmoothDamp(transform.position, target, ref velocity, followSpeed);
     }
 
