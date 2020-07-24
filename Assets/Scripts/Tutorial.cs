@@ -31,7 +31,6 @@ public class Tutorial : MonoBehaviour
         if (!currentObj._isAlive)
         {
             currentIndex++;
-            print("next up index: " + currentIndex);
         }
     }
 
@@ -74,6 +73,5 @@ public class Tutorial : MonoBehaviour
     private void LoadNextLevel()
     {
         UIMaster.Instance.ChangeScene(UIMaster.Instance.GetCurrentSceneId() + 1);
-        print("scene change");
     }
 }
