@@ -58,7 +58,7 @@ public class EventHandler : MonoBehaviour
             if (Pause._isPaused)
                 EventManager.RaiseOnResume();
         }
-
+        
         if (EnemyController._isKillSound)
         {
             EventManager.RaiseOnEnemyDeath();
@@ -72,6 +72,16 @@ public class EventHandler : MonoBehaviour
         if (EnemyController._isAttackSoundAir)
         {
             EventManager.RaiseOnAirEnemyAttack();
+        }
+
+        if (UIMaster.Instance._isPausedInTuto)
+        {
+            EventManager.RaiseOnPause();
+        }
+
+        if (!UIMaster.Instance._isPausedInTuto)
+        {
+            EventManager.RaiseOnResume();
         }
 
     }

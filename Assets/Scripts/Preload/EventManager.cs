@@ -35,8 +35,9 @@ public class EventManager : MonoBehaviour
     public delegate void OnAttackingAirEnemy();
     public static event OnAttackingAirEnemy onAirEnemyAttackEvent;
 
-    public delegate void OnPlayMusic();
-    public static event OnPlayMusic onPlayMusicEvent;
+    public delegate void OnDestroyTutoObject();
+    public static event OnDestroyTutoObject onDestroyTutoObjectEvent;
+
 
     public static void RaiseOnSaveGame()
     {
@@ -101,4 +102,9 @@ public class EventManager : MonoBehaviour
             onAirEnemyAttackEvent();
     }
 
+    public static void RaiseOnDestroyTutoObject()
+    {
+        if (onDestroyTutoObjectEvent != null)
+            onDestroyTutoObjectEvent();
+    }
 }
