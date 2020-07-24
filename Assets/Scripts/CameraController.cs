@@ -5,9 +5,9 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public GameObject matti;
-    public float verticalOffset;
-    public float horizontalOffset;
-    public float depthOffset;
+    public float xOffset;
+    public float yOffset;
+    public float zOffset;
     public float followSpeed;
 
     private Vector3 target;
@@ -29,10 +29,10 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        target = new Vector3(matti.transform.position.x, matti.transform.position.y, depthOffset);
+        target = new Vector3(matti.transform.position.x, matti.transform.position.y, zOffset);
         GetXPosition();
         GetYPosition();
-        // velocity = mattiRB.velocity;
+        velocity = mattiRB.velocity;
         transform.position = Vector3.SmoothDamp(transform.position, target, ref velocity, followSpeed);
     }
 
@@ -40,11 +40,11 @@ public class CameraController : MonoBehaviour
     {
         if (matti.transform.localScale.x > 0)   // TODO smooth out camera movement on direction change
         {
-            target.x += horizontalOffset;
+            target.x += yOffset;
         }
         else
         {
-            target.x -= horizontalOffset;
+            target.x -= yOffset;
         }
     }
 
@@ -52,11 +52,11 @@ public class CameraController : MonoBehaviour
     {
         if (pc.LookingDown) // TODO smooth out camera movement on pressing down
         {
-            target.y -= verticalOffset - 0.7f;
+            target.y -= xOffset - 0.7f;
         }
         else
         {
-            target.y += verticalOffset;
+            target.y += xOffset;
         }
     }
 }

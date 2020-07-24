@@ -21,8 +21,8 @@ public class PlayerFloat : PlayerBehaviour
     public override void OnStateUpdate(Animator state, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(state, stateInfo, layerIndex);
-        MoveRigidbody(state.GetFloat("InputX") * 0.4f, player.fastSpeed);       
-        rigidBody.drag = player.floatingDrag;
+        MoveRigidbody(state.GetFloat("InputX") * 0.4f, player._fastSpeed);       
+        rigidBody.drag = player._floatingDrag;
         InputBasedFlip(state.GetFloat("InputX"));
     }
 
