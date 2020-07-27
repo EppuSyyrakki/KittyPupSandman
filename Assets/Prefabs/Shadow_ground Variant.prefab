@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   speed: 10
+  variableSpeed: 0
   fadeOutTime: 1.5
   state: {fileID: 0}
   lastPositionX: 0
@@ -87,6 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee99a136d5e06b5468b71f7cbe4c69bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _patrolSound: event:/monster/ballMonsterRandom3D
+  _attackSound: event:/monster/ballMonsterAggressiveRandom3D
 --- !u!1001 &2765865533077756928
 PrefabInstance:
   m_ObjectHideFlags: 0

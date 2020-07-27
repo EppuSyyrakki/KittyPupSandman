@@ -68,6 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee99a136d5e06b5468b71f7cbe4c69bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _patrolSound: event:/monster/ghostRandom3D
+  _attackSound: 
 --- !u!114 &7346746339174311258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +86,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   speed: 10
+  variableSpeed: 0
   fadeOutTime: 1.5
   state: {fileID: 0}
   lastPositionX: 0

@@ -35,6 +35,11 @@ public class EventManager : MonoBehaviour
     public delegate void OnAttackingAirEnemy();
     public static event OnAttackingAirEnemy onAirEnemyAttackEvent;
 
+    public delegate void OnAttackingCrawlingEnemy();
+    public static event OnAttackingCrawlingEnemy onCrawlingEnemyAttackEvent;
+
+    public delegate void OnPlayerDamage();
+    public static event OnPlayerDamage onPlayerDamageEvent;
 
     public static void RaiseOnSaveGame()
     {
@@ -87,16 +92,30 @@ public class EventManager : MonoBehaviour
 
     public static void RaiseOnGroundEnemyAttack()
     {
-        //Debug.Log("Enemy attaaaacks!");
+        Debug.Log("Ground enemy attaaaacks!");
         if (onGroundEnemyAttackEvent != null)
             onGroundEnemyAttackEvent();
     }
 
     public static void RaiseOnAirEnemyAttack()
     {
-        //Debug.Log("Air enemy attaaaaacks!");
+        Debug.Log("Air enemy attaaaaacks!");
         if (onAirEnemyAttackEvent != null)
             onAirEnemyAttackEvent();
+    }
+
+    public static void RaiseOnCrawlingEnemyAttack()
+    {
+
+        Debug.Log("Crawling enemy attaaacks!");
+        if (onCrawlingEnemyAttackEvent != null)
+            onCrawlingEnemyAttackEvent();
+    }
+
+    public static void RaiseOnPlayerDamage()
+    {
+        Debug.Log("Player was hit");
+        
     }
 
 }
