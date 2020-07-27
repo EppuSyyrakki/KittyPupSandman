@@ -36,6 +36,11 @@ public class SFXController : MonoBehaviour
         EnemySound.release();
     }
 
+    public void PlaySmoshyEnemySound(string path)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
+    }
+
     private void PlayGroundAttackSound()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/monster/ballMonsterAggressiveRandom3D");
