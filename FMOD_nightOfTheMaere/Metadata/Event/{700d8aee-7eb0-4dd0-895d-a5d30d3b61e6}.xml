@@ -5,7 +5,7 @@
 			<value>liquidSplashRandom</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{94c3d8eb-abe2-4756-aac7-6bbbbe6f34b0}</destination>
@@ -59,7 +59,14 @@
 			<destination>{ddeee7a3-2fbb-41c9-9a1f-6e82fcaeae3e}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{67d8db29-99a0-4e75-bb62-69f54482c0f7}" />
+	<object class="EventAutomatableProperties" id="{67d8db29-99a0-4e75-bb62-69f54482c0f7}">
+		<property name="maxVoices">
+			<value>4</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>30</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{ae393fa9-1bbf-4d9f-aa21-5d73470d8b73}" />
 	<object class="GroupTrack" id="{d722d9eb-a38f-4913-91b6-7cd6fd93c816}">
 		<relationship name="modules">
@@ -126,6 +133,7 @@
 	<object class="MixerBusEffectChain" id="{ddbae8d8-8daf-4271-ba73-4a7cc7a9102f}">
 		<relationship name="effects">
 			<destination>{a4cd87a2-73c3-4db6-8cef-8db960e2dda0}</destination>
+			<destination>{bb0ff2c8-8754-44eb-ade3-d9bfdcc28a00}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{cbfa3e37-ae37-4f52-84bb-fdba5b815c30}" />
@@ -173,5 +181,10 @@
 	</object>
 	<object class="MixerBusPanner" id="{203b1600-3ee7-4439-8eec-f19715813955}" />
 	<object class="MixerBusFader" id="{a4cd87a2-73c3-4db6-8cef-8db960e2dda0}" />
+	<object class="SpatialiserEffect" id="{bb0ff2c8-8754-44eb-ade3-d9bfdcc28a00}">
+		<property name="minimumDistance">
+			<value>7.80000019</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{2f3e779c-14fd-4831-b9db-e89d23e42dd4}" />
 </objects>

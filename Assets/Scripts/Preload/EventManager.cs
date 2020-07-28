@@ -17,6 +17,9 @@ public class EventManager : MonoBehaviour
     public delegate void OnReadFile();
     public static event OnReadFile onReadFileEvent;
 
+    public delegate void OnContinueGame();
+    public static event OnContinueGame onContinueGameEvent;
+
     public delegate void OnCloseMessage();
     public static event OnCloseMessage onCloseMessageEvent;
 
@@ -29,12 +32,8 @@ public class EventManager : MonoBehaviour
     public delegate void OnDeadEnemy();
     public static event OnDeadEnemy onKillEnemySoundEvent;
 
-    public delegate void OnAttackingGroundEnemy();
-    public static event OnAttackingGroundEnemy onGroundEnemyAttackEvent;
-
-    public delegate void OnAttackingAirEnemy();
-    public static event OnAttackingAirEnemy onAirEnemyAttackEvent;
-
+    public delegate void OnPlayerDamage();
+    public static event OnPlayerDamage onPlayerDamageEvent;
 
     public static void RaiseOnSaveGame()
     {
@@ -58,6 +57,12 @@ public class EventManager : MonoBehaviour
     {
         if (onReadFileEvent != null)
             onReadFileEvent();
+    }
+
+    public static void RaiseOnContinueGame()
+    {
+        if (onContinueGameEvent != null)
+            onContinueGameEvent();
     }
 
     public static void RaiseOnCloseMessage()
@@ -85,18 +90,10 @@ public class EventManager : MonoBehaviour
             onKillEnemySoundEvent();
     }
 
-    public static void RaiseOnGroundEnemyAttack()
+    public static void RaiseOnPlayerDamage()
     {
-        //Debug.Log("Enemy attaaaacks!");
-        if (onGroundEnemyAttackEvent != null)
-            onGroundEnemyAttackEvent();
-    }
-
-    public static void RaiseOnAirEnemyAttack()
-    {
-        //Debug.Log("Air enemy attaaaaacks!");
-        if (onAirEnemyAttackEvent != null)
-            onAirEnemyAttackEvent();
+        if (onPlayerDamageEvent != null)
+            onPlayerDamageEvent();
     }
 
 }

@@ -13,6 +13,8 @@ public class SaveGame : MonoBehaviour
     private String[] saveDataArr;
     public static bool _isInit { get; private set; }
 
+    private bool _isContinueGame { get; set;  }
+
     public static SaveGame Instance { get; private set; }
 
     private void OnEnable()
@@ -21,6 +23,7 @@ public class SaveGame : MonoBehaviour
         EventManager.onUpdateSceneEvent += UpdateScene;
         EventManager.onNewSaveFileEvent += CreateNewSaveFile;
         EventManager.onReadFileEvent += ReadFile;
+        EventManager.onContinueGameEvent += SetContinueGame;
     }
 
     private void OnDisable()
@@ -29,6 +32,7 @@ public class SaveGame : MonoBehaviour
         EventManager.onUpdateSceneEvent -= UpdateScene;
         EventManager.onNewSaveFileEvent -= CreateNewSaveFile;
         EventManager.onReadFileEvent -= ReadFile;
+        EventManager.onContinueGameEvent += SetContinueGame;
     }
 
     private void OnDestroy()
@@ -36,18 +40,27 @@ public class SaveGame : MonoBehaviour
         EventManager.onSaveGameEvent -= Save;
         EventManager.onUpdateSceneEvent -= UpdateScene;
         EventManager.onNewSaveFileEvent -= CreateNewSaveFile;
-        EventManager.onReadFileEvent -= ReadFile;
+        EventManager.onReadFileEvent -= ReadFile; 
+        EventManager.onContinueGameEvent += SetContinueGame;
+    }
+
+    private void SetContinueGame()
+    {
+        _isContinueGame = true;
     }
 
     private void Save()
     {
-        WriteFile(Savepoint.currentlyActivated);
+        CheckIsWriteFileAvailable(Savepoint.currentlyActivated);
     }
 
     private void UpdateScene()
     {
-        sceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
-        //UnityEngine.Debug.Log("Saving scene: " + sceneIndex);
+        if (!_isContinueGame)
+        {
+            sceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+            //UnityEngine.Debug.Log("Saving scene: " + sceneIndex);
+        }
     }
 
     private void CreateNewSaveFile()
@@ -96,7 +109,30 @@ public class SaveGame : MonoBehaviour
         File.WriteAllText("C:/sandmanSaves/" + transform.name + ".txt", saveDataTxt);
 
         playerPosVec = playerPos;
-        //UnityEngine.Debug.LogWarning("Writing file... scene index: " + sceneIndex);
+        //UnityEngine.Debug.Log("Writing file...: " + saveDataTxt);
+    }
+
+    public void CheckIsWriteFileAvailable(Vector2 playerPos)
+    {
+        if (!_isContinueGame)
+        {
+            WriteFile(playerPos);
+        }
+        else if (_isContinueGame && playerPosVec != playerPos)
+        {
+            SetContinueGameStateFalse();
+            WriteFile(playerPos);
+        }
+        else
+        {
+            UnityEngine.Debug.LogWarning("Not saving; current pos from memory");
+        }
+    }
+
+    private void SetContinueGameStateFalse()
+    {
+        UIMaster.Instance._isContinue = false;
+        _isContinueGame = false;
     }
 
     public int GetSceneIndex()

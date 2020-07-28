@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using FMOD;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -15,9 +17,11 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer[] sr;
     private bool dead = false;
 
-    public static bool _isKillSound { get; set; }
-    public static bool _isAttackSoundGround { get; private set; }
-    public static bool _isAttackSoundAir { get; private set; }
+    private static string namePlayer = "Player";
+    private static string nameFly = "fly";
+    private static string nameGround = "ground";
+    private static string nameCrawl = "crawl";
+    private static string enemyName;
 
     // These are set in LightWeapon.cs if this is hit by the Light trigger
     [HideInInspector] public bool escaping;
@@ -27,7 +31,7 @@ public class EnemyController : MonoBehaviour
     {
         state = GetComponent<Animator>();
         sr = GetComponentsInChildren<SpriteRenderer>();
-        _isKillSound = false;
+        enemyName = name;
     }
 
     // Update is called once per frame
@@ -39,7 +43,6 @@ public class EnemyController : MonoBehaviour
         if (dead)
         {
             Destroy(gameObject);
-            _isKillSound = true;
         }
 
         lastPositionX = transform.position.x;
@@ -101,19 +104,25 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (name.Contains("Shadow_ground Variant") && collision.collider.tag == "Player")
-            _isAttackSoundGround = true;
 
-        else if (name.Contains("Shadow_fly Variant") && collision.collider.tag == "Player")
-            _isAttackSoundAir = true;
+        if ((name.Contains(nameGround) || name.Contains(nameFly) || name.Contains(nameCrawl))
+            && collision.collider.tag == namePlayer)
+            enemyName = name;
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (name.Contains("Shadow_ground Variant") && collision.collider.tag == "Player")
-            _isAttackSoundGround = false;
+        if ((name.Contains(nameGround) || name.Contains(nameFly) || name.Contains(nameCrawl))
+            && collision.collider.tag == namePlayer)
+            enemyName = "";
 
-        else if (name.Contains("Shadow_fly Variant") && collision.collider.tag == "Player")
-            _isAttackSoundAir = false;
     }
+
+    public static string GetAttackSoundtype()
+    {
+        return enemyName;
+    }
+
+   
 }

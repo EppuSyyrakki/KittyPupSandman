@@ -74,4 +74,20 @@ public class Tutorial : MonoBehaviour
     {
         UIMaster.Instance.ChangeScene(UIMaster.Instance.GetCurrentSceneId() + 1);
     }
+
+    public void Resume()
+    {
+
+        for (int i = 0; i < tutoMenus.Length; i++)
+        {
+            if (i == currentIndex)
+            {
+                currentObj.Resume();
+            }
+            else
+            {
+                tutoMenus[i].gameObject.SetActive(false);
+            }
+        }
+    }
 }

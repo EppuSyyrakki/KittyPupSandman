@@ -12,7 +12,7 @@ public class EventHandler : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (Savepoint._isActive)
+        if (Savepoint._isActive && !UIMaster.Instance._isContinue)
         {
             //Debug.Log("EventHandler invoked by savepoint action");
             EventManager.RaiseOnSaveGame();
@@ -27,7 +27,7 @@ public class EventHandler : MonoBehaviour
 
         if (!Directory.Exists("C:/sandmanSaves"))
         {
-            // Debug.Log("EventHandler invoked by create save file action");
+            //Debug.Log("EventHandler invoked by create save file action");
             EventManager.RaiseOnNewSaveFile();
         }
 
@@ -35,6 +35,11 @@ public class EventHandler : MonoBehaviour
         {
             //Debug.Log("EventHandler invoked by read file action");
             EventManager.RaiseOnReadFile();
+        }
+
+        if (UIMaster.Instance._isContinue)
+        {
+            EventManager.RaiseOnContinueGame();
         }
 
         if (!Savepoint._isActive && timer > 1.5f)
@@ -58,21 +63,6 @@ public class EventHandler : MonoBehaviour
             if (Pause._isPaused)
                 EventManager.RaiseOnResume();
         }
-        
-        if (EnemyController._isKillSound)
-        {
-            EventManager.RaiseOnEnemyDeath();
-        }
-
-        if (EnemyController._isAttackSoundGround)
-        {
-            EventManager.RaiseOnGroundEnemyAttack();
-        }
-
-        if (EnemyController._isAttackSoundAir)
-        {
-            EventManager.RaiseOnAirEnemyAttack();
-        }
 
         if (UIMaster.Instance._isPausedInTuto)
         {
@@ -82,6 +72,11 @@ public class EventHandler : MonoBehaviour
         if (!UIMaster.Instance._isPausedInTuto)
         {
             EventManager.RaiseOnResume();
+        }
+
+        if (HitCheck._playerDamage)
+        {
+            EventManager.RaiseOnPlayerDamage();
         }
 
     }
