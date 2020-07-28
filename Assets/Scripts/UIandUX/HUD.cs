@@ -46,5 +46,5 @@ public class HUD : MonoBehaviour
             saveText.text = noMessage;
         }
     }
-   
+
 }
