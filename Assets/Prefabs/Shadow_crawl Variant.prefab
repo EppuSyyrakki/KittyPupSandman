@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _patrolSound: event:/liquid/liquidSplashRandom
-  _attackSound: event:/monster/crawlingMonsterAggressiveRandom3D
+  _attackSound: event:/TestSounds/Test2
 --- !u!114 &7732648724607144402
 MonoBehaviour:
   m_ObjectHideFlags: 0

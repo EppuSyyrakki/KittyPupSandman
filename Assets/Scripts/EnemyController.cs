@@ -1,6 +1,7 @@
 ﻿using FMOD;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -16,19 +17,11 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer[] sr;
     private bool dead = false;
 
-    [SerializeField]
-    private static bool _isAttackSoundGround { get; set; }
-
-    [SerializeField]
-    private static bool _isAttackSoundAir { get; set; }
-
-    [SerializeField]
-    private static bool _isAttackSoundMushy { get; set; }
-
     private static string namePlayer = "Player";
     private static string nameFly = "fly";
     private static string nameGround = "ground";
     private static string nameCrawl = "crawl";
+    private static string enemyName;
 
     // These are set in LightWeapon.cs if this is hit by the Light trigger
     [HideInInspector] public bool escaping;
@@ -38,6 +31,7 @@ public class EnemyController : MonoBehaviour
     {
         state = GetComponent<Animator>();
         sr = GetComponentsInChildren<SpriteRenderer>();
+        enemyName = name;
     }
 
     // Update is called once per frame
@@ -110,53 +104,25 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (name.Contains(nameGround) && collision.collider.tag == namePlayer)
-        {
-            _isAttackSoundGround = true;
-            _isAttackSoundAir = false;
-            _isAttackSoundMushy = false;
-        }
-            
 
-        else if (name.Contains(nameFly) && collision.collider.tag == namePlayer)
-        {
-            _isAttackSoundGround = false;
-            _isAttackSoundAir = true;
-            _isAttackSoundMushy = false;
-        }
-
-        else if (name.Contains(nameCrawl) && collision.collider.tag == namePlayer)
-        {
-            _isAttackSoundGround = false;
-            _isAttackSoundAir = false;
-            _isAttackSoundMushy = true;
-        }
+        if ((name.Contains(nameGround) || name.Contains(nameFly) || name.Contains(nameCrawl))
+            && collision.collider.tag == namePlayer)
+            enemyName = name;
 
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (name.Contains(nameGround) && collision.collider.tag == namePlayer)
-            _isAttackSoundGround = false;
+        if ((name.Contains(nameGround) || name.Contains(nameFly) || name.Contains(nameCrawl))
+            && collision.collider.tag == namePlayer)
+            enemyName = "";
 
-        else if (name.Contains(nameFly) && collision.collider.tag == namePlayer)
-            _isAttackSoundAir = false;
-
-        else if (name.Contains(nameCrawl) && collision.collider.tag == namePlayer)
-            _isAttackSoundMushy = false;
     }
 
-    public static bool GetAttackSoundtype(string soundType)
+    public static string GetAttackSoundtype()
     {
-
-        if (soundType.Equals(nameFly))
-            return _isAttackSoundAir;
-
-        else if (soundType.Equals(nameGround))
-            return _isAttackSoundGround;
-
-        else
-            return _isAttackSoundMushy;
+        return enemyName;
     }
+
    
 }

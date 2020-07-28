@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _patrolSound: event:/monster/ghostRandom3D
-  _attackSound: 
+  _attackSound: event:/TestSounds/Test3
 --- !u!114 &7346746339174311258
 MonoBehaviour:
   m_ObjectHideFlags: 0

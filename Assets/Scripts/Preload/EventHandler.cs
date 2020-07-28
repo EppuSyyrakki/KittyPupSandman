@@ -58,24 +58,6 @@ public class EventHandler : MonoBehaviour
             if (Pause._isPaused)
                 EventManager.RaiseOnResume();
         }
-        
-        if (EnemyController.GetAttackSoundtype("ground"))
-        {
-            EventManager.RaiseOnGroundEnemyAttack();
-            Debug.Log("ground attack handling");
-        }
-
-        if (EnemyController.GetAttackSoundtype("fly"))
-        {
-            EventManager.RaiseOnAirEnemyAttack();
-            Debug.Log("airial attack handling");
-        }
-
-        if (EnemyController.GetAttackSoundtype("crawl"))
-        {
-            EventManager.RaiseOnCrawlingEnemyAttack();
-            Debug.Log("crawling attack handling");
-        }
 
         if (UIMaster.Instance._isPausedInTuto)
         {
@@ -89,7 +71,6 @@ public class EventHandler : MonoBehaviour
 
         if (HitCheck._playerDamage)
         {
-            Debug.Log("player damage handling");
             EventManager.RaiseOnPlayerDamage();
         }
 

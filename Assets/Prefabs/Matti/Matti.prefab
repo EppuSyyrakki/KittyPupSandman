@@ -61,7 +61,7 @@ MonoBehaviour:
   - {x: 0.50948274, y: -0.19030197, z: 0}
   m_ShapePathHash: -856728447
   m_Mesh: {fileID: 0}
-  m_InstanceId: -2544
+  m_InstanceId: 37596
 --- !u!114 &1339281861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
   - {x: 0.502733, y: 0.15857029, z: 0}
   m_ShapePathHash: 1687189415
   m_Mesh: {fileID: 0}
-  m_InstanceId: -2536
+  m_InstanceId: 37538
 --- !u!1 &1935918871654438096
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,8 +373,8 @@ MonoBehaviour:
   - {fileID: 4119927736800880543}
   - {fileID: 4333392427706315312}
   m_Bounds:
-    m_Center: {x: 0.0000009536743, y: -0.00021827221, z: 0}
-    m_Extent: {x: 0.56054693, y: 0.5193121, z: 0}
+    m_Center: {x: 0, y: -0.00021880865, z: 0}
+    m_Extent: {x: 0.56054693, y: 0.5193125, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &2127293362579130287
@@ -417,9 +417,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7137975076513411756}
   - component: {fileID: 2929166854263672981}
-  - component: {fileID: 5688433483874320514}
   - component: {fileID: 2929166854263672982}
   - component: {fileID: 2929166854263672983}
+  - component: {fileID: 7053947762033198745}
   m_Layer: 0
   m_Name: Matti
   m_TagString: Player
@@ -479,18 +479,6 @@ MonoBehaviour:
   umbrellaPosition: {fileID: 2348044664985653584}
   lamp: {fileID: 5157728387027687948, guid: d03e00be3f7aca6489bba93865fad46e, type: 3}
   lampPosition: {fileID: 6779696590645278556}
---- !u!114 &5688433483874320514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929166854263672976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee99a136d5e06b5468b71f7cbe4c69bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &2929166854263672982
 Animator:
   serializedVersion: 3
@@ -531,6 +519,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &7053947762033198745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929166854263672976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9add8b52b28303841afa16982f9d5a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtSound: event:/TestSounds/Test1
 --- !u!1 &2963569293643248934
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +631,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 2640038895396680333}
   m_Bounds:
-    m_Center: {x: 0.002951458, y: 0.023274124, z: 0}
+    m_Center: {x: 0.0029506236, y: 0.023273349, z: 0}
     m_Extent: {x: 0.20600757, y: 0.43209335, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -717,7 +718,7 @@ MonoBehaviour:
   - {x: 0.5059086, y: 0.16611795, z: 0}
   m_ShapePathHash: -1682303784
   m_Mesh: {fileID: 0}
-  m_InstanceId: -2538
+  m_InstanceId: 37548
 --- !u!1 &3676093658803603933
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +818,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 4333392427706315312}
   m_Bounds:
-    m_Center: {x: 0.0000009536743, y: 0, z: 0}
+    m_Center: {x: 0.00000008940697, y: 0, z: 0}
     m_Extent: {x: 0.15429689, y: 0.15429689, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1096,8 +1097,8 @@ MonoBehaviour:
   - {fileID: 3012570476103677636}
   - {fileID: 2640038895396680333}
   m_Bounds:
-    m_Center: {x: 0.00000044703484, y: 0.000000029802322, z: 0}
-    m_Extent: {x: 0.4570279, y: 0.4550782, z: 0}
+    m_Center: {x: -0.00000011920929, y: -0.00000032782555, z: 0}
+    m_Extent: {x: 0.45702755, y: 0.4550782, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &7394917227398368126
@@ -1352,7 +1353,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 2719009835719703448}
   m_Bounds:
-    m_Center: {x: 0.00001463294, y: 0.02193755, z: 0}
+    m_Center: {x: 0.000013768673, y: 0.02193743, z: 0}
     m_Extent: {x: 0.197252, y: 0.43313682, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
