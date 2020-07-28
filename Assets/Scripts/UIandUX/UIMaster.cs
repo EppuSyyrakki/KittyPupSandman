@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,11 +18,29 @@ public class UIMaster : MonoBehaviour
 
     private int _preloadSceneId = 0; 
     private int _mainMenuSceneId = 1;
-    private int _firstLevelSceneId = 2;
+    private int _tutorialSceneId = 2;
+    private int _firstSceneId = 3;
 
-    public bool _isPausedInTuto;
+    public bool _isPausedInTuto { get; set; }
+    private bool _isNoGameMemory { get; set; }
+    public bool _isContinue { get; set; }
 
     public static UIMaster Instance { get; private set; }
+
+    private void OnEnable()
+    {
+        EventManager.onNewSaveFileEvent += InitNewGame;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.onNewSaveFileEvent -= InitNewGame;
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.onNewSaveFileEvent -= InitNewGame;
+    }
 
     public void Awake()
     {
@@ -35,6 +54,10 @@ public class UIMaster : MonoBehaviour
     {
         currentMenu = menus[startMenu];
 
+    }
+    private void InitNewGame()
+    {
+        _isNoGameMemory = true;
     }
 
     public void OnGUI()
@@ -71,13 +94,13 @@ public class UIMaster : MonoBehaviour
     {
 
         // this method takes index values from build settings
-        SceneManager.LoadScene(sceneBuildIndex: sceneID);
+        SceneManager.LoadScene(sceneBuildIndex: sceneID);      
     }
 
     public void StartNewGame()
     {
-        ChangeScene(_firstLevelSceneId);
-        SaveGame.Instance.WriteFile(new Vector2(0, 0));     // clear player pos from the memory
+        ChangeScene(_tutorialSceneId);
+        SaveGame.Instance.CheckIsWriteFileAvailable(new Vector2(0, 0));     // clear player pos from the memory
     }
 
     public void ContinueGame()
@@ -85,10 +108,16 @@ public class UIMaster : MonoBehaviour
         int i = SaveGame.Instance.GetSceneIndex();
         //Debug.LogWarning("Continue game, scene index in UI: " + i);
 
-        if (i == _preloadSceneId)
-            StartNewGame(); 
+        if (_isNoGameMemory)        
+        {
+            UnityEngine.Debug.Log("No previous memory, initiating new game!");
+            StartNewGame();
+        }
         else
+        {
+            _isContinue = true; 
             ChangeScene(i);
+        }
     }
 
     public void EnterMainMenuScene()
@@ -115,7 +144,7 @@ public class UIMaster : MonoBehaviour
 
     public int GetFirstLevelSceneId()
     {
-        return _firstLevelSceneId;
+        return _firstSceneId;
     }
 
     public void QuitGame()

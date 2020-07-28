@@ -17,6 +17,9 @@ public class EventManager : MonoBehaviour
     public delegate void OnReadFile();
     public static event OnReadFile onReadFileEvent;
 
+    public delegate void OnContinueGame();
+    public static event OnContinueGame onContinueGameEvent;
+
     public delegate void OnCloseMessage();
     public static event OnCloseMessage onCloseMessageEvent;
 
@@ -54,6 +57,12 @@ public class EventManager : MonoBehaviour
     {
         if (onReadFileEvent != null)
             onReadFileEvent();
+    }
+
+    public static void RaiseOnContinueGame()
+    {
+        if (onContinueGameEvent != null)
+            onContinueGameEvent();
     }
 
     public static void RaiseOnCloseMessage()

@@ -12,7 +12,7 @@ public class EventHandler : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (Savepoint._isActive)
+        if (Savepoint._isActive && !UIMaster.Instance._isContinue)
         {
             //Debug.Log("EventHandler invoked by savepoint action");
             EventManager.RaiseOnSaveGame();
@@ -27,7 +27,7 @@ public class EventHandler : MonoBehaviour
 
         if (!Directory.Exists("C:/sandmanSaves"))
         {
-            // Debug.Log("EventHandler invoked by create save file action");
+            //Debug.Log("EventHandler invoked by create save file action");
             EventManager.RaiseOnNewSaveFile();
         }
 
@@ -35,6 +35,11 @@ public class EventHandler : MonoBehaviour
         {
             //Debug.Log("EventHandler invoked by read file action");
             EventManager.RaiseOnReadFile();
+        }
+
+        if (UIMaster.Instance._isContinue)
+        {
+            EventManager.RaiseOnContinueGame();
         }
 
         if (!Savepoint._isActive && timer > 1.5f)
