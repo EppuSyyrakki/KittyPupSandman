@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   matti: {fileID: 0}
-  xOffset: 3
-  yOffset: 4
+  xOffset: 4
+  yOffset: 3
   zOffset: -11
   followSpeed: 8
 --- !u!114 &6566983910669237784

@@ -11,6 +11,7 @@ public class PlayerInputController : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     private GameObject lampClone;
     private bool _vulnerable;
+    private SpriteRenderer[] spriteRenderers;
 
     [Header("Movement attributes")]
     public float _maxSpeed;
@@ -40,13 +41,13 @@ public class PlayerInputController : MonoBehaviour
     {
         state = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
-        transform.position = SaveGame.Instance.GetPosFromMemory(); 
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        transform.position = SaveGame.Instance.GetPosFromMemory();      
     }
 
     void Update()
     {
-        SetStateFloats();
-        SetStateBools();
+        SetStateParameters();
         SetStateGrounded();
         SetLamp();
 
@@ -59,14 +60,11 @@ public class PlayerInputController : MonoBehaviour
             SaveGame.Instance.WriteFile(this.gameObject.transform.position);
     }
 
-    private void SetStateFloats()
+    private void SetStateParameters()
     {
         state.SetFloat("InputX", Input.GetAxis("Horizontal"));
         state.SetFloat("InputXAbs", Mathf.Abs(Input.GetAxis("Horizontal")));
-    }
 
-    private void SetStateBools()
-    {
         if (Input.GetButtonDown("Jump"))
             state.SetBool("InputJump", true);
         else if (Input.GetButtonUp("Jump"))
@@ -113,17 +111,34 @@ public class PlayerInputController : MonoBehaviour
             Vector3 location = transform.InverseTransformVector(hitCheck.HitLocation);
             Vector2 bump = new Vector2(-location.x, 0);
             rigidbody2d.AddForce(bump * _bumpForce * Time.deltaTime);
-            _vulnerable = true;            
+            PlayerVulnerable(0.5f);
+            _vulnerable = true;          
         }
         else
         {
             Debug.Log("PLAYER IS DEAD");
+            PlayerVulnerable(0f);
+            Time.timeScale = 0f;
         }
 
         if (_vulnerable) Invoke("DisableVulnerability", _vulnerableTime);
     }
 
-    private void DisableVulnerability() => _vulnerable = false;
+    private void PlayerVulnerable(float alpha)  // Figure out a better way to indicate vulnerability than alpha
+    {
+        foreach (SpriteRenderer sr in spriteRenderers)
+        {
+            Color c = sr.color;
+            c.a = alpha;
+            sr.color = c;
+        }
+    }
+
+    private void DisableVulnerability()
+    {
+        _vulnerable = false;
+        PlayerVulnerable(1f);
+    }
 
     void OnDisable()
     {

@@ -38,25 +38,17 @@ public class CameraController : MonoBehaviour
 
     private void GetXPosition()
     {
-        if (matti.transform.localScale.x > 0)   // TODO smooth out camera movement on direction change
-        {
-            target.x += yOffset;
-        }
+        if (matti.transform.localScale.x > 0)
+            target.x += xOffset;
         else
-        {
-            target.x -= yOffset;
-        }
+            target.x -= xOffset;
     }
 
     private void GetYPosition()
     {
-        if (pc.LookingDown) // TODO smooth out camera movement on pressing down
-        {
-            target.y -= xOffset - 0.7f;
-        }
+        if (pc.LookingDown)
+            target.y -= yOffset - 0.7f;
         else
-        {
-            target.y += xOffset;
-        }
+            target.y += yOffset;
     }
 }
