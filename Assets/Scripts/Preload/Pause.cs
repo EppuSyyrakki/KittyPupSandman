@@ -56,7 +56,6 @@ public class Pause : MonoBehaviour
         {
             _isPaused = true; 
             Time.timeScale = 0f;
-            print("Stop the fucking time!!!!");
         }
     }
 
@@ -71,7 +70,6 @@ public class Pause : MonoBehaviour
         {
             _isPaused = false;
             Time.timeScale = 1f;
-            print("yo fucker, not stopping for ya tweet");
         }
     }
 
