@@ -48,30 +48,17 @@ public class EventHandler : MonoBehaviour
             timer = 0;
         }
 
-        if (UIMaster.Instance.GetCurrentMenu() == "PauseMenu" ||
-            UIMaster.Instance.GetCurrentMenu() == "OptionsMenu" ||
-            UIMaster.Instance.GetCurrentMenu() == "ControlsMenu")
+
+        if (UIMaster.Instance._isInTutoScene && UIMaster.Instance._isPausedInTuto)
         {
-            //Debug.Log("EventHandler invoked by pause action");
-            if (!Pause._isPaused)
-                EventManager.RaiseOnPause();
+            print("called? this paused in tuto event");
+            EventManager.RaiseOnPauseInTutorial();
         }
 
-        if (UIMaster.Instance.GetCurrentMenu() == "HudMenu" && UIMaster.Instance.GetCurrentSceneId() > UIMaster.Instance.GetMainMenuSceneId())
+        if (UIMaster.Instance._isInTutoScene && !UIMaster.Instance._isPausedInTuto)
         {
-            //Debug.Log("EventHandler invoked by resume action");
-            if (Pause._isPaused)
-                EventManager.RaiseOnResume();
-        }
-
-        if (UIMaster.Instance._isPausedInTuto)
-        {
-            EventManager.RaiseOnPause();
-        }
-
-        if (!UIMaster.Instance._isPausedInTuto)
-        {
-            EventManager.RaiseOnResume();
+            print("called? this resumed in tuto event");
+            EventManager.RaiseOnResumeTutorial();
         }
 
         if (HitCheck._playerDamage)

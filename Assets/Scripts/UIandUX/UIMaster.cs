@@ -22,6 +22,7 @@ public class UIMaster : MonoBehaviour
     private int _firstSceneId = 3;
 
     public bool _isPausedInTuto { get; set; }
+    public bool _isInTutoScene { get; set; }
     private bool _isNoGameMemory { get; set; }
     public bool _isContinue { get; set; }
 
@@ -83,18 +84,41 @@ public class UIMaster : MonoBehaviour
             {
                 menus[i].SetActive(true);
                 currentMenu = menus[i];
-                //Debug.Log("Menu changed to: " + currentMenu.tag);
+                PauseAction(i);
             }
             else
                 menus[i].SetActive(false);
         }
     }
 
+    private static void PauseAction(int i)
+    {
+        if (i > 0)
+        {
+            //print("pausing from UiMaster, ya git! " + Pause.Instance.GetTime());
+            Pause.Instance.PauseGame();
+        }
+        else
+        {
+            print("resuming game from UiMaster, ya git!" + Pause.Instance.GetTime());
+            Pause.Instance.ResumeGame();
+        }
+    }
+
     public void ChangeScene(int sceneID)
     {
+        CheckIfInTutoScene(sceneID);
 
         // this method takes index values from build settings
-        SceneManager.LoadScene(sceneBuildIndex: sceneID);      
+        SceneManager.LoadScene(sceneBuildIndex: sceneID);
+    }
+
+    private void CheckIfInTutoScene(int sceneID)
+    {
+        if (sceneID != _tutorialSceneId)
+            _isInTutoScene = false;
+        else
+            _isInTutoScene = true;
     }
 
     public void StartNewGame()
@@ -108,14 +132,19 @@ public class UIMaster : MonoBehaviour
         int i = SaveGame.Instance.GetSceneIndex();
         //Debug.LogWarning("Continue game, scene index in UI: " + i);
 
-        if (_isNoGameMemory)        
+        CheckIfMemoryExists(i);
+    }
+
+    private void CheckIfMemoryExists(int i)
+    {
+        if (_isNoGameMemory)
         {
             UnityEngine.Debug.Log("No previous memory, initiating new game!");
             StartNewGame();
         }
         else
         {
-            _isContinue = true; 
+            _isContinue = true;
             ChangeScene(i);
         }
     }

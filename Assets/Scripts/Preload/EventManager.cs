@@ -29,6 +29,12 @@ public class EventManager : MonoBehaviour
     public delegate void OnResumeGame();
     public static event OnResumeGame onResumeEvent;
 
+    public delegate void OnPauseTuto();
+    public static event OnPauseTuto onPauseTutorialEvent;
+
+    public delegate void OnResumeTuto();
+    public static event OnResumeTuto onResumeTutorialEvent;
+
     public delegate void OnDeadEnemy();
     public static event OnDeadEnemy onKillEnemySoundEvent;
 
@@ -81,6 +87,18 @@ public class EventManager : MonoBehaviour
     {
         if (onResumeEvent != null)
             onResumeEvent();
+    }
+
+    public static void RaiseOnPauseInTutorial()
+    {
+        if (onPauseTutorialEvent != null)
+            onPauseTutorialEvent();
+    }
+
+    public static void RaiseOnResumeTutorial()
+    {
+        if (onResumeTutorialEvent != null)
+            onResumeTutorialEvent();
     }
 
     public static void RaiseOnEnemyDeath()
