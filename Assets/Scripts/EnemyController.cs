@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class EnemyController : MonoBehaviour
     // These are set in LightWeapon.cs if this is hit by the Light trigger
     [HideInInspector] public bool escaping;
     [HideInInspector] public Vector2 escapeDirection;
+
 
     void Start()
     {
@@ -119,10 +121,10 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    public static string GetAttackSoundtype()
+    public static string GetEnemyName()
     {
+        
         return enemyName;
     }
 
-   
 }

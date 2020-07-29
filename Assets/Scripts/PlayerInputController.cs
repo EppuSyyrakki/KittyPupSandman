@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInputController : MonoBehaviour
 {
@@ -147,6 +148,7 @@ public class PlayerInputController : MonoBehaviour
     private void KillPlayer()
     {
         // something?
+        SFXPlayer.Instance.PlayDie();
     }
 
     void OnDisable()

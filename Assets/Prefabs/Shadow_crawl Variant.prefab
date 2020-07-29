@@ -69,7 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _patrolSound: event:/liquid/liquidSplashRandom
-  _attackSound: event:/TestSounds/Test2
+  _attackSound: event:/liquid/liquidSplashRandom
+  enemyObj: {fileID: 9185783157443115516}
 --- !u!114 &7732648724607144402
 MonoBehaviour:
   m_ObjectHideFlags: 0

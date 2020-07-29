@@ -95,12 +95,10 @@ public class UIMaster : MonoBehaviour
     {
         if (i > 0)
         {
-            //print("pausing from UiMaster, ya git! " + Pause.Instance.GetTime());
             Pause.Instance.PauseGame();
         }
         else
         {
-            print("resuming game from UiMaster, ya git!" + Pause.Instance.GetTime());
             Pause.Instance.ResumeGame();
         }
     }

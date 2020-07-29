@@ -16,6 +16,9 @@ public class SFXEnemy : MonoBehaviour
     private string _attackSound;
     private bool _isAttack;
 
+    [SerializeField]
+    private GameObject enemyObj;
+
     private void OnEnable()
     {
         EventManager.onPlayerDamageEvent += CheckAttackType;
@@ -35,28 +38,38 @@ public class SFXEnemy : MonoBehaviour
     {
         SoundsInit();
     }
-        private void SoundsInit()
+    private void SoundsInit()
     {
         if (_patrolSound != null)
+        {
             _isPatrol = true;
+        }
+            
 
         if (_attackSound != null)
+        {
             _isAttack = true;
+        }
     }
-    
+
+    private void Update()
+    {
+    }
+
     public void PlayPatrolEnemy()
     {
+
         if (_isPatrol)
         {
-            FMODUnity.RuntimeManager.PlayOneShot(_patrolSound, GetComponent<Transform>().position);
+            FMODUnity.RuntimeManager.PlayOneShot(_patrolSound, enemyObj.transform.position);
         }
-        else
+        else 
             Debug.LogWarning("No enemy patrol sound available.");
     }
 
     private void CheckAttackType()
     {
-        if (name == EnemyController.GetAttackSoundtype() && _isAttack)
+        if (name == EnemyController.GetEnemyName() && _isAttack)
         {
             FMODUnity.RuntimeManager.PlayOneShot(_attackSound, GetComponent<Transform>().position);
         }

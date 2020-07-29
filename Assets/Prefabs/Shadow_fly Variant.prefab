@@ -68,8 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee99a136d5e06b5468b71f7cbe4c69bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patrolSound: event:/monster/ghostRandom3D
-  _attackSound: event:/TestSounds/Test3
+  _patrolSound: event:/monster/Ghost/ghostRandom3D
+  _attackSound: event:/monster/Ghost/ghostAttack3D
+  enemyObj: {fileID: 4200184904927764695}
 --- !u!114 &7346746339174311258
 MonoBehaviour:
   m_ObjectHideFlags: 0

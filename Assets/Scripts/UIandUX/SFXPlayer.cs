@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class SFXPlayer : MonoBehaviour
 {
-    private string matti = "matti";
-
     [SerializeField]
     string hurtSound;
     private bool _isHurtSound;
+
+    [SerializeField]
+    string dieSound;
+    private bool _isDieSound;
+
+    public static SFXPlayer Instance { get; private set; }
 
     private void OnEnable()
     {
@@ -28,8 +32,20 @@ public class SFXPlayer : MonoBehaviour
 
     private void Awake()
     {
+        ValidateSounds();
+
+        if (Instance == null)
+            Instance = this;
+        else
+            Debug.LogWarning("Warning! Multiple " + this + "in the scene");
+    }
+
+    private void ValidateSounds()
+    {
         if (hurtSound != null)
             _isHurtSound = true;
+        if (dieSound != null)
+            _isDieSound = true;
     }
 
     private void PlayFootstepsPlayer(string path)
@@ -46,6 +62,12 @@ public class SFXPlayer : MonoBehaviour
     {
         if (_isHurtSound)
             FMODUnity.RuntimeManager.PlayOneShot(hurtSound, GetComponent<Transform>().position);     
+    }
+
+    public void PlayDie()
+    {
+        if (_isDieSound)
+            FMODUnity.RuntimeManager.PlayOneShot(dieSound, GetComponent<Transform>().position);
     }
 }
 

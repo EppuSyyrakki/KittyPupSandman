@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _patrolSound: event:/monster/ballMonsterRandom3D
   _attackSound: event:/monster/ballMonsterAggressiveRandom3D
+  enemyObj: {fileID: 8039164854915638191}
 --- !u!1001 &2765865533077756928
 PrefabInstance:
   m_ObjectHideFlags: 0

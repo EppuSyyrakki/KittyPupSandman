@@ -48,16 +48,13 @@ public class EventHandler : MonoBehaviour
             timer = 0;
         }
 
-
         if (UIMaster.Instance._isInTutoScene && UIMaster.Instance._isPausedInTuto)
         {
-            print("called? this paused in tuto event");
             EventManager.RaiseOnPauseInTutorial();
         }
 
         if (UIMaster.Instance._isInTutoScene && !UIMaster.Instance._isPausedInTuto)
         {
-            print("called? this resumed in tuto event");
             EventManager.RaiseOnResumeTutorial();
         }
 

@@ -61,7 +61,10 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{67d8db29-99a0-4e75-bb62-69f54482c0f7}">
 		<property name="maxVoices">
-			<value>4</value>
+			<value>6</value>
+		</property>
+		<property name="voiceStealing">
+			<value>1</value>
 		</property>
 		<property name="triggerCooldown">
 			<value>30</value>
@@ -183,7 +186,7 @@
 	<object class="MixerBusFader" id="{a4cd87a2-73c3-4db6-8cef-8db960e2dda0}" />
 	<object class="SpatialiserEffect" id="{bb0ff2c8-8754-44eb-ade3-d9bfdcc28a00}">
 		<property name="minimumDistance">
-			<value>7.80000019</value>
+			<value>1.80000007</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{2f3e779c-14fd-4831-b9db-e89d23e42dd4}" />
