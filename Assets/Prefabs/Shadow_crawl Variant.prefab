@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee99a136d5e06b5468b71f7cbe4c69bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patrolSound: event:/liquid/liquidSplashRandom
+  _patrolSound: event:/monster/2D sounds/splash1
   _attackSound: event:/liquid/liquidSplashRandom
   enemyObj: {fileID: 9185783157443115516}
 --- !u!114 &7732648724607144402
