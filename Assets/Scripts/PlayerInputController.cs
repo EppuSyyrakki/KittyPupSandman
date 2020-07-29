@@ -108,8 +108,13 @@ public class PlayerInputController : MonoBehaviour
     {
         if (!_vulnerable)
         {
-            Vector3 location = transform.InverseTransformVector(hitCheck.HitLocation);
-            Vector2 bump = new Vector2(-location.x, 0);
+            Vector2 bump = new Vector2();
+
+            if (hitCheck.HitLocation.x >= transform.position.x)
+                bump.x = -_bumpForce;
+            else
+                bump.x = _bumpForce;
+            
             rigidbody2d.AddForce(bump * _bumpForce * Time.deltaTime);
             PlayerVulnerable(0.5f);
             _vulnerable = true;          
@@ -118,13 +123,12 @@ public class PlayerInputController : MonoBehaviour
         {
             Debug.Log("PLAYER IS DEAD");
             PlayerVulnerable(0f);
-            Time.timeScale = 0f;
         }
 
         if (_vulnerable) Invoke("DisableVulnerability", _vulnerableTime);
     }
 
-    private void PlayerVulnerable(float alpha)  // Figure out a better way to indicate vulnerability than alpha
+    private void PlayerVulnerable(float alpha)
     {
         foreach (SpriteRenderer sr in spriteRenderers)
         {
