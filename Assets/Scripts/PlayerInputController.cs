@@ -121,7 +121,7 @@ public class PlayerInputController : MonoBehaviour
         }
         else
         {
-            Debug.Log("PLAYER IS DEAD");
+            KillPlayer();
             PlayerVulnerable(0f);
         }
 
@@ -142,6 +142,11 @@ public class PlayerInputController : MonoBehaviour
     {
         _vulnerable = false;
         PlayerVulnerable(1f);
+    }
+
+    private void KillPlayer()
+    {
+        // something?
     }
 
     void OnDisable()
