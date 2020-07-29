@@ -7,6 +7,9 @@ public class Pause : MonoBehaviour
 {
     public static bool _isPaused { get; private set; }
 
+    public static bool _okPause { get; set; }
+    public static bool _okResume { get; set; }
+
     public static Pause Instance { get; private set; }
 
     public void Awake()
@@ -23,33 +26,60 @@ public class Pause : MonoBehaviour
     {
         EventManager.onPauseEvent += PauseGame;
         EventManager.onResumeEvent += ResumeGame;
+
+        EventManager.onPauseTutorialEvent += PauseInTuto;
+        EventManager.onResumeTutorialEvent += ResumeInTuto;
     }
 
     private void OnDisable()
     {
         EventManager.onPauseEvent -= PauseGame;
         EventManager.onResumeEvent -= ResumeGame;
+
+        EventManager.onPauseTutorialEvent -= PauseInTuto;
+        EventManager.onResumeTutorialEvent -= ResumeInTuto;
     }
 
     private void OnDestroy()
     {
         EventManager.onPauseEvent -= PauseGame;
         EventManager.onResumeEvent -= ResumeGame;
+
+        EventManager.onPauseTutorialEvent -= PauseInTuto;
+        EventManager.onResumeTutorialEvent -= ResumeInTuto;
     }
 
     public void PauseGame()
-    {
-        Time.timeScale = 0f;
+    {        
 
         if ( !_isPaused)
-            _isPaused = true;
+        {
+            _isPaused = true; 
+            Time.timeScale = 0f;
+        }
+    }
+
+    private void PauseInTuto()
+    {
+        PauseGame();
     }
 
     public void ResumeGame()
     {
-        Time.timeScale = 1f;
-
         if (_isPaused)
+        {
             _isPaused = false;
+            Time.timeScale = 1f;
+        }
+    }
+
+    private void ResumeInTuto()
+    {
+        ResumeGame();
+    }
+
+    public float GetTime()
+    {
+        return Time.timeScale;
     }
 }
