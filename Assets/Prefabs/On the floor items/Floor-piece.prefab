@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1963830736666095482
+--- !u!1 &7286522154453071817
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1248547588192212267}
-  - component: {fileID: 824149640257690515}
-  - component: {fileID: 7459615805621733817}
+  - component: {fileID: 8855291675233087867}
+  - component: {fileID: 7988047714202846015}
+  - component: {fileID: 1372457443725207497}
   m_Layer: 0
-  m_Name: "P\xF6ly"
+  m_Name: Floor-piece
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1248547588192212267
+--- !u!4 &8855291675233087867
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963830736666095482}
+  m_GameObject: {fileID: 7286522154453071817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &824149640257690515
+--- !u!212 &7988047714202846015
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963830736666095482}
+  m_GameObject: {fileID: 7286522154453071817}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -47,7 +47,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RenderingLayerMask: 3
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
@@ -71,64 +71,40 @@ SpriteRenderer:
   m_SortingLayerID: 283004243
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6609685c51ff349468187b5cfecdd91b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84df053f04bccfd4a8ce6feaf456bc10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10, y: 5}
+  m_Size: {x: 20, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &7459615805621733817
-PolygonCollider2D:
+--- !u!61 &1372457443725207497
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963830736666095482}
+  m_GameObject: {fileID: 7286522154453071817}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -4.181683}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10, y: 5}
-    newSize: {x: 10, y: 5}
+    oldSize: {x: 20, y: 10}
+    newSize: {x: 20, y: 10}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 3.8167515, y: -1.2705714}
-      - {x: 3.8799999, y: -0.79999995}
-      - {x: 3.6899998, y: -0.32999998}
-      - {x: 3.31, y: 0.01}
-      - {x: 3.1644406, y: 0.34165943}
-      - {x: 2.8899999, y: 0.56}
-      - {x: 2.7, y: 0.87}
-      - {x: 2.2769759, y: 1.2577748}
-      - {x: 1.74, y: 1.35}
-      - {x: 1.1999999, y: 1.04}
-      - {x: 0.85999995, y: 0.97999996}
-      - {x: 0.12, y: 1.02}
-      - {x: -0.37, y: 1.53}
-      - {x: -0.98999995, y: 1.56}
-      - {x: -1.43, y: 1.24}
-      - {x: -2.18, y: 1.25}
-      - {x: -2.6453655, y: 0.92270833}
-      - {x: -2.9099998, y: 0.35999998}
-      - {x: -3.3799999, y: 0.22}
-      - {x: -3.74, y: -0.35999998}
-      - {x: -3.73, y: -0.77}
-      - {x: -3.8899999, y: -1.27}
-      - {x: -1.3374046, y: -1.25175}
-      - {x: 0.7414205, y: -1.2317703}
-      - {x: 2.7778978, y: -1.2554698}
+  serializedVersion: 2
+  m_Size: {x: 20, y: 1.6366339}
+  m_EdgeRadius: 0
