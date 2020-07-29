@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8855291675233087867}
   - component: {fileID: 7988047714202846015}
-  - component: {fileID: 1812658956833416746}
+  - component: {fileID: 1372457443725207497}
   m_Layer: 0
   m_Name: Floor-piece
   m_TagString: Ground
@@ -47,7 +47,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RenderingLayerMask: 5
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
@@ -68,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -200325829
-  m_SortingLayer: 2
+  m_SortingLayerID: 283004243
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 84df053f04bccfd4a8ce6feaf456bc10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -82,16 +82,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &1812658956833416746
-BoxCollider:
+--- !u!61 &1372457443725207497
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7286522154453071817}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -4.181683}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20, y: 10}
+    newSize: {x: 20, y: 10}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20, y: 1.630022, z: 0.2}
-  m_Center: {x: 0, y: -4.184989, z: 0}
+  m_Size: {x: 20, y: 1.6366339}
+  m_EdgeRadius: 0
