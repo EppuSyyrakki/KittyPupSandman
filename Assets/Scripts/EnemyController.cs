@@ -122,9 +122,7 @@ public class EnemyController : MonoBehaviour
     }
 
     public static string GetEnemyName()
-    {
-        
+    {       
         return enemyName;
     }
-
 }

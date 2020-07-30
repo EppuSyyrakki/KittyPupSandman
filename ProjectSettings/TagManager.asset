@@ -15,6 +15,7 @@ TagManager:
   - MainMenu
   - Enemy:fly
   - Enemy:ground
+  - Boss
   layers:
   - Default
   - TransparentFX

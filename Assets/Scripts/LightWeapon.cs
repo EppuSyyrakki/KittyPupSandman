@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,11 +14,11 @@ public class LightWeapon : MonoBehaviour
             ec.escaping = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
-        {
             collision.GetComponent<EnemyController>().escaping = false;
-        }
+
     }
 }
