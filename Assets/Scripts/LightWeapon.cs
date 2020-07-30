@@ -8,17 +8,23 @@ public class LightWeapon : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            EnemyController ec = collision.GetComponent<EnemyController>();
-            Vector2 direction = (transform.position - collision.transform.position) * -Vector2.one;
-            ec.escapeDirection = direction.normalized;
-            ec.escaping = true;
+            if (collision.TryGetComponent(out EnemyController ec))
+            {
+                Vector2 direction = (transform.position - collision.transform.position) * -Vector2.one;
+                ec.escapeDirection = direction.normalized;
+                ec.escaping = true;
+            }          
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
-            collision.GetComponent<EnemyController>().escaping = false;
-
+        {
+            if (collision.TryGetComponent(out EnemyController ec))
+            {
+                ec.escaping = false;
+            }            
+        }
     }
 }

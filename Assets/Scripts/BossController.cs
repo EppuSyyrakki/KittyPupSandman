@@ -6,13 +6,15 @@ public class BossController : MonoBehaviour
 {
     [HideInInspector] public Animator state;
     [HideInInspector] public bool attacking;
+    public float attackTimer;
     public bool lit;
     public GameObject matti;
     public GameObject[] claws;
-    public float _turningDelay;
-    public int _lives;
-    public int fadeOutTime;
-
+    public float turningDelay;
+    public int lives;
+    public float fadeOutTime;
+    public float attackInterval;
+  
     private float _distanceFromPlayer;
     private SpriteRenderer[] sr;
 
@@ -27,22 +29,32 @@ public class BossController : MonoBehaviour
     void Update()
     {
         _distanceFromPlayer = Mathf.Abs(transform.position.x - matti.transform.position.x);
-
         Vector3 target = new Vector3(matti.transform.position.x, transform.position.y, 0);
         transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime);
-
-        if (_distanceFromPlayer < 11 && !attacking)
-        {
-            if (Random.Range(0f, 1f) <= 0.5)
-                state.SetTrigger("Attack2");
-            else
-                state.SetTrigger("Attack");
-        }
+        attackTimer += Time.deltaTime;
+        AttackPlayer();
         PlayerBasedFlip();
 
-        if (_lives <= 0)
+        if (lives <= 0)
         {
             // end game
+        }    
+    }
+
+    private void AttackPlayer()
+    {
+        if (_distanceFromPlayer < 11 && !attacking && attackTimer > attackInterval)
+        {
+            if (Random.Range(0f, 1f) <= 0.5)
+            {
+                state.SetTrigger("Attack2");
+                attackTimer = 0f;
+            }
+            else
+            {
+                state.SetTrigger("Attack");
+                attackTimer = 0f;
+            }
         }
     }
 
@@ -58,9 +70,9 @@ public class BossController : MonoBehaviour
     public void PlayerBasedFlip()
     {
         if (matti.transform.position.x > transform.position.x)
-            Invoke("TurnRight", _turningDelay);
+            Invoke("TurnRight", turningDelay);
         else if (matti.transform.position.x < transform.position.x)
-            Invoke("TurnLeft", _turningDelay);
+            Invoke("TurnLeft", turningDelay);
     }
 
     private void TurnRight() => transform.localScale = new Vector3(-1, 1, 1);
@@ -80,7 +92,7 @@ public class BossController : MonoBehaviour
 
             if (alpha <= 0.1)
             {
-                _lives--;
+                lives--;
                 CancelFade(0.6f);
             }
 

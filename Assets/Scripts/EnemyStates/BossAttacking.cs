@@ -24,6 +24,6 @@ public class BossAttacking : StateMachineBehaviour
         base.OnStateExit(state, stateInfo, layerIndex);
         controller.attacking = false;
         controller.EnableColliders(false);
+        
     }
-
 }
