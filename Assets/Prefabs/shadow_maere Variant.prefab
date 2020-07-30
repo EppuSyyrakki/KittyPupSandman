@@ -1,12 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &494694109684420858
+--- !u!114 &8060436248075582180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5636396563687708382}
+  m_GameObject: {fileID: 3439954339179854503}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee99a136d5e06b5468b71f7cbe4c69bd, type: 3}
@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _patrolSound: event:/boss/bossRandom
   _attackSound: event:/boss/boss_attack
-  enemyObj: {fileID: 3439954339179854503}
+  enemyObj: {fileID: 0}
 --- !u!1001 &7384167986807144088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -818,12 +818,6 @@ PrefabInstance:
 --- !u!1 &3439954339179854503 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5315647890781340735, guid: e72084ba91e88c84ca2b0bee13d5fd24,
-    type: 3}
-  m_PrefabInstance: {fileID: 7384167986807144088}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5636396563687708382 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2900693535749957702, guid: e72084ba91e88c84ca2b0bee13d5fd24,
     type: 3}
   m_PrefabInstance: {fileID: 7384167986807144088}
   m_PrefabAsset: {fileID: 0}
