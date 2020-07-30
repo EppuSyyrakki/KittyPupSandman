@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7122391220322476151}
   - component: {fileID: 1524432292736898861}
-  - component: {fileID: 5520246787396802842}
+  - component: {fileID: 8871607268773440777}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5520246787396802842
-BoxCollider2D:
+--- !u!60 &8871607268773440777
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -5.3873167}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -105,6 +105,16 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 25, y: 1.7253666}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -12.451172, y: -4.4433594}
+      - {x: -12.498732, y: 1.1487019}
+      - {x: -14.074728, y: 1.1185145}
+      - {x: -13.80939, y: -6.220526}
+      - {x: -12.5, y: -6.25}
+      - {x: 12.5, y: -6.25}
+      - {x: 14.332232, y: -6.2558784}
+      - {x: 14.415983, y: 0.50976324}
+      - {x: 12.579069, y: 0.4244833}
+      - {x: 12.5, y: -4.4799805}
+      - {x: 12.451172, y: -4.4433594}

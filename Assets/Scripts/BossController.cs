@@ -21,13 +21,18 @@ public class BossController : MonoBehaviour
     void Update()
     {
         _distanceFromPlayer = Mathf.Abs(transform.position.x - matti.transform.position.x);
-        Debug.Log(_distanceFromPlayer);
 
-        if (_distanceFromPlayer < 8)
+        Vector3 target = new Vector3(matti.transform.position.x, transform.position.y, 0);
+        transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime);
+
+        if (_distanceFromPlayer < 11)
         {
-            EnableColliders(true);
-            state.SetTrigger("Attack");
-        }
+            if (Random.Range(0f, 1f) <= 0.5)
+                state.SetTrigger("Attack2");
+            else
+                state.SetTrigger("Attack");
+        }        
+
         PlayerBasedFlip();
     }
 
