@@ -25,13 +25,13 @@ public class EventHandler : MonoBehaviour
             EventManager.RaiseOnUpdateScene();
         }       
 
-        if (!Directory.Exists("C:/sandmanSaves"))
+        if (!Directory.Exists("sandmanSaves"))
         {
             //Debug.Log("EventHandler invoked by create save file action");
             EventManager.RaiseOnNewSaveFile();
         }
 
-        if (File.Exists("C:/sandmanSaves/" + transform.name + ".txt") && SaveGame._isInit)
+        if (File.Exists("sandmanSaves/" + transform.name + ".txt") && SaveGame._isInit)
         {
             //Debug.Log("EventHandler invoked by read file action");
             EventManager.RaiseOnReadFile();

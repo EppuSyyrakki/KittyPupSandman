@@ -134,7 +134,7 @@ public class UIMaster : MonoBehaviour
     public void ChangeScene(int sceneID)
     {
         CheckIfInTutoScene(sceneID);
-
+        
         // this method takes index values from build settings
         SceneManager.LoadScene(sceneBuildIndex: sceneID);
     }

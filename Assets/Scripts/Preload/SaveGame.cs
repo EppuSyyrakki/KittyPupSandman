@@ -65,14 +65,14 @@ public class SaveGame : MonoBehaviour
 
     private void CreateNewSaveFile()
     {
-        Directory.CreateDirectory("C:/sandmanSaves/");
+        Directory.CreateDirectory("sandmanSaves/");
     }
 
     private void ReadFile()
     {
         _isInit = false;
 
-        saveDataTxt = File.ReadAllText("C:/sandmanSaves/" + transform.name + ".txt");
+        saveDataTxt = File.ReadAllText("sandmanSaves/" + transform.name + ".txt");
 
         //split the string into an array of strings at the separator written in our file
 
@@ -106,7 +106,7 @@ public class SaveGame : MonoBehaviour
         saveDataTxt = playerPos.x + "!" + playerPos.y;
         saveDataTxt = saveDataTxt + "!" + sceneIndex;
 
-        File.WriteAllText("C:/sandmanSaves/" + transform.name + ".txt", saveDataTxt);
+        File.WriteAllText("sandmanSaves/" + transform.name + ".txt", saveDataTxt);
 
         playerPosVec = playerPos;
         //UnityEngine.Debug.Log("Writing file...: " + saveDataTxt);
