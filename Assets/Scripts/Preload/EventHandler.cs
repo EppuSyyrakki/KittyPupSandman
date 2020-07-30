@@ -63,5 +63,10 @@ public class EventHandler : MonoBehaviour
             EventManager.RaiseOnPlayerDamage();
         }
 
+        if (PlayerInputController.Instance._isDie)
+        {
+            EventManager.RaiseOnPlayerDeath();
+        }
+
     }
 }

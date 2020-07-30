@@ -6,7 +6,6 @@ using UnityEngine;
 public class Pause : MonoBehaviour
 {
     public static bool _isPaused { get; private set; }
-
     public static bool _okPause { get; set; }
     public static bool _okResume { get; set; }
 

@@ -38,6 +38,18 @@ public class PlayerInputController : MonoBehaviour
 
     public bool LookingDown { get; set; }
 
+    public static PlayerInputController Instance { get; private set; }
+
+    public bool _isDie { get; set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Debug.LogWarning("Warning! Multiple " + this + " in the scene");
+    }
+
     void Start()
     {
         state = GetComponent<Animator>();
@@ -148,7 +160,8 @@ public class PlayerInputController : MonoBehaviour
     private void KillPlayer()
     {
         // something?
-        SFXPlayer.Instance.PlayDie();
+        _isDie = true;
+        
     }
 
     void OnDisable()

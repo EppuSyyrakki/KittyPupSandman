@@ -41,6 +41,9 @@ public class EventManager : MonoBehaviour
     public delegate void OnPlayerDamage();
     public static event OnPlayerDamage onPlayerDamageEvent;
 
+    public delegate void OnPlayerDeath();
+    public static event OnPlayerDeath onPlayerDeathEvent;
+
     public static void RaiseOnSaveGame()
     {
         if (onSaveGameEvent != null)
@@ -112,6 +115,12 @@ public class EventManager : MonoBehaviour
     {
         if (onPlayerDamageEvent != null)
             onPlayerDamageEvent();
+    }
+
+    public static void RaiseOnPlayerDeath()
+    {
+        if (onPlayerDeathEvent != null)
+            onPlayerDeathEvent();
     }
 
 }

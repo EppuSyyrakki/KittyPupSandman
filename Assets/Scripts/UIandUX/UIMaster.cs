@@ -12,9 +12,10 @@ public class UIMaster : MonoBehaviour
     private GameObject[] menus = null;
 
     [SerializeField]
-    private int startMenu = 0;
+    private int startMenu;
 
     public static GameObject currentMenu;
+    private int currentMenuIndex;
 
     private int _preloadSceneId = 0; 
     private int _mainMenuSceneId = 1;
@@ -31,16 +32,19 @@ public class UIMaster : MonoBehaviour
     private void OnEnable()
     {
         EventManager.onNewSaveFileEvent += InitNewGame;
+        EventManager.onPlayerDeathEvent += ChangeDeathScene;
     }
 
     private void OnDisable()
     {
         EventManager.onNewSaveFileEvent -= InitNewGame;
+        EventManager.onPlayerDeathEvent -= ChangeDeathScene;
     }
 
     private void OnDestroy()
     {
         EventManager.onNewSaveFileEvent -= InitNewGame;
+        EventManager.onPlayerDeathEvent -= ChangeDeathScene;
     }
 
     public void Awake()
@@ -53,12 +57,27 @@ public class UIMaster : MonoBehaviour
     }
     private void Start()
     {
-        currentMenu = menus[startMenu];
-
+        if (menus != null)
+        {
+            currentMenuIndex = startMenu;
+            currentMenu = menus[startMenu];
+        }
+        else
+            UnityEngine.Debug.LogWarning("no menu to add");
     }
     private void InitNewGame()
     {
+        WipeSfxPlayerSounds();
         _isNoGameMemory = true;
+    }
+
+    private static void WipeSfxPlayerSounds()
+    {
+        if (SFXPlayer.Instance._isHurt)
+            SFXPlayer.Instance._isHurt = false;
+
+        if (SFXPlayer.Instance._isDead)
+            SFXPlayer.Instance._isDead = false;
     }
 
     public void OnGUI()
@@ -78,12 +97,21 @@ public class UIMaster : MonoBehaviour
 
     public void ChangeMenu(int menuIndex)
     {
+        if (menus != null)
+        {
+            ValidChange(menuIndex);
+        }
+    }
+
+    private void ValidChange(int menuIndex)
+    {
         for (int i = 0; i < menus.Length; i++)
         {
             if (i == menuIndex)
             {
                 menus[i].SetActive(true);
                 currentMenu = menus[i];
+                currentMenuIndex = i;
                 PauseAction(i);
             }
             else
@@ -122,15 +150,33 @@ public class UIMaster : MonoBehaviour
     public void StartNewGame()
     {
         ChangeScene(_tutorialSceneId);
+        WipeSfxPlayerSounds();
+        HitCheckSetToDefault();
         SaveGame.Instance.CheckIsWriteFileAvailable(new Vector2(0, 0));     // clear player pos from the memory
+    }
+
+    private static void HitCheckSetToDefault()
+    {
+        HitCheck.Instance.SetIsHit();
+        HitCheck.Instance.SetIsDamage();
     }
 
     public void ContinueGame()
     {
         int i = SaveGame.Instance.GetSceneIndex();
-        //Debug.LogWarning("Continue game, scene index in UI: " + i);
-
         CheckIfMemoryExists(i);
+        HitCheckSetToDefault();
+        setMenuToDefault();
+
+    }
+
+    private void setMenuToDefault()
+    {
+        if (currentMenuIndex != startMenu)
+        {
+            currentMenuIndex = startMenu;
+            currentMenu = menus[startMenu];
+        }
     }
 
     private void CheckIfMemoryExists(int i)
@@ -154,9 +200,10 @@ public class UIMaster : MonoBehaviour
         //Debug.LogWarning("Main menu, scene index in UI: " + SceneManager.GetActiveScene().buildIndex);
     }
 
-    public string GetCurrentMenu()
+    private void ChangeDeathScene()
     {
-        return currentMenu.tag;
+        ChangeScene(4);
+        PlayerInputController.Instance._isDie = false;
     }
 
     public int GetCurrentSceneId()

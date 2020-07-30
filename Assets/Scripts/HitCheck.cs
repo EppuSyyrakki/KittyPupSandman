@@ -9,6 +9,16 @@ public class HitCheck : MonoBehaviour
     public string _tagName;
     public Vector2 HitLocation { get; private set; }
 
+    public static HitCheck Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Debug.LogWarning("Warning! Multiple " + this + " in the scene");
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag(_tagName))
@@ -26,5 +36,22 @@ public class HitCheck : MonoBehaviour
             IsHit = false;
             _playerDamage = false;
         }
+    }
+
+    public bool GetIsHit()
+    {
+        return IsHit;
+    }
+
+    public void SetIsHit()
+    {
+        if (IsHit)
+            IsHit = false;
+    }
+
+    public void SetIsDamage()
+    {
+        if (_playerDamage)
+            _playerDamage = false;
     }
 }

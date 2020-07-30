@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _patrolSound: event:/boss/bossRandom
   _attackSound: event:/boss/boss_attack
-  enemyObj: {fileID: 0}
+  enemyObj: {fileID: 3439954339179854503}
 --- !u!58 &1582453737
 CircleCollider2D:
   m_ObjectHideFlags: 0
