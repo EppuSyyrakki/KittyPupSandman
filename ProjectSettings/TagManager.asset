@@ -64,6 +64,9 @@ TagManager:
   - name: Obstacle front
     uniqueID: 2687268673
     locked: 0
+  - name: Boss
+    uniqueID: 1585036137
+    locked: 0
   - name: Player
     uniqueID: 340492397
     locked: 0
