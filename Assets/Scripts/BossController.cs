@@ -18,9 +18,14 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _distanceFromPlayer = Mathf.Abs(transform.position.x - matti.transform.position.x):
-        PlayerBasedFlip();
+        _distanceFromPlayer = Mathf.Abs(transform.position.x - matti.transform.position.x);
         Debug.Log(_distanceFromPlayer);
+
+        if (_distanceFromPlayer < 8)
+        {
+            // enable colliders, do attack anim
+        }
+        PlayerBasedFlip();
     }
 
     private void PlayerBasedFlip()
