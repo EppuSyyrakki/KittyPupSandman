@@ -51,10 +51,6 @@ public class SFXEnemy : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-    }
-
     public void PlayPatrolEnemy()
     {
 
@@ -72,5 +68,13 @@ public class SFXEnemy : MonoBehaviour
         {
             FMODUnity.RuntimeManager.PlayOneShot(_attackSound, GetComponent<Transform>().position);
         }
+    }
+
+    private void BossAttack()
+    {
+        if (_isAttack)
+            FMODUnity.RuntimeManager.PlayOneShot(_attackSound, GetComponent<Transform>().position);
+        else
+            Debug.LogWarning("No boss attack sound available:");
     }
 }
