@@ -5284,7 +5284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2755701911878116800}
   m_Layer: 5
-  m_Name: TutorialEnd
+  m_Name: EndLevel
   m_TagString: ControlsMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5817,7 +5817,6 @@ MonoBehaviour:
   - {fileID: 1491001352747591650}
   - {fileID: 3157230980685184401}
   startMenu: 0
-  _isPausedInTuto: 0
 --- !u!114 &7911778200754148196
 MonoBehaviour:
   m_ObjectHideFlags: 0

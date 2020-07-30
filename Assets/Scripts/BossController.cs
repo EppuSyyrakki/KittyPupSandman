@@ -10,6 +10,7 @@ public class BossController : MonoBehaviour
     public bool lit;
     public GameObject matti;
     public GameObject[] claws;
+    public GameObject ender;
     public float turningDelay;
     public int lives;
     public float fadeOutTime;
@@ -37,8 +38,9 @@ public class BossController : MonoBehaviour
 
         if (lives <= 0)
         {
-            // end game
-        }    
+            ender.SetActive(true);
+            Destroy(gameObject);
+        }     
     }
 
     private void AttackPlayer()

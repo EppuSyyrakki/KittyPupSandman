@@ -10,5 +10,4 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(1);      // from preload to main menu scene
     }
-
 }

@@ -39,6 +39,4 @@ public class TutorialMenuObject : MonoBehaviour
         UIMaster.Instance._isPausedInTuto = false;
         _isAlive = false;
     }
-
-
 }
